@@ -67,6 +67,10 @@ $emulators = @{
         "basePath" = "N:\emulator-updates\BigPEmu\"
         "prefix" = "BigPEmu-"
     }
+    "RPCS3" = @{
+        "compatibilityUrl" = "https://rpcs3.net/compatibility?b"
+        "basePath" = "N:\emulator-updates\RPCS3\"
+    }
 }
 
 # Function to download a file
@@ -74,6 +78,10 @@ function Download-Emulator {
     param (
         [string]$name
     )
+
+    # Initialize variables
+    $url = $null
+    $path = $null
 
     if ($name -eq "XEMU") {
         # Get the latest version from the GitHub releases API
@@ -188,41 +196,31 @@ function Download-Emulator {
     }
     elseif ($name -eq "RPCS3") {
         # Define the compatibility URL
-		$compatibilityUrl = "https://rpcs3.net/compatibility?b"
+        $compatibilityUrl = $emulators[$name]["compatibilityUrl"]
 
-		# Fetch the content of the compatibility page
-		$pageContent = Invoke-WebRequest -Uri $compatibilityUrl -UseBasicParsing
+        # Fetch the content of the compatibility page
+        $pageContent = Invoke-WebRequest -Uri $compatibilityUrl -UseBasicParsing
 
-		# Extract the download URL for the latest Windows version
-		$downloadUrl = $pageContent.Links |
-        Where-Object { $_.href -match "win64\.7z" } |
-        Select-Object -First 1 |
-        ForEach-Object { $_.href }
+        # Extract the download URL for the latest Windows version
+        $downloadUrl = $pageContent.Links |
+            Where-Object { $_.href -match "win64\.7z" } |
+            Select-Object -First 1 |
+            ForEach-Object { $_.href }
 
-		# If the URL is relative, prepend the base URL
-		if ($downloadUrl -notmatch "^https?://") {
-        $downloadUrl = "https://rpcs3.net" + $downloadUrl
-    }
-    # Extract the filename from the download URL
-    $fileName = [System.IO.Path]::GetFileName($downloadUrl)
-    $downloadPath = "N:\emulator-updates\RPCS3\$fileName"
+        # If the URL is relative, prepend the base URL
+        if ($downloadUrl -notmatch "^https?://") {
+            $downloadUrl = "https://rpcs3.net" + $downloadUrl
+        }
 
-    # Check if directory exists, if not, create it
-    $directory = [System.IO.Path]::GetDirectoryName($downloadPath)
-    if (-not (Test-Path -Path $directory)) {
-        Write-Host "Creating directory $directory..."
-        New-Item -ItemType Directory -Path $directory
+        # Extract the filename from the download URL
+        $fileName = [System.IO.Path]::GetFileName($downloadUrl)
+        $path = $emulators[$name]["basePath"] + $fileName
+        $url = $downloadUrl
     }
-    # Download the file
-    Write-Host "Downloading RPCS3 from $downloadUrl to $downloadPath..."
-    try {
-        Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
-        Write-Host "RPCS3 downloaded to $downloadPath"
+    else {
+        $url = $emulators[$name]["url"]
+        $path = $emulators[$name]["path"]
     }
-    catch {
-        Write-Host "Failed to download RPCS3: $($_)"
-    }
-}
 
     $directory = [System.IO.Path]::GetDirectoryName($path)
 
@@ -238,7 +236,7 @@ function Download-Emulator {
         Write-Host "$name downloaded to $path"
     }
     catch {
-        Write-Host "Failed to download $name ${$}"
+        Write-Host "Failed to download $name ${_}"
     }
 }
 
