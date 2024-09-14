@@ -1,0 +1,5 @@
+[Emulators]
+emupath=n:\emulator-updates
+
+# change emupath to your download location example:  r:\emulator-updates
+# The script will look for this file and get the emupath and append that to the download directory.  for example if downloading MAME and the emupath is set to r:\emulator-updates then the download location will be r:\emulator-updates\MAME
