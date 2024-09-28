@@ -1,4 +1,4 @@
-Welcome to my little project to help Retro gamers get the latest versions of the top emulators.
+Welcome to my project to help Retro gamers get the latest windows versions of the top emulators.
 
 Supported emulators:
 
@@ -22,7 +22,11 @@ Thank you for checking out the project! I hope it makes your retro gaming experi
 
 Install:
 1. Downlaod load latest release
-2. Rename emd.ini.sample to emd.ini
-3. Edit emd.ini and update the emupath to your download location. *see emd.ini for more information
-4. Run the Powershell script and select desired emulator to download or choose download all to grab all of them.
+2. On first run it will prompt you to select a download directory for the emulators
+3. Run the Powershell script and select desired emulator to download or choose download all to grab all of them.
 
+*note:  You can edit the emd.ini and update the emupath to your download location. *see emd.ini for more information
+
+Futures:
+- The ability to select the emulator OS version:  Windows, Mac or Linix
+- Futher improvments to the interface
