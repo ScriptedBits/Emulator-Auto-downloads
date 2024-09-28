@@ -1,3 +1,36 @@
+<#
+    ===============================================================
+                          Emulator Auto-Downloader
+                               Version: v.2
+                               
+    GitHub Repository: https://github.com/dbalcar/Emulator-Auto-downloads
+
+    This script automatically downloads and updates various emulators
+    from their latest releases hosted on GitHub or official websites.
+    
+    Supported Emulators:
+    - Vita3K
+    - XENIA
+    - XEMU
+    - Ryujinx
+    - Redream
+    - PCSX2
+    - PPSSPP
+    - MAME
+    - Duckstation
+    - BigPEmu
+    - RPCS3
+
+    Author: David Balcar
+    License:
+
+    For support, visit the repository above.
+    ===============================================================
+#>
+
+# Load required assembly for folder browsing
+Add-Type -AssemblyName System.Windows.Forms
+
 # Get the current working directory
 $currentPath = Get-Location
 
@@ -34,6 +67,34 @@ function Read-IniFile {
     return $ini
 }
 
+# Function to create the INI file if it's missing
+function Create-IniFile {
+    param (
+        [string]$iniFilePath,
+        [string]$emupath
+    )
+
+    # Content of the INI file
+    $content = @"
+[Emulators]
+emupath = $emupath
+
+
+# change emupath to your download location example: r:\emulator-updates
+# The script will look for this file and get the emupath and append that to the download directory.
+# For example, if downloading MAME and the emupath is set to r:\emulator-updates, then the download location will be r:\emulator-updates\MAME
+"@
+
+    try {
+        # Create the INI file with the specified content
+        Set-Content -Path $iniFilePath -Value $content
+        Write-Host "INI file created successfully at $iniFilePath."
+    } catch {
+        Write-Error "Failed to create INI file: $_"
+        exit 1
+    }
+}
+
 # Function to get the emulator path from the INI file
 function Get-EmulatorPath {
     param (
@@ -65,6 +126,100 @@ function Get-EmulatorPath {
     # Return the path associated with the key
     return $ini[$section][$key]
 }
+
+# Function to browse for a folder (GUI)
+function Browse-Folder {
+    $folderBrowser = New-Object System.Windows.Forms.FolderBrowserDialog
+    $folderBrowser.Description = "Select a folder for emulator downloads"
+    $folderBrowser.ShowNewFolderButton = $true
+
+    $result = $folderBrowser.ShowDialog()
+    if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
+        return $folderBrowser.SelectedPath
+    } else {
+        return $null
+    }
+}
+
+# Check if INI file exists
+if (-not (Test-Path $iniFilePath)) {
+    Write-Warning "INI file not found at $iniFilePath."
+
+    # Ask the user if they want to create the INI file
+    $response = Read-Host "Would you like to create the INI file? (y/n)"
+    if ($response -eq 'y') {
+        # Let the user select the emulator path using a folder browser dialog
+        $emupath = Browse-Folder
+
+        if ($null -eq $emupath) {
+            Write-Host "No path selected. Exiting script."
+            exit 1
+        }
+
+        # Create the INI file
+        Create-IniFile -iniFilePath $iniFilePath -emupath $emupath
+
+        Write-Host "Restarting the script..."
+        Start-Sleep -Seconds 2
+
+        # Restart the script
+        & $PSCommandPath
+        exit 0
+    } else {
+        Write-Host "Exiting script. Please create the INI file manually."
+        exit 1
+    }
+}
+
+# Main script starts here
+$emupath = Get-EmulatorPath -iniFilePath $iniFilePath
+
+if ($null -eq $emupath) {
+    Write-Error "Emulator path is not defined in the INI file. Edit the emd.ini file with the correct path to download the Emulators."
+    exit 1
+}
+
+# Use the retrieved emulator path in the script logic
+# Assuming you want to replace the "N:\*\" with $emupath
+$path = $emupath
+# Now you can use the $path variable where needed in the script
+
+Write-Host " "
+Write-Host " "
+Write-Host " "
+Write-Host "Welcome to the Emulator Downloader"
+Write-Host " "
+Write-Host "https://github.com/dbalcar/Emulator-Auto-downloads"
+Write-Host " "
+Write-Host "Using emulator path: $path"
+Write-Host "Setting path to: $path"
+Write-Host " "
+
+
+# Main script starts here
+$emupath = Get-EmulatorPath -iniFilePath $iniFilePath
+
+if ($null -eq $emupath) {
+    Write-Error "Emulator path is not defined in the INI file. Edit the emd.ini file with the correct path to download the Emulators."
+    exit 1
+}
+
+# Use the retrieved emulator path in the script logic
+# Assuming you want to replace the "N:\*\" with $emupath
+$path = $emupath
+# Now you can use the $path variable where needed in the script
+
+Write-Host " "
+Write-Host " "
+Write-Host " "
+Write-Host "Welcome to the Emulator Downloader"
+Write-Host " "
+Write-Host "https://github.com/dbalcar/Emulator-Auto-downloads"
+Write-Host " "
+Write-Host "Using emulator path: $path"
+Write-Host "Setting path to: $path"
+Write-Host " "
+
 
 # Main script starts here
 $emupath = Get-EmulatorPath -iniFilePath $iniFilePath
@@ -345,43 +500,51 @@ function Download-Emulator {
     }
     elseif ($name -eq "PPSSPP") {
     # PPSSPP download logic
+    # Append the 'PPSSPP' folder to the base path
     $ppssppDownloadPath = Join-Path $emupath "PPSSPP"
+
+    # Check if the PPSSPP directory exists, if not, create it
     if (-not (Test-Path -Path $ppssppDownloadPath)) {
         Write-Host "Creating directory: $ppssppDownloadPath"
         New-Item -Path $ppssppDownloadPath -ItemType Directory -Force
     }
 
-    # Define the PPSSPP devbuilds URL
-    $ppssppUrl = "https://www.ppsspp.org/devbuilds/"
+    # Define the PPSSPP builds page URL
+    $ppssppBuildsUrl = "https://builds.ppsspp.org/"
+
+    # Fetch the webpage containing the builds info
     try {
-        $webpage = Invoke-WebRequest -Uri $ppssppUrl -UseBasicParsing
-        Write-Host "Successfully fetched PPSSPP devbuilds webpage."
+        $webpage = Invoke-WebRequest -Uri $ppssppBuildsUrl -UseBasicParsing
+        Write-Host "Successfully fetched PPSSPP builds webpage."
     } catch {
-        Write-Error "Failed to fetch PPSSPP devbuilds webpage: $_"
+        Write-Error "Failed to fetch PPSSPP builds webpage: $_"
+        exit 1
+    }
+
+    # Use regex to extract the latest PPSSPP build version link (we are looking for something like 'v1.17.1-1187-g6b383e40e0/ppsspp_win.zip')
+    $regexPattern = 'href="(\/builds\/v[\d\.\-\w]+\/ppsspp_win\.zip)"'
+    $versionMatch = Select-String -InputObject $webpage.Content -Pattern $regexPattern -AllMatches
+
+    if (-not $versionMatch.Matches) {
+        Write-Error "Could not extract the PPSSPP download link from the webpage."
         #exit 1
     }
 
-    # Parse the webpage to find the first link that contains "win" and ends with ".zip"
-    $downloadLink = $webpage.Links | Where-Object { $_.href -match "win.*\.zip$" } | Select-Object -First 1
+    # Extract the first match for the download URL part
+    $relativeDownloadUrl = $versionMatch.Matches[0].Groups[1].Value
 
-    if (-not $downloadLink) {
-        Write-Error "Could not find a download link for a Windows version on the PPSSPP devbuilds page."
-        #exit 1
-    }
-
-    # Construct the full download URL if the link is relative
-    $downloadUrl = $downloadLink.href
-    if ($downloadUrl -notmatch "^https?://") {
-        $uri = [System.Uri]::new($ppssppUrl)
-        $downloadUrl = [System.Uri]::new($uri, $downloadUrl).AbsoluteUri
-    }
+    # Construct the full download URL
+    $downloadUrl = "https://builds.ppsspp.org" + $relativeDownloadUrl
 
     # Extract the file name from the link
-    $fileName = [System.IO.Path]::GetFileName($downloadUrl)
+    $fileName = "ppsspp_win.zip"
+
+    # Define the target file path with the filename
     $targetFilePath = Join-Path $ppssppDownloadPath $fileName
 
-    Write-Host "Downloading PPSSPP from: $downloadUrl"
-    Write-Host "Saving to: $targetFilePath"
+    # Debugging: Check if $downloadUrl and $targetFilePath are correctly set
+    Write-Host "Download URL: $downloadUrl"
+    Write-Host "Target File Path: $targetFilePath"
 
     # Use Start-BitsTransfer to download the file
     try {
@@ -390,6 +553,8 @@ function Download-Emulator {
     } catch {
         Write-Error "Failed to download '$fileName': $_"
     }
+
+
 }
 
     elseif ($name -eq "MAME") {
@@ -559,8 +724,10 @@ function Download-Emulator {
 
 # Function to display the menu
 function Show-Menu {
+	Clear-Host  # Clears the screen before showing the menu
 	Write-Host "`n`n`nWelcome to the Emulator Downloader"
 	Write-Host "https://github.com/dbalcar/Emulator-Auto-downloads"
+	Write-Host "Using emulator path: $path"
 	Write-Host ""
 	Write-Host ""
 	Write-Host "Select an option:"
@@ -577,6 +744,16 @@ function Show-Menu {
     Write-Host "11. Download RPCS3"
     Write-Host "12. Download All"
     Write-Host "13. Exit"
+}
+
+# Function to display errors, pause, and clear screen
+function Handle-Error {
+    param (
+        [string]$errorMessage
+    )
+    Write-Error $errorMessage  # Display the error message
+    Read-Host -Prompt "Press Enter to continue"  # Pause to let the user read the error
+    Clear-Host  # Clear the screen
 }
 
 # Main script loop
@@ -609,5 +786,5 @@ while (-not $exit) {
         default {
             Write-Host "Invalid choice. Please enter a number between 1 and 13."
         }
-    }
+	}
 }
