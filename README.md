@@ -14,8 +14,6 @@ Ryujinx
 Duckstation
 Vita3k
 
-
-As of release .1 most downloads are working.  Some do give PS errors. Those are being worked on for future releases.
 If you don't see an emulator that you would like to see added please leave a comment.
 
 Thank you for checking out the project! I hope it makes your retro gaming experience even better.
