@@ -1,7 +1,7 @@
 <#
     ===============================================================
                           Emulator Auto-Downloader
-                               Version: v.2
+                               Version: v.2.1
                                
     GitHub Repository: https://github.com/dbalcar/Emulator-Auto-downloads
 
