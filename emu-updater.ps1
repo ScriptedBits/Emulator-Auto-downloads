@@ -3,7 +3,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 <#
     ===============================================================
                           Emulator Auto-Downloader
-                               Version: v.2.2
+                               Version: v.2.4
                                
     GitHub Repository: https://github.com/dbalcar/Emulator-Auto-downloads
 
@@ -22,6 +22,8 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
     - Duckstation
     - BigPEmu
     - RPCS3
+	- CEMU
+	- Dolphin
 
     Author: David Balcar
     License:
@@ -662,6 +664,133 @@ function Download-Emulator {
             Write-Error "Failed to download '$($asset.name)': $_"
         }
     }
+
+	elseif ($name -eq "CEMU") {
+        # CEMU download logic
+		# Create the CEMU directory under the defined emupath
+		$cemuDownloadPath = Join-Path $emupath "CEMU"
+
+		# Check if the CEMU directory exists, if not, create it
+	if (-not (Test-Path -Path $cemuDownloadPath)) {
+		Write-Host "Creating directory: $cemuDownloadPath"
+		New-Item -Path $cemuDownloadPath -ItemType Directory -Force
+}
+
+		# GitHub API URL to get the latest release for the CEMU project
+	$apiUrl = "https://api.github.com/repos/cemu-project/Cemu/releases/latest"
+
+		# Define User-Agent header as GitHub API requires it for proper access
+	$headers = @{
+		"User-Agent" = "Mozilla/5.0"
+}
+
+		# Fetch the latest release information from GitHub
+	try {
+		Write-Host "Fetching latest release information from GitHub..."
+		$release = Invoke-RestMethod -Uri $apiUrl -Headers $headers
+		Write-Host "Successfully fetched latest release information."
+	} catch {
+		Write-Error "Failed to retrieve latest release info from GitHub: $_"
+		exit 1
+}
+
+		# Find the asset that ends with "windows-x64.zip"
+	$asset = $release.assets | Where-Object { $_.name -like "*windows-x64.zip" }
+
+	if (-not $asset) {
+		Write-Error "File 'windows-x64.zip' not found in the latest release."
+		exit 1
+}
+
+		# Define the download URL and the target file path
+	$downloadUrl = $asset.browser_download_url
+	$targetFilePath = Join-Path $cemuDownloadPath $asset.name
+
+	# Debugging: Check if $downloadUrl and $targetFilePath are correctly set
+	Write-Host "Download URL: $downloadUrl"
+	Write-Host "Target File Path: $targetFilePath"
+
+	# Ensure $downloadUrl and $targetFilePath are not null or empty
+	if (-not $downloadUrl) {
+		Write-Error "The download URL is null or empty."
+		exit 1
+}
+
+	if (-not $targetFilePath) {
+		Write-Error "The target file path is null or empty."
+		exit 1
+}
+
+	# Use Start-BitsTransfer to download the file
+	try {
+		Write-Host "Downloading CEMU release..."
+		Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
+		Write-Host "Download completed successfully. File saved to $targetFilePath"
+	} catch {
+		Write-Error "Failed to download 'windows-x64.zip': $_"
+		exit 1
+}
+	}
+
+	elseif ($name -eq "Dolphin") {
+        # Dolphin download logic
+		# Create the Dolphin directory under the defined emupath
+	$dolphinDownloadPath = Join-Path $emupath "Dolphin"
+
+		# Check if the Dolphin directory exists, if not, create it
+	if (-not (Test-Path -Path $dolphinDownloadPath)) {
+		Write-Host "Creating directory: $dolphinDownloadPath"
+		New-Item -Path $dolphinDownloadPath -ItemType Directory -Force
+}
+		# Define the Dolphin download page URL
+	$dolphinUrl = "https://dolphin-emu.org/download/"
+
+		# Fetch the webpage containing the download info
+	try {
+		Write-Host "Fetching the Dolphin download page..."
+		$webpage = Invoke-WebRequest -Uri $dolphinUrl -UseBasicParsing
+		Write-Host "Successfully fetched the Dolphin download page."
+	} catch {
+		Write-Error "Failed to fetch Dolphin download page: $_"
+		exit 1
+}
+
+		# Parse the webpage to find the first link with the file name that ends with "x64.7z" under "Development versions"
+	$downloadLink = $webpage.Links | Where-Object { $_.href -match "x64.7z" } | Select-Object -First 1
+
+	if (-not $downloadLink) {
+		Write-Error "Could not find a download link for 'x64.7z'."
+		exit 1
+}
+
+		# Check if the link is relative (doesn't start with 'http' or 'https')
+	if ($downloadLink.href -notmatch "^https?://") {
+		# If it's relative, construct the full URL
+		$downloadUrl = "https://dolphin-emu.org" + $downloadLink.href
+	} else {
+		# If it's already an absolute URL, just use it
+    $downloadUrl = $downloadLink.href
+}
+
+		# Extract the file name from the link
+	$fileName = [System.IO.Path]::GetFileName($downloadUrl)
+
+		# Define the target file path with the filename
+	$targetFilePath = Join-Path $dolphinDownloadPath $fileName
+
+		# Debugging: Check if $downloadUrl and $targetFilePath are correctly set
+	Write-Host "Download URL: $downloadUrl"
+	Write-Host "Target File Path: $targetFilePath"
+
+		# Use Start-BitsTransfer to download the file
+	try {
+		Write-Host "Downloading the Dolphin emulator release..."
+		Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
+		Write-Host "Download completed successfully. File saved to $targetFilePath"
+	} catch {
+		Write-Error "Failed to download 'x64.7z': $_"
+}
+	}
 }
 
 # Function to display the menu
@@ -685,8 +814,10 @@ function Show-Menu {
     Write-Host "9. Download Duckstation"
     Write-Host "10. Download BigPEmu"
     Write-Host "11. Download RPCS3"
-    Write-Host "12. Download All"
-    Write-Host "13. Exit"
+	Write-Host "12. Download CEMU"
+	Write-Host "13. Download Dolphin"
+    Write-Host "14. Download All"
+    Write-Host "15. Exit"
 	Write-Host ""
 }
 
@@ -704,7 +835,7 @@ function Handle-Error {
 $exit = $false
 while (-not $exit) {
     Show-Menu
-    $choice = Read-Host "Choose the emulator to download (1-13)"
+    $choice = Read-Host "Choose the emulator to download (1-15)"
     
     switch ($choice) {
         1 { Download-Emulator -name "Vita3K" }
@@ -718,17 +849,19 @@ while (-not $exit) {
         9 { Download-Emulator -name "Duckstation" }
         10 { Download-Emulator -name "BigPEmu" }
         11 { Download-Emulator -name "RPCS3" }
-        12 {
-            foreach ($emulator in @("Vita3K", "XENIA", "XEMU", "Ryujinx", "Redream", "PCSX2", "PPSSPP", "MAME", "Duckstation", "BigPEmu", "RPCS3")) {
+		12 { Download-Emulator -name "CEMU" }
+		13 { Download-Emulator -name "Dolphin" }
+        14 {
+            foreach ($emulator in @("Vita3K", "XENIA", "XEMU", "Ryujinx", "Redream", "PCSX2", "PPSSPP", "MAME", "Duckstation", "BigPEmu", "RPCS3", "CEMU", "Dolphin")) {
                 Download-Emulator -name $emulator
             }
         }
-        13 {
+        15 {
             Write-Host "Exiting..."
             $exit = $true
         }
         default {
-            Write-Host "Invalid choice. Please enter a number between 1 and 13."
+            Write-Host "Invalid choice. Please enter a number between 1 and 15."
         }
 	}
 }
