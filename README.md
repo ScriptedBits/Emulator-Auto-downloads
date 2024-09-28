@@ -8,11 +8,13 @@ PPSSPP
 PCSX2
 RPCS3
 Dolphin
+Redream
 XEMU
 Xenia
 Ryujinx
 Duckstation
 Vita3k
+CEMU
 
 If you don't see an emulator that you would like to see added please leave a comment.
 
@@ -21,7 +23,8 @@ Thank you for checking out the project! I hope it makes your retro gaming experi
 
 <img width="491" alt="ead main screen" src="https://github.com/user-attachments/assets/cdfb2b11-ded3-4c80-88be-4bc41dc5e132">
 
-
+Requiremnts:
+- Windows 10/11 with Powershell5 or higher
 
 Install:
 1. Downlaod load latest release
@@ -33,5 +36,6 @@ Install:
 
 Futures:
 - The ability to select the emulator OS version:  Windows, Mac or Linix
+- New emulaters i.e.  RetroArch (I know not an emulator per say :-) , Supermodel, Cxbx, Applewin, Shadps4, fpPS4, Lime3DS, Project64 and more...
 - Futher improvments to the interface
 - Digitaly sign script
