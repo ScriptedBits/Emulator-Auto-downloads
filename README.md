@@ -27,7 +27,7 @@ Requiremnts:
 - Windows 10/11 with Powershell5 or higher
 
 Install:
-1. Downlaod load latest release
+1. Download load latest release
 2. Run using the command: powershell -ExecutionPolicy Bypass -File .\emu-updater.ps1
 3. On first run it will prompt you to select a download directory for the emulators
 4. Run the Powershell script and select desired emulator to download or choose download all to grab all of them.
