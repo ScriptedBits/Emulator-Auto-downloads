@@ -19,6 +19,9 @@ If you don't see an emulator that you would like to see added please leave a com
 Thank you for checking out the project! I hope it makes your retro gaming experience even better.
 
 
+<img width="491" alt="ead main screen" src="https://github.com/user-attachments/assets/cdfb2b11-ded3-4c80-88be-4bc41dc5e132">
+
+
 
 Install:
 1. Downlaod load latest release
