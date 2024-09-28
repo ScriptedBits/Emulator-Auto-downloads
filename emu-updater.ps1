@@ -1,7 +1,9 @@
+# Temporarily bypass the execution policy for this session
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 <#
     ===============================================================
                           Emulator Auto-Downloader
-                               Version: v.2.1
+                               Version: v.2.2
                                
     GitHub Repository: https://github.com/dbalcar/Emulator-Auto-downloads
 
@@ -160,7 +162,7 @@ if (-not (Test-Path $iniFilePath)) {
         Create-IniFile -iniFilePath $iniFilePath -emupath $emupath
 
         Write-Host "Restarting the script..."
-        Start-Sleep -Seconds 2
+        Start-Sleep -Seconds 1
 
         # Restart the script
         & $PSCommandPath
@@ -175,71 +177,13 @@ if (-not (Test-Path $iniFilePath)) {
 $emupath = Get-EmulatorPath -iniFilePath $iniFilePath
 
 if ($null -eq $emupath) {
-    Write-Error "Emulator path is not defined in the INI file. Edit the emd.ini file with the correct path to download the Emulators."
-    exit 1
-}
-
-# Use the retrieved emulator path in the script logic
-# Assuming you want to replace the "N:\*\" with $emupath
-$path = $emupath
-# Now you can use the $path variable where needed in the script
-
-Write-Host " "
-Write-Host " "
-Write-Host " "
-Write-Host "Welcome to the Emulator Downloader"
-Write-Host " "
-Write-Host "https://github.com/dbalcar/Emulator-Auto-downloads"
-Write-Host " "
-Write-Host "Using emulator path: $path"
-Write-Host "Setting path to: $path"
-Write-Host " "
-
-
-# Main script starts here
-$emupath = Get-EmulatorPath -iniFilePath $iniFilePath
-
-if ($null -eq $emupath) {
-    Write-Error "Emulator path is not defined in the INI file. Edit the emd.ini file with the correct path to download the Emulators."
-    exit 1
-}
-
-# Use the retrieved emulator path in the script logic
-# Assuming you want to replace the "N:\*\" with $emupath
-$path = $emupath
-# Now you can use the $path variable where needed in the script
-
-Write-Host " "
-Write-Host " "
-Write-Host " "
-Write-Host "Welcome to the Emulator Downloader"
-Write-Host " "
-Write-Host "https://github.com/dbalcar/Emulator-Auto-downloads"
-Write-Host " "
-Write-Host "Using emulator path: $path"
-Write-Host "Setting path to: $path"
-Write-Host " "
-
-
-# Main script starts here
-$emupath = Get-EmulatorPath -iniFilePath $iniFilePath
-
-if ($null -eq $emupath) {
     Write-Error "Emulator path is not defined in the INI file. Edit the emd.ini file with the correct path to download the Emulators"
     exit 1
 }
 
 # Use the retrieved emulator path in the script logic
 $path = $emupath
-#Write-Host ""
-#Write-Host ""
-#Write-Host "`n`n`nWelcome to the Emulator Downloader"
-#Write-Host "https://github.com/dbalcar/Emulator-Auto-downloads"
-#Write-Host ""
-#Write-Host ""
-Write-Host "Using emulator download path: $path"
-#Write-Host "Setting path to: $path"
-Write-Host ""
+# $path variable where needed in the script
 
 # Function to download an emulator
 function Download-Emulator {
@@ -553,8 +497,6 @@ function Download-Emulator {
     } catch {
         Write-Error "Failed to download '$fileName': $_"
     }
-
-
 }
 
     elseif ($name -eq "MAME") {
@@ -725,12 +667,13 @@ function Download-Emulator {
 # Function to display the menu
 function Show-Menu {
 	Clear-Host  # Clears the screen before showing the menu
-	Write-Host "`n`n`nWelcome to the Emulator Downloader"
+	Write-Host "`n`n`nWelcome to the Emulator Auto Downloader"
 	Write-Host "https://github.com/dbalcar/Emulator-Auto-downloads"
 	Write-Host "Using emulator path: $path"
 	Write-Host ""
 	Write-Host ""
 	Write-Host "Select an option:"
+	Write-Host ""
     Write-Host "1. Download Vita3K"
     Write-Host "2. Download XENIA"
     Write-Host "3. Download XEMU"
@@ -744,6 +687,7 @@ function Show-Menu {
     Write-Host "11. Download RPCS3"
     Write-Host "12. Download All"
     Write-Host "13. Exit"
+	Write-Host ""
 }
 
 # Function to display errors, pause, and clear screen
@@ -752,7 +696,7 @@ function Handle-Error {
         [string]$errorMessage
     )
     Write-Error $errorMessage  # Display the error message
-    Read-Host -Prompt "Press Enter to continue"  # Pause to let the user read the error
+    Read-Host -Prompt "Press any key to continue"  # Pause to let the user read the error
     Clear-Host  # Clear the screen
 }
 
@@ -760,7 +704,7 @@ function Handle-Error {
 $exit = $false
 while (-not $exit) {
     Show-Menu
-    $choice = Read-Host "Enter your choice (1-13)"
+    $choice = Read-Host "Choose the emulator to download (1-13)"
     
     switch ($choice) {
         1 { Download-Emulator -name "Vita3K" }
