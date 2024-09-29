@@ -1,41 +1,54 @@
-Welcome to my project to help Retro gamers get the latest windows versions of the top emulators.
+Welcome to the Emulator Auto-Download Project!
 
-Supported emulators:
+This project is designed to help retro gamers easily download the latest Windows versions of the top emulators in one convenient place.
 
-BigEmu
-MAME
-PPSSPP
-PCSX2
-RPCS3
-Dolphin
-Redream
-XEMU
-Xenia
-Ryujinx
-Duckstation
-Vita3k
-CEMU
+Supported Emulators:
 
-If you don't see an emulator that you would like to see added please leave a comment.
+    AppleWin
+    BigPEmu
+    CEMU
+    Dolphin
+    Duckstation
+    Lime3DS
+    MAME
+    PCSX2
+    PPSSPP
+    Redream
+    RPCS3
+    Ryujinx
+    Vita3K
+    XEMU
+    XENIA
 
-Thank you for checking out the project! I hope it makes your retro gaming experience even better.
+If your favorite emulator isn’t listed, feel free to leave a comment with your request!
 
+Thank you for exploring this project! I hope it enhances your retro gaming experience.
 
-<img width="491" alt="ead main screen" src="https://github.com/user-attachments/assets/cdfb2b11-ded3-4c80-88be-4bc41dc5e132">
+<img width="831" alt="Emulator Auto-Download main screen" src="https://github.com/user-attachments/assets/5ce5d8f8-1097-4582-ae82-97a47504fd0a">
 
-Requiremnts:
-- Windows 10/11 with Powershell5 or higher
+Requirements:
 
-Install:
-1. Download load latest release
-2. Run using the command: powershell -ExecutionPolicy Bypass -File .\emu-updater.ps1
-3. On first run it will prompt you to select a download directory for the emulators
-4. Run the Powershell script and select desired emulator to download or choose download all to grab all of them.
+    Windows 10/11 with PowerShell 5 or higher.
 
-*note:  You can edit the emd.ini and update the emupath to your download location. *see emd.ini for more information
+Installation Instructions:
 
-Futures:
-- The ability to select the emulator OS version:  Windows, Mac or Linix
-- New emulaters i.e.  RetroArch (I know not an emulator per say :-) , Supermodel, Cxbx, Applewin, Shadps4, fpPS4, Lime3DS, Project64 and more...
-- Futher improvments to the interface
-- Digitaly sign script
+    Download the latest release.
+    Run the following command in PowerShell:
+
+    powershell -ExecutionPolicy Bypass -File .\emu-updater.ps1
+
+    On the first run, you'll be prompted to select a download directory for the emulators.
+    After that, simply run the PowerShell script again to select and download the emulator(s) of your choice, or choose the option to download all.
+
+    Note: You can modify the emd.ini file to update the emupath to your preferred download location. See emd.ini for more details.
+
+Future Features:
+
+    The ability to select emulator versions for different operating systems: Windows, Mac, or Linux.
+    Support for additional emulators such as RetroArch (I know it's not really an emulator! 😄), Supermodel, Cxbx, ShadPS4, fpPS4, Project64, and more!
+    - Continued improvements to the user interface.
+    - Digital signature for the script for enhanced security.
+
+Be sure to support the emulator community and contribute where you can!
+
+Disclaimer: All trademarks are the property of their respective owners.
