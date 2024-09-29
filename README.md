@@ -60,3 +60,7 @@ If your favorite emulator isn’t listed, you can request it by leaving a commen
 **Disclaimer**: All trademarks are the property of their respective owners.
 
 ---
+
+
+<img width="531" alt="ead main screen" src="https://github.com/user-attachments/assets/ba2548e2-c5f8-411c-b5eb-5344d399631b">
+
