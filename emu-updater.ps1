@@ -1,13 +1,15 @@
 # Temporarily bypass the execution policy for this session
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+# Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+# $host.UI.RawUI.WindowSize = New-Object Management.Automation.Host.Size(100, 100)
+
 <#
     ===============================================================
                           Emulator Auto-Downloader
-                               Version: v.2.4
+                               Version: v.2.6
                                
     GitHub Repository: https://github.com/dbalcar/Emulator-Auto-downloads
 
-    This script automatically downloads and updates various emulators
+    This script allows you to download various emulators
     from their latest releases hosted on GitHub or official websites.
     
     Supported Emulators:
@@ -24,9 +26,10 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
     - RPCS3
 	- CEMU
 	- Dolphin
+	- AppleWin
 
     Author: David Balcar
-    License:
+    License: GPL3
 
     For support, visit the repository above.
     ===============================================================
@@ -92,9 +95,9 @@ emupath = $emupath
     try {
         # Create the INI file with the specified content
         Set-Content -Path $iniFilePath -Value $content
-        Write-Host "INI file created successfully at $iniFilePath."
+        Write-Host "emd.ini file created successfully at $iniFilePath."
     } catch {
-        Write-Error "Failed to create INI file: $_"
+        Write-Error "Failed to create emd.ini file: $_"
         exit 1
     }
 }
@@ -111,13 +114,13 @@ function Get-EmulatorPath {
     $ini = Read-IniFile -filePath $iniFilePath
 
     if ($null -eq $ini) {
-        Write-Error "Failed to read INI file."
+        Write-Error "Failed to read emd.ini file."
         return $null
     }
 
     # Check if the section exists
     if (-not $ini.ContainsKey($section)) {
-        Write-Error "Section '$section' not found in the INI file."
+        Write-Error "Section '$section' not found in the emd.ini file."
         return $null
     }
 
@@ -150,7 +153,7 @@ if (-not (Test-Path $iniFilePath)) {
     Write-Warning "INI file not found at $iniFilePath."
 
     # Ask the user if they want to create the INI file
-    $response = Read-Host "Would you like to create the INI file? (y/n)"
+    $response = Read-Host "Would you like to create the emd.ini file? (y/n)"
     if ($response -eq 'y') {
         # Let the user select the emulator path using a folder browser dialog
         $emupath = Browse-Folder
@@ -170,7 +173,7 @@ if (-not (Test-Path $iniFilePath)) {
         & $PSCommandPath
         exit 0
     } else {
-        Write-Host "Exiting script. Please create the INI file manually."
+        Write-Host "Exiting script. Please create the emd.ini file manually."
         exit 1
     }
 }
@@ -791,77 +794,259 @@ function Download-Emulator {
 		Write-Error "Failed to download 'x64.7z': $_"
 }
 	}
+	
+	elseif ($name -eq "AppleWin") {
+        # AppleWin download logic
+		# Append the 'AppleWin' folder to the base path
+	$applewinDownloadPath = Join-Path $emupath "AppleWin"
+
+		# Check if the AppleWin directory exists, if not, create it
+	if (-not (Test-Path -Path $applewinDownloadPath)) {
+		Write-Host "Creating directory: $applewinDownloadPath"
+		New-Item -Path $applewinDownloadPath -ItemType Directory -Force
 }
+		# GitHub API URL to get the latest release for the AppleWin project
+	$apiUrl = "https://api.github.com/repos/AppleWin/AppleWin/releases/latest"
+
+		# Define User-Agent header as GitHub API requires it for proper access
+	$headers = @{
+		"User-Agent" = "Mozilla/5.0"
+}
+		# Fetch the latest release information from GitHub
+	try {
+		Write-Host "Fetching latest release information from GitHub..."
+		$release = Invoke-RestMethod -Uri $apiUrl -Headers $headers
+		Write-Host "Successfully fetched latest release information."
+	} catch {
+		Write-Error "Failed to retrieve latest release info from GitHub: $_"
+		exit 1
+}
+		# Find the asset that starts with "applewin"
+	$asset = $release.assets | Where-Object { $_.name -like "applewin*" }
+
+	if (-not $asset) {
+		Write-Error "No file starting with 'applewin' found in the latest release."
+		exit 1
+}
+		# Define the download URL and the target file path
+	$downloadUrl = $asset.browser_download_url
+	$targetFilePath = Join-Path $applewinDownloadPath $asset.name
+
+		# Debugging: Check if $downloadUrl and $targetFilePath are correctly set
+		Write-Host "Download URL: $downloadUrl"
+		Write-Host "Target File Path: $targetFilePath"
+
+		# Ensure $downloadUrl and $targetFilePath are not null or empty
+	if (-not $downloadUrl) {
+		Write-Error "The download URL is null or empty."
+		exit 1
+}
+	if (-not $targetFilePath) {
+		Write-Error "The target file path is null or empty."
+		exit 1
+}
+		# Use Start-BitsTransfer to download the file
+	try {
+		Write-Host "Downloading AppleWin release..."
+		Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
+		Write-Host "Download completed successfully. File saved to $targetFilePath"
+	} catch {
+		Write-Error "Failed to download 'AppleWin': $_"
+		exit 1
+}
+	}
+	elseif ($name -eq "Lime3DS") {
+        # Lime3DS download logic
+		# Append the 'Lime3DS' folder to the base path
+	$lime3DSDownloadPath = Join-Path $emupath "Lime3DS"
+
+		# Check if the Lime3DS directory exists, if not, create it
+	if (-not (Test-Path -Path $lime3DSDownloadPath)) {
+			Write-Host "Creating directory: $lime3DSDownloadPath"
+    New-Item -Path $lime3DSDownloadPath -ItemType Directory -Force
+}
+		# GitHub API URL to get the latest release for the Lime3DS project
+	$apiUrl = "https://api.github.com/repos/Lime3DS/Lime3DS/releases/latest"
+
+		# Define User-Agent header as GitHub API requires it for proper access
+	$headers = @{
+    "User-Agent" = "Mozilla/5.0"
+}
+		# Fetch the latest release information from GitHub
+	try {
+		Write-Host "Fetching latest release information from GitHub..."
+		$release = Invoke-RestMethod -Uri $apiUrl -Headers $headers
+		Write-Host "Successfully fetched latest release information."
+	} catch {
+		Write-Error "Failed to retrieve latest release info from GitHub: $_"
+		exit 1
+}
+		# Filter for assets that end with 'msys2.zip' and 'msvc.zip'
+	$assetsToDownload = $release.assets | Where-Object { $_.name -match "(msys2\.zip|msvc\.zip)" }
+
+	if (-not $assetsToDownload) {
+		Write-Error "No files ending with 'msys2.zip' or 'msvc.zip' found in the latest release."
+		exit 1
+}
+		# Loop through the assets and download each one
+	foreach ($asset in $assetsToDownload) {
+    $downloadUrl = $asset.browser_download_url
+    $fileName = $asset.name
+    $targetFilePath = Join-Path $lime3DSDownloadPath $fileName
+
+		# Debugging: Check if $downloadUrl and $targetFilePath are correctly set
+    Write-Host "Download URL: $downloadUrl"
+    Write-Host "Target File Path: $targetFilePath"
+
+		# Ensure $downloadUrl and $targetFilePath are not null or empty
+    if (-not $downloadUrl) {
+        Write-Error "The download URL is null or empty."
+        exit 1
+    }
+    if (-not $targetFilePath) {
+        Write-Error "The target file path is null or empty."
+        exit 1
+    }
+    # Use Start-BitsTransfer to download the file
+    try {
+        Write-Host "Downloading $fileName..."
+        Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
+        Write-Host "Download completed successfully. File saved to $targetFilePath"
+    } catch {
+        Write-Error "Failed to download '$fileName': $_"
+        exit 1
+    }
+}
+
+Write-Host "All files downloaded successfully."
+
+}
+}
+
+
+  
+Write-Host "
+             ########                               ########             
+         ##------------+#                       #+------------##         
+       #----#-######-#----#                   #------######------#       
+     #----#------------#----#################----##----##----##----#     
+    #---#------###------#----------------------+#----#    #-----#---#    
+    +--#-------###--------#-------------------#------#    #------#--+    
+   #--#--------###--------++-----------------++--##----##----##---#--#   
+   #--#---##############---#---####---####---#-#    #------#    #-#--#   
+   #--#---##############---#---#..-------#---#-#    #------#    #-#--#   
+  ----#--------###---------#-----------------#--####---##---####--#----  
+  #----#-------###--------#-------------------#------#    #------#----#  
+  #-----#------###-------#---------------------#-----#    #-----#-----#  
+  #-------#------------#----++++++++++++++++++---#----####----#-------#  
+ #---#-------########----+++++++++++++++++++++++----########--------#--# 
+ #---#-----------------++++###################++++------------------#--# 
+ #--#-----------------+++#                     #+++-----------------#--# 
+ +--+----------------++#                         #++-------------------+ 
+#---#--------------+++#                           #+++--------------+#--#
+#--+--------------++#                               #++--------------#--#
+#+--------------+++#                                 #+++--------------+#
+#++------------++#+                                   +#++------------++#
+ #+++++-----++++#                                       #++++-----+++++# 
+  ##++++++++++##                                         ##++++++++++##  
+     ###++###                                               ##+++###     "
 
 # Function to display the menu
 function Show-Menu {
-	Clear-Host  # Clears the screen before showing the menu
+    Clear-Host
+    Write-Host "
+             ########                               ########             
+         ##------------+#                       #+------------##         
+       #----#-######-#----#                   #------######------#       
+     #----#------------#----#################----##----##----##----#     
+    #---#------###------#----------------------+#----#    #-----#---#    
+    +--#-------###--------#-------------------#------#    #------#--+    
+   #--#--------###--------++-----------------++--##----##----##---#--#   
+   #--#---##############---#---####---####---#-#    #------#    #-#--#   
+   #--#---##############---#---#..-------#---#-#    #------#    #-#--#   
+  ----#--------###---------#-----------------#--####---##---####--#----  
+  #----#-------###--------#-------------------#------#    #------#----#  
+  #-----#------###-------#---------------------#-----#    #-----#-----#  
+  #-------#------------#----++++++++++++++++++---#----####----#-------#  
+ #---#-------########----+++++++++++++++++++++++----########--------#--# 
+ #---#-----------------++++###################++++------------------#--# 
+ #--#-----------------+++#                     #+++-----------------#--# 
+ +--+----------------++#                         #++-------------------+ 
+#---#--------------+++#                           #+++--------------+#--#
+#--+--------------++#                               #++--------------#--#
+#+--------------+++#                                 #+++--------------+#
+#++------------++#+                                   +#++------------++#
+ #+++++-----++++#                                       #++++-----+++++# 
+  ##++++++++++##                                         ##++++++++++##  
+     ###++###                                               ##+++###     "
+	 
 	Write-Host "`n`n`nWelcome to the Emulator Auto Downloader"
-	Write-Host "https://github.com/dbalcar/Emulator-Auto-downloads"
-	Write-Host "Using emulator path: $path"
-	Write-Host ""
-	Write-Host ""
-	Write-Host "Select an option:"
-	Write-Host ""
-    Write-Host "1. Download Vita3K"
-    Write-Host "2. Download XENIA"
-    Write-Host "3. Download XEMU"
-    Write-Host "4. Download Ryujinx"
-    Write-Host "5. Download Redream"
-    Write-Host "6. Download PCSX2"
-    Write-Host "7. Download PPSSPP"
-    Write-Host "8. Download MAME"
-    Write-Host "9. Download Duckstation"
-    Write-Host "10. Download BigPEmu"
-    Write-Host "11. Download RPCS3"
-	Write-Host "12. Download CEMU"
-	Write-Host "13. Download Dolphin"
-    Write-Host "14. Download All"
-    Write-Host "15. Exit"
-	Write-Host ""
-}
-
-# Function to display errors, pause, and clear screen
-function Handle-Error {
-    param (
-        [string]$errorMessage
-    )
-    Write-Error $errorMessage  # Display the error message
-    Read-Host -Prompt "Press any key to continue"  # Pause to let the user read the error
-    Clear-Host  # Clear the screen
+    Write-Host "https://github.com/dbalcar/Emulator-Auto-downloads"
+    Write-Host "Emulator download path: $path"
+    Write-Host ""
+    Write-Host "Select an option:"
+    Write-Host ""
+    Write-Host "1. AppleWin          9. PPSSPP"
+    Write-Host "2. BigPEmu          10. Redream"
+    Write-Host "3. CEMU             11. RPCS3"
+    Write-Host "4. Dolphin          12. Ryujinx"
+    Write-Host "5. Duckstation      13. Vita3K"
+    Write-Host "6. Lime3DS          14. XEMU"
+    Write-Host "7. MAME             15. XENIA"
+    Write-Host "8. PCSX2" 
+    Write-Host ""
+    Write-Host "'all' to download all emulators"
+    Write-Host "'exit' to exit"
+    Write-Host ""
 }
 
 # Main script loop
 $exit = $false
 while (-not $exit) {
     Show-Menu
-    $choice = Read-Host "Choose the emulator to download (1-15)"
+    $choice = Read-Host "Choose the emulator to download (1-15, 'all' to download all, or 'exit' to quit)"
     
+    # Input validation: if it's a number between 1 and 15, cast to int; otherwise, make lowercase
+    if ($choice -match '^\d+$') {
+        $choice = [int]$choice
+    } else {
+        $choice = $choice.ToLower()
+    }
+
+    # Handle user input
     switch ($choice) {
-        1 { Download-Emulator -name "Vita3K" }
-        2 { Download-Emulator -name "XENIA" }
-        3 { Download-Emulator -name "XEMU" }
-        4 { Download-Emulator -name "Ryujinx" }
-        5 { Download-Emulator -name "Redream" }
-        6 { Download-Emulator -name "PCSX2" }
-        7 { Download-Emulator -name "PPSSPP" }
-        8 { Download-Emulator -name "MAME" }
-        9 { Download-Emulator -name "Duckstation" }
-        10 { Download-Emulator -name "BigPEmu" }
+        1  { Download-Emulator -name "AppleWin" }
+        2  { Download-Emulator -name "BigPEmu" }
+        3  { Download-Emulator -name "CEMU" }
+        4  { Download-Emulator -name "Dolphin" }
+        5  { Download-Emulator -name "Duckstation" }
+        6  { Download-Emulator -name "Lime3DS" }
+        7  { Download-Emulator -name "MAME" }
+        8  { Download-Emulator -name "PCSX2" }
+        9  { Download-Emulator -name "PPSSPP" }
+        10 { Download-Emulator -name "Redream" }
         11 { Download-Emulator -name "RPCS3" }
-		12 { Download-Emulator -name "CEMU" }
-		13 { Download-Emulator -name "Dolphin" }
-        14 {
-            foreach ($emulator in @("Vita3K", "XENIA", "XEMU", "Ryujinx", "Redream", "PCSX2", "PPSSPP", "MAME", "Duckstation", "BigPEmu", "RPCS3", "CEMU", "Dolphin")) {
+        12 { Download-Emulator -name "Ryujinx" }
+        13 { Download-Emulator -name "Vita3K" }
+        14 { Download-Emulator -name "XEMU" }
+        15 { Download-Emulator -name "XENIA" }
+
+        # Download all emulators
+        "all" {
+            foreach ($emulator in @("AppleWin", "BigPEmu", "CEMU", "Duckstation", "Dolphin", "Lime3DS", "MAME", "PCSX2", "PPSSPP", "Redream", "RPCS3", "Ryujinx", "Vita3K", "XEMU", "XENIA")) {
                 Download-Emulator -name $emulator
             }
         }
-        15 {
+
+        # Exit option
+        "exit" {
             Write-Host "Exiting..."
             $exit = $true
         }
+
+        # Default case for invalid input
         default {
-            Write-Host "Invalid choice. Please enter a number between 1 and 15."
+            Write-Host "Invalid choice. Please enter a number between 1 and 15, or type 'all' to download all, or 'exit' to quit."
         }
-	}
+    }
 }
