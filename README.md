@@ -11,9 +11,11 @@ Supported Emulators:
 - Duckstation
 - Lime3DS
 - MAME
+- melonDS
 - PCSX2
 - PPSSPP
 - Redream
+- RetroArch
 - RPCS3
 - Ryujinx
 - Vita3K
@@ -57,10 +59,14 @@ If your favorite emulator isn’t listed, you can request it by leaving a commen
 
 ---
 
-**Disclaimer**: All trademarks are the property of their respective owners.
+**Disclaimer**: All emulator names, trademarks and software are the property of their respective owners. This script is provided as-is without any warranty or guarantee of functionality.
 
+    The author of this script is not affiliated with any the emulator
+    projects or any emulator developers. This script is for personal 
+    use only to automate the process of downloading files from public 
+    sources.
 ---
 
+<img width="513" alt="ead main screen" src="https://github.com/user-attachments/assets/fd163bb6-2302-43fb-81ba-f07227a7aae2">
 
-<img width="531" alt="ead main screen" src="https://github.com/user-attachments/assets/ba2548e2-c5f8-411c-b5eb-5344d399631b">
 
