@@ -1192,7 +1192,3 @@ while (-not $exit) {
 }
 # Stop transcript logging - for debugging ONLY
 #Stop-Transcript
-
-
-
-#  lime3ds and retroarch not working.   need to totoly redo those
