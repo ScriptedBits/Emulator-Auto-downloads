@@ -1,39 +1,65 @@
-# Temporarily bypass the execution policy for this session
-# Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 # $host.UI.RawUI.WindowSize = New-Object Management.Automation.Host.Size(100, 100)
-
+# Define the log file location
+$logFile = "logfile.txt"
+# Start transcript logging - This is for debugging
+#Start-Transcript -Path $logFile -Append
+$scriptVersion = "v2.7"
 <#
-    ===============================================================
+   ===============================================================
                           Emulator Auto-Downloader
-                               Version: v.2.6
-                               
+                               Version: v2.7
+          
+	This script downloads the latest stable / dev releases of emulators 
+    for Windows x86_64, including:
+	
+	AppleWin
+	BigPEmu
+	CEMU
+	Dolphin
+	Duckstation
+	Lime3DS
+	MAME
+	melonDS
+	PCSX2
+	PPSSPP
+	Redream
+	RetroArch
+	RPCS3
+	Ryujinx
+	Vita3K
+	XEMU
+	XENIA 
+    
+	from their official websites or github.
+
     GitHub Repository: https://github.com/dbalcar/Emulator-Auto-downloads
 
-    This script allows you to download various emulators
-    from their latest releases hosted on GitHub or official websites.
-    
-    Supported Emulators:
-    - Vita3K
-    - XENIA
-    - XEMU
-    - Ryujinx
-    - Redream
-    - PCSX2
-    - PPSSPP
-    - MAME
-    - Duckstation
-    - BigPEmu
-    - RPCS3
-	- CEMU
-	- Dolphin
-	- AppleWin
+    Copyright (c) 2024 David Balcar
 
+    All emulator names and software are the property of their respective
+    owners. This script is provided as-is without any warranty or 
+    guarantee of functionality.
+
+    The author of this script is not affiliated with any the emulator
+    projects or any emulator developers. This script is for personal 
+    use only to automate the process of downloading files from public 
+    sources.
+    
     Author: David Balcar
     License: GPL3
 
-    For support, visit the repository above.
+    For any support or issues, visit the github respository
     ===============================================================
 #>
+
+# Clear the screen and set the console background to black
+$Host.UI.RawUI.BackgroundColor = "Black"
+
+# Reset the foreground color to default (white) for the rest of the script
+$Host.UI.RawUI.ForegroundColor = "White"  # Optional: change default font color to white
+
+#Clear-Host
+
 
 # Load required assembly for folder browsing
 Add-Type -AssemblyName System.Windows.Forms
@@ -855,8 +881,12 @@ function Download-Emulator {
 		exit 1
 }
 	}
+	
 	elseif ($name -eq "Lime3DS") {
-        # Lime3DS download logic
+	
+# Lime3DS download logic
+	#Write-Host "lime3ds selected, proceeding with download logic." -ForegroundColor Yellow
+
 		# Append the 'Lime3DS' folder to the base path
 	$lime3DSDownloadPath = Join-Path $emupath "Lime3DS"
 
@@ -916,42 +946,146 @@ function Download-Emulator {
         Write-Error "Failed to download '$fileName': $_"
         exit 1
     }
+	}
+	}
+	
+	elseif ($name -eq "RetroArch") {
+	# RetroArch download logic
+	# Define the URL for RetroArch platforms page
+	$baseUrl = "https://www.retroarch.com/?page=platforms"
+
+# Define the path where the files will be downloaded (change this to your desired download location)
+$downloadPath = Join-Path -Path $emupath -ChildPath "RetroArch"
+
+# Ensure the download directory exists, if not, create it
+if (-not (Test-Path -Path $downloadPath)) {
+    Write-Host "Creating directory: $downloadPath"
+    New-Item -Path $downloadPath -ItemType Directory -Force
+}
+
+# Function to download files using BITS
+function Download-File {
+    param (
+        [string]$sourceUrl,
+        [string]$destinationPath
+    )
+
+    Write-Host "Downloading file from $sourceUrl"
+    try {
+        Start-BitsTransfer -Source $sourceUrl -Destination $destinationPath
+        Write-Host "Download completed: $destinationPath"
+    } catch {
+        Write-Error "Failed to download $sourceUrl. Error: $_"
+    }
+}
+
+# Fetch the main webpage from the base URL
+	try {
+		Write-Host "Fetching RetroArch platforms page from: $baseUrl"
+		$webpage = Invoke-WebRequest -Uri $baseUrl -UseBasicParsing
+	} catch {
+		Write-Error "Failed to fetch the platforms page from $baseUrl. Error: $_"
+		exit 1
+	}
+
+# Parse the HTML content to find the section for "Windows 11 / 10 / 8.1 / 8 / 7"
+	$windowsSection = $webpage.Content -match '<h4>Windows 11 / 10 / 8.1 / 8 / 7</h4>'
+	if (-not $windowsSection) {
+		Write-Error "Could not find the Windows section on the page."
+		exit 1
+}
+
+# Extract the download link that contains "/windows/x86_64/"
+	$downloadLink = $null
+	$lines = $webpage.Content -split "`n"
+	foreach ($line in $lines) {
+    if ($line -match 'href="(.*?/windows/x86_64/.*?)"') {
+        $downloadLink = $matches[1]
+        break
+    }
+}
+
+# If no download link is found, exit with an error
+	if (-not $downloadLink) {
+    Write-Error "Failed to find the download link for the Windows x86_64 version."
+    exit 1
+}
+
+# Now strip the filename (if any) from the downloadLink and keep only the directory part
+	$directoryUrl = $downloadLink -replace '[^/]+$', '' # Removes the last part after the last '/' to get the directory URL
+	$fullDirectoryUrl =  $directoryUrl
+
+Write-Host "Directory URL for downloads: $fullDirectoryUrl"
+
+# Define the files to download
+	$filesToDownload = @("RetroArch.7z", "RetroArch_cores.7z")
+
+foreach ($file in $filesToDownload) {
+    # Construct the full download URL by appending the filename to the directory URL
+    $downloadUrl = $fullDirectoryUrl + $file
+    $targetFilePath = Join-Path -Path $downloadPath -ChildPath $file
+
+    # Download the file using BITS
+    Download-File -sourceUrl $downloadUrl -destinationPath $targetFilePath
 }
 
 Write-Host "All files downloaded successfully."
+	}
+	
+	elseif ($name -eq "melonDS") {
+    Write-Host "melonDS selected, proceeding with download logic." -ForegroundColor Yellow
+    
+    # melonDS download logic
+    $downloadPath = Join-Path -Path $emupath -ChildPath "melonDS"
+    
+    if (-not (Test-Path -Path $downloadPath)) {
+        Write-Host "Creating directory: $downloadPath"
+        New-Item -Path $downloadPath -ItemType Directory -Force
+    }
+    
+    # GitHub API URL to get the latest release for the melonDS project
+    $apiUrl = "https://api.github.com/repos/melonDS-emu/melonDS/releases/latest"
+    
+    $headers = @{
+        "User-Agent" = "Mozilla/5.0"
+    }
+    
+    try {
+        Write-Host "Fetching latest melonDS release information from GitHub..." -ForegroundColor Cyan
+        $release = Invoke-RestMethod -Uri $apiUrl -Headers $headers
+        Write-Host "Successfully fetched latest melonDS release information." -ForegroundColor Green
+    } catch {
+        Write-Error "Failed to retrieve latest release info from GitHub: $_"
+        return
+    }
+    
+    $asset = $release.assets | Where-Object { $_.name -like "*win_x64.zip" }
+    
+    if (-not $asset) {
+        Write-Error "File ending with 'win_x64.zip' not found in the latest release."
+        return
+    }
+    
+    $downloadUrl = $asset.browser_download_url
+    $targetFilePath = Join-Path -Path $downloadPath -ChildPath $asset.name
+    
+    Write-Host "Download URL: $downloadUrl" -ForegroundColor Cyan
+    Write-Host "Target File Path: $targetFilePath" -ForegroundColor Cyan
+    
+    try {
+        Write-Host "Downloading the latest melonDS release..." -ForegroundColor Green
+        Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
+        Write-Host "Download completed successfully. File saved to $targetFilePath" -ForegroundColor Green
+    } catch {
+        Write-Error "Failed to download the file: $_"
+    }
+}
 
 }
-}
 
+# Main script loop
+$exit = $false
 
-  
-Write-Host "
-             ########                               ########             
-         ##------------+#                       #+------------##         
-       #----#-######-#----#                   #------######------#       
-     #----#------------#----#################----##----##----##----#     
-    #---#------###------#----------------------+#----#    #-----#---#    
-    +--#-------###--------#-------------------#------#    #------#--+    
-   #--#--------###--------++-----------------++--##----##----##---#--#   
-   #--#---##############---#---####---####---#-#    #------#    #-#--#   
-   #--#---##############---#---#..-------#---#-#    #------#    #-#--#   
-  ----#--------###---------#-----------------#--####---##---####--#----  
-  #----#-------###--------#-------------------#------#    #------#----#  
-  #-----#------###-------#---------------------#-----#    #-----#-----#  
-  #-------#------------#----++++++++++++++++++---#----####----#-------#  
- #---#-------########----+++++++++++++++++++++++----########--------#--# 
- #---#-----------------++++###################++++------------------#--# 
- #--#-----------------+++#                     #+++-----------------#--# 
- +--+----------------++#                         #++-------------------+ 
-#---#--------------+++#                           #+++--------------+#--#
-#--+--------------++#                               #++--------------#--#
-#+--------------+++#                                 #+++--------------+#
-#++------------++#+                                   +#++------------++#
- #+++++-----++++#                                       #++++-----+++++# 
-  ##++++++++++##                                         ##++++++++++##  
-     ###++###                                               ##+++###     "
-
-# Function to display the menu
 function Show-Menu {
     Clear-Host
     Write-Host "
@@ -978,35 +1112,39 @@ function Show-Menu {
 #++------------++#+                                   +#++------------++#
  #+++++-----++++#                                       #++++-----+++++# 
   ##++++++++++##                                         ##++++++++++##  
-     ###++###                                               ##+++###     "
+     ###++###                                               ##+++###     " -ForegroundColor "Blue" -BackgroundColor "Black"
 	 
-	Write-Host "`n`n`nWelcome to the Emulator Auto Downloader"
-    Write-Host "https://github.com/dbalcar/Emulator-Auto-downloads"
-    Write-Host "Emulator download path: $path"
+	 
+	Write-Host "          Welcome to the Emulator Auto-Downloader - Version: $scriptVersion" -ForegroundColor "Green" -BackgroundColor "Black"
+	Write-Host "            https://github.com/dbalcar/Emulator-Auto-downloads" -ForegroundColor "Green" -BackgroundColor "Black"
+	Write-Host "                Emulator download path: $path" -ForegroundColor "Green" -BackgroundColor "Black"
+	
     Write-Host ""
-    Write-Host "Select an option:"
+    Write-Host "Select an option:" -ForegroundColor "Green" -BackgroundColor "Black"
     Write-Host ""
-    Write-Host "1. AppleWin          9. PPSSPP"
-    Write-Host "2. BigPEmu          10. Redream"
-    Write-Host "3. CEMU             11. RPCS3"
-    Write-Host "4. Dolphin          12. Ryujinx"
-    Write-Host "5. Duckstation      13. Vita3K"
-    Write-Host "6. Lime3DS          14. XEMU"
-    Write-Host "7. MAME             15. XENIA"
-    Write-Host "8. PCSX2" 
+    Write-Host "1. AppleWin         10. PPSSPP" -ForegroundColor "Green" -BackgroundColor "Black"
+    Write-Host "2. BigPEmu          11. Redream" -ForegroundColor "Green" -BackgroundColor "Black"
+    Write-Host "3. CEMU             12. RetroArch" -ForegroundColor "Green" -BackgroundColor "Black"
+    Write-Host "4. Dolphin          13. RPCS3" -ForegroundColor "Green" -BackgroundColor "Black"
+    Write-Host "5. Duckstation      14. Ryujinx" -ForegroundColor "Green" -BackgroundColor "Black"
+    Write-Host "6. Lime3DS          15. Vita3K" -ForegroundColor "Green" -BackgroundColor "Black"
+    Write-Host "7. MAME             16. XEMU" -ForegroundColor "Green" -BackgroundColor "Black"
+    Write-Host "8. melonDS          17. XENIA" -ForegroundColor "Green" -BackgroundColor "Black"
+	Write-Host "9. PCSX2" -ForegroundColor "Green" -BackgroundColor "Black"
     Write-Host ""
-    Write-Host "'all' to download all emulators"
-    Write-Host "'exit' to exit"
+
+    Write-Host "'all' to download all of the emulators" -ForegroundColor "Green" -BackgroundColor "Black"
+    Write-Host "'exit' to exit" -ForegroundColor "Green" -BackgroundColor "Black"
     Write-Host ""
 }
 
-# Main script loop
-$exit = $false
 while (-not $exit) {
     Show-Menu
-    $choice = Read-Host "Choose the emulator to download (1-15, 'all' to download all, or 'exit' to quit)"
+    # Display the prompt in red and capture the choice
+    Write-Host "Choose the emulator to download (1-17, 'all' to download all, or 'exit' to quit)" -ForegroundColor Red
+    $choice = Read-Host
     
-    # Input validation: if it's a number between 1 and 15, cast to int; otherwise, make lowercase
+    # Input validation: if it's a number between 1 and 17, cast to int; otherwise, make lowercase
     if ($choice -match '^\d+$') {
         $choice = [int]$choice
     } else {
@@ -1015,25 +1153,27 @@ while (-not $exit) {
 
     # Handle user input
     switch ($choice) {
-        1  { Download-Emulator -name "AppleWin" }
-        2  { Download-Emulator -name "BigPEmu" }
-        3  { Download-Emulator -name "CEMU" }
-        4  { Download-Emulator -name "Dolphin" }
-        5  { Download-Emulator -name "Duckstation" }
-        6  { Download-Emulator -name "Lime3DS" }
-        7  { Download-Emulator -name "MAME" }
-        8  { Download-Emulator -name "PCSX2" }
-        9  { Download-Emulator -name "PPSSPP" }
-        10 { Download-Emulator -name "Redream" }
-        11 { Download-Emulator -name "RPCS3" }
-        12 { Download-Emulator -name "Ryujinx" }
-        13 { Download-Emulator -name "Vita3K" }
-        14 { Download-Emulator -name "XEMU" }
-        15 { Download-Emulator -name "XENIA" }
+		1  { Download-Emulator -name "AppleWin" }
+		2  { Download-Emulator -name "BigPEmu" }
+		3  { Download-Emulator -name "CEMU" }
+		4  { Download-Emulator -name "Dolphin" }
+		5  { Download-Emulator -name "Duckstation" }
+		6  { Download-Emulator -name "Lime3DS" }
+		7  { Download-Emulator -name "MAME" }
+		8  { Download-Emulator -name "melonDS" }
+		9  { Download-Emulator -name "PCSX2" }
+		10 { Download-Emulator -name "PPSSPP" }
+		11 { Download-Emulator -name "Redream" }
+		12 { Download-Emulator -name "RetroArch" }
+		13 { Download-Emulator -name "RPCS3" }
+        14 { Download-Emulator -name "Ryujinx" }
+        15 { Download-Emulator -name "Vita3K" }
+        16 { Download-Emulator -name "XEMU" }
+        17 { Download-Emulator -name "XENIA" }
 
         # Download all emulators
         "all" {
-            foreach ($emulator in @("AppleWin", "BigPEmu", "CEMU", "Duckstation", "Dolphin", "Lime3DS", "MAME", "PCSX2", "PPSSPP", "Redream", "RPCS3", "Ryujinx", "Vita3K", "XEMU", "XENIA")) {
+            foreach ($emulator in @("AppleWin", "BigPEmu", "CEMU", "Dolphin", "Duckstation", "Lime3DS", "melonDS", "MAME", "PCSX2", "PPSSPP", "Redream", "RetroArch", "RPCS3", "Ryujinx", "Vita3K", "XEMU", "XENIA")) {
                 Download-Emulator -name $emulator
             }
         }
@@ -1046,7 +1186,13 @@ while (-not $exit) {
 
         # Default case for invalid input
         default {
-            Write-Host "Invalid choice. Please enter a number between 1 and 15, or type 'all' to download all, or 'exit' to quit."
+            Write-Host "Invalid choice. Please enter a number between 1 and 17, or type 'all' to download all, or 'exit' to quit."
         }
     }
 }
+# Stop transcript logging - for debugging ONLY
+#Stop-Transcript
+
+
+
+#  lime3ds and retroarch not working.   need to totoly redo those
