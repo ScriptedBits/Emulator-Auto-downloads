@@ -10,7 +10,7 @@ This project is designed to help retro gamers easily download the latest Windows
 | **BigPEmu**        | Atari Jaguar         |     | **Redream**      | Dreamcast    |
 | **CEMU**           | Wii U                |     | **RetroArch**    | Frontend     |
 | **Dolphin**        | Wii / GameCube       |     | **RPCS3**        | PS3          |
-| **Duckstation**    | PS1                  |     |       |        |
+| **Duckstation**    | PS1                  |     | **shadps4**      | PS4          |
 | **Lime3DS**        | DS                   |     | **Vita3K**       | Vita         |
 | **MAME**           | Arcade               |     | **XEMU**         | Xbox         |
 | **melonDS**        | DS                   |     | **XENIA**        | Xbox360      |
