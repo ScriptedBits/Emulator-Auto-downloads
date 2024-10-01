@@ -4,23 +4,16 @@ This project is designed to help retro gamers easily download the latest Windows
 
 Supported Emulators:
 
-- AppleWin
-- BigPEmu
-- CEMU
-- Dolphin
-- Duckstation
-- Lime3DS
-- MAME
-- melonDS
-- PCSX2
-- PPSSPP
-- Redream
-- RetroArch
-- RPCS3
-- Ryujinx
-- Vita3K
-- XEMU
-- XENIA
+- AppleWin              - PCSX2
+- BigPEmu               - PPSSPP
+- CEMU                  - Redream
+- Dolphin               - RetroArch
+- Duckstation           - RPCS3
+- Lime3DS               - Ryujinx
+- MAME                  - Vita3K
+- melonDS               - XEMU
+                        - XENIA
+
 
 If your favorite emulator isn’t listed, you can request it by leaving a comment.
 
