@@ -43,7 +43,8 @@ If your favorite emulator isn’t listed, you can request it by leaving a commen
 4. **Select Emulators**
    - After that, the script will show you a list of emulators. You can pick the ones you want or download all of them at once.
 
-> **Note**: If you want to change the download folder later, you can edit the `emd.ini` file in any text editor. Just update the `emupath` setting with the new location.
+> [!NOTE]
+> If you want to change the download folder later, you can edit the `emd.ini` file in any text editor. Just update the `emupath` setting with the new location.
 
 ## Future Features (Coming Soon):
 
