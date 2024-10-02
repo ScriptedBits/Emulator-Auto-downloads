@@ -4,17 +4,21 @@ This project is designed to help retro gamers easily download the latest Windows
 
 ## Supported Emulators: ##
 
-| **Emulator**   | **System**          |     | **Emulator**   | **System**   |
-|----------------|---------------------|-----|----------------|--------------|
-| **AppleWin**       | Apple ][             |     | **PPSSPP**       | PSP          |
-| **BigPEmu**        | Atari Jaguar         |     | **Redream**      | Dreamcast    |
-| **CEMU**           | Wii U                |     | **RetroArch**    | Frontend     |
-| **Dolphin**        | Wii / GameCube       |     | **RPCS3**        | PS3          |
-| **Duckstation**    | PS1                  |     | **shadps4**      | PS4          |
-| **Lime3DS**        | DS                   |     | **Vita3K**       | Vita         |
-| **MAME**           | Arcade               |     | **XEMU**         | Xbox         |
-| **melonDS**        | DS                   |     | **XENIA**        | Xbox360      |
-| **PCSX2**          | PS2                  |     |                  |              |
+| **Emulator**   | **System**          |     |      **Emulator**               | **System**   |
+|----------------|---------------------|-----|---------------------------------|--------------|
+| **AppleWin**       | Apple ][             |     | **PPSSPP**                 | PSP          |
+| **BigPEmu**        | Atari Jaguar         |     | **Redream**                | Dreamcast    |
+| **CEMU**           | Wii U                |     | **RetroArch**              | Frontend     |
+| **Dolphin**        | Wii / GameCube       |     | **Rosalie's Mupen GUI**    | N64          |
+| **Duckstation**    | PS!                  |     | **RPCS3**                  | PS3          |
+| **Lime3DS**        | DS                   |     | **shadps4**                | PS4          |
+| **MAME**           | Arcade               |     | **VICE**                   | C64          |
+| **melonDS**        | DS                   |     | **Vita3K**                 | Vita         |
+| **mupen64plus**    | N64                  |     | **WinUAE**                 | Amiga        |
+|  **PCSX2**         | PS2                  |     | **XEMU**                   | Xbox         |
+|                    |                      |     | **XENIA**                  | Xbox360      |
+|                    |                      |     |                            |              |
+
 
 
 If your favorite emulator isn’t listed, you can request it by leaving a comment.
