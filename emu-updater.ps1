@@ -3,7 +3,7 @@
 $logFile = "logfile.txt"
 # Start transcript logging - This is for debugging
 #Start-Transcript -Path $logFile -Append
-$scriptVersion = "v2.9"
+$scriptVersion = "v2.9.1"
 <#
    ===============================================================
                           Emulator Auto-Downloader
@@ -261,7 +261,7 @@ function Download-Emulator {
 
         try {
             Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
-            Write-Host "Download completed successfully. File saved to $targetFilePath"
+            Write-Host "XEMU download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
             Write-Error "Failed to download xemu-win-release.zip: $_"
         }
@@ -302,7 +302,7 @@ function Download-Emulator {
 
         try {
             Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
-            Write-Host "Download completed successfully. File saved to $targetFilePath"
+            Write-Host "Ryujinx download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
             Write-Error "Failed to download $($asset.name): $_"
         }
@@ -335,12 +335,12 @@ function Download-Emulator {
         $downloadUrl = $asset.browser_download_url
         $targetFilePath = Join-Path $xeniaDownloadPath "xenia_canary.zip"
 
-        Write-Host "Downloading XENIA from: $downloadUrl"
-        Write-Host "Saving to: $targetFilePath"
+        # Write-Host "Downloading XENIA from: $downloadUrl"
+        # Write-Host "Saving to: $targetFilePath"
 
         try {
             Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
-            Write-Host "Download completed successfully. File saved to $targetFilePath"
+            Write-Host "XENIA download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
             Write-Error "Failed to download $($asset.name): $_"
         }
@@ -379,7 +379,7 @@ function Download-Emulator {
 
         try {
             Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
-            Write-Host "Download completed successfully. File saved to $targetFilePath"
+            Write-Host "Vita3K download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
             Write-Error "Failed to download $($asset.name): $_"
         }
@@ -424,7 +424,7 @@ function Download-Emulator {
 
         try {
             Start-BitsTransfer -Source $secondDownloadLink -Destination $targetFilePath
-            Write-Host "Download completed successfully. File saved to $targetFilePath"
+            Write-Host "Redream download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
             Write-Error "Failed to download '$fileName': $_"
         }
@@ -471,7 +471,7 @@ function Download-Emulator {
 
         try {
             Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
-            Write-Host "Download completed successfully. File saved to $targetFilePath"
+            Write-Host "PCSX2 download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
             Write-Error "Failed to download $($asset.name): $_"
         }
@@ -527,7 +527,7 @@ function Download-Emulator {
     # Use Start-BitsTransfer to download the file
     try {
         Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
-        Write-Host "Download completed successfully. File saved to $targetFilePath"
+        Write-Host "PPSSPP download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
     } catch {
         Write-Error "Failed to download '$fileName': $_"
     }
@@ -562,12 +562,12 @@ function Download-Emulator {
         $fileName = $firstAsset.name
         $outputFilePath = Join-Path -Path $mameDownloadPath -ChildPath $fileName
 
-        Write-Host "Downloading MAME from: $downloadUrl"
-        Write-Host "Saving file to: $outputFilePath"
+        # Write-Host "Downloading MAME from: $downloadUrl" -ForegroundColor "Green" -BackgroundColor "Black"
+        # Write-Host "Saving file to: $outputFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
 
         try {
             Start-BitsTransfer -Source $downloadUrl -Destination $outputFilePath
-            Write-Host "Download completed successfully. File saved as $outputFilePath"
+            Write-Host "MAME download completed successfully. File saved as $outputFilePath"
         } catch {
             Write-Error "Failed to download the file using Start-BitsTransfer."
         }
@@ -601,12 +601,12 @@ function Download-Emulator {
         $downloadUrl = $asset.browser_download_url
         $targetFilePath = Join-Path $duckstationDownloadPath "duckstation-windows-x64-release.zip"
 
-        Write-Host "Downloading Duckstation from: $downloadUrl"
-        Write-Host "Saving to: $targetFilePath"
+        # Write-Host "Downloading Duckstation from: $downloadUrl"
+        # Write-Host "Saving to: $targetFilePath"
 
         try {
             Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
-            Write-Host "Download completed successfully. File saved to $targetFilePath"
+            Write-Host "Duckstation download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
             Write-Error "Failed to download 'duckstation-windows-x64-release.zip': $_"
         }
@@ -652,7 +652,7 @@ function Download-Emulator {
 
         try {
             Start-BitsTransfer -Source $firstZipUrl -Destination $outputFilePath
-            Write-Host "Download completed successfully. File saved as $outputFilePath"
+            Write-Host "BigPEmu download completed successfully. File saved as $outputFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
             Write-Error "Failed to download the .zip file."
         }
@@ -691,7 +691,7 @@ function Download-Emulator {
 
         try {
             Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
-            Write-Host "Download completed successfully. File saved to $targetFilePath"
+            Write-Host "RPCS3 download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
             Write-Error "Failed to download '$($asset.name)': $_"
         }
@@ -757,7 +757,7 @@ function Download-Emulator {
 	try {
 		Write-Host "Downloading CEMU release..."
 		Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
-		Write-Host "Download completed successfully. File saved to $targetFilePath"
+		Write-Host "CEMU download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
 	} catch {
 		Write-Error "Failed to download 'windows-x64.zip': $_"
 		exit 1
@@ -808,7 +808,7 @@ Write-Host "Downloading $fileName from $downloadUrl to $destinationFilePath"
 # Start the BITS transfer to download the file
 try {
     Start-BitsTransfer -Source $downloadUrl -Destination $destinationFilePath -Priority Foreground
-    Write-Host "Download complete: $destinationFilePath"
+    Write-Host "Dolphin download completed successfully. File saved to $destinationFilePath"   -ForegroundColor "Green" -BackgroundColor "Black"
 } catch {
     Write-Error "Failed to download the file using BITS: $_"
     exit 1
@@ -870,7 +870,7 @@ try {
 	try {
 		Write-Host "Downloading AppleWin release..."
 		Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
-		Write-Host "Download completed successfully. File saved to $targetFilePath"
+		Write-Host "AppleWin download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
 	} catch {
 		Write-Error "Failed to download 'AppleWin': $_"
 		exit 1
@@ -936,7 +936,7 @@ try {
     try {
         Write-Host "Downloading $fileName..."
         Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
-        Write-Host "Download completed successfully. File saved to $targetFilePath"
+        Write-Host "Lime3DS download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
     } catch {
         Write-Error "Failed to download '$fileName': $_"
         exit 1
@@ -1024,7 +1024,7 @@ foreach ($file in $filesToDownload) {
     Download-File -sourceUrl $downloadUrl -destinationPath $targetFilePath
 }
 
-Write-Host "All files downloaded successfully."
+Write-Host "RetroArch files downloaded successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
 
 
 	}
@@ -1072,15 +1072,15 @@ Write-Host "Downloading $($asset.name) from $downloadUrl to $destinationFilePath
 # Start the BITS transfer to download the file
 try {
     Start-BitsTransfer -Source $downloadUrl -Destination $destinationFilePath -Priority Foreground
-    Write-Host "Download complete: $destinationFilePath"
+    Write-Host "shadps4 downloaded successfully. File saved to $destinationFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
 } catch {
     Write-Error "Failed to download the file. $_"
     exit 1
 }
 
 }
-	elseif ($name -eq "TeknoParrot") {
-    Write-Host "TeknoParrot selected, proceeding with download logic." -ForegroundColor Yellow
+	elseif ($name -eq "TeknoParrot (Web installer)") {
+    Write-Host "TeknoParrot (Web installer) selected, proceeding with download logic." -ForegroundColor Yellow
 	# Append 'TeknoParrot' to the path
 $downloadPath = Join-Path -Path $emupath -ChildPath "TeknoParrot"
 
@@ -1119,7 +1119,7 @@ Write-Host "Downloading $($asset.name) from $downloadUrl to $destinationFilePath
 # Start the BITS transfer to download the file
 try {
     Start-BitsTransfer -Source $downloadUrl -Destination $destinationFilePath -Priority Foreground
-    Write-Host "Download complete: $destinationFilePath"
+    Write-Host "TeknoParrot downloaded successfully. File saved to $destinationFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
 } catch {
     Write-Error "Failed to download the file using BITS: $_"
     exit 1
@@ -1178,7 +1178,7 @@ Write-Host "Downloading $fileName from $downloadUrl to $destinationFilePath"
 # Start the BITS transfer to download the file
 try {
     Start-BitsTransfer -Source $downloadUrl -Destination $destinationFilePath -Priority Foreground
-    Write-Host "Download complete: $destinationFilePath"
+    Write-Host "WinUAE downloaded successfully. File saved to $destinationFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
 } catch {
     Write-Error "Failed to download the file using BITS: $_"
     exit 1
@@ -1227,10 +1227,10 @@ $sdlPattern = "^SDL2VICE-\d+\.\d+-win64-r\d+\.7z$"
 $downloadedAnyFile = $false
 
 # Print the list of asset names to verify
-Write-Host "List of files in pre-release:"
-$preRelease.assets | ForEach-Object {
-    Write-Host "Asset: $($_.name)"
-}
+#Write-Host "List of files in pre-release:"
+#$preRelease.assets | ForEach-Object {
+#    Write-Host "Asset: $($_.name)"
+#}
 
 # Loop through the assets in the pre-release
 $preRelease.assets | ForEach-Object {
@@ -1247,7 +1247,7 @@ $preRelease.assets | ForEach-Object {
         # Start the BITS transfer to download the file
         try {
             Start-BitsTransfer -Source $downloadUrl -Destination $destinationFilePath -Priority Foreground
-            Write-Host "Download complete: $destinationFilePath"
+            Write-Host "VICE downloaded successfully. File saved to $destinationFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
             $downloadedAnyFile = $true
         } catch {
             Write-Error "Failed to download the file using BITS: $_"
@@ -1260,6 +1260,333 @@ if (-not $downloadedAnyFile) {
     Write-Host "No files matching the patterns were found in the pre-release."
 }
 }
+	
+	elseif ($name -eq "Xenia Manager") {
+    Write-Host "Xenia Manager selected, proceeding with download logic." -ForegroundColor Yellow
+    
+    # Xenia Manager download logic
+	
+$downloadDir = Join-Path $emupath "Xenia Manager"
+
+# Ensure the download directory exists
+if (-not (Test-Path $downloadDir)) {
+    New-Item -Path $downloadDir -ItemType Directory
+}
+
+# GitHub API URL to get the latest release info
+$apiUrl = "https://api.github.com/repos/xenia-manager/xenia-manager/releases/latest"
+
+# Set a User-Agent header for the request (required by GitHub API)
+$headers = @{ "User-Agent" = "PowershellScript" }
+
+# Fetch the latest release info from GitHub
+$response = Invoke-RestMethod -Uri $apiUrl -Headers $headers
+
+# Extract the release version (e.g., v1.0.0) and assets (downloads) from the API response
+$releaseVersion = $response.tag_name  # e.g., "v1.0.0"
+$asset = $response.assets | Where-Object { $_.name -eq "xenia_manager.zip" }
+
+# Ensure we found the xenia_manager.zip asset
+if (-not $asset) {
+    Write-Error "No asset found for 'xenia_manager.zip' in the latest release"
+    exit
+}
+
+# Extract the download URL for xenia_manager.zip
+$downloadLink = $asset.browser_download_url
+
+# Define the full path where the file will be downloaded (with the release version appended)
+$fileName = "xenia_manager_$releaseVersion.zip"
+$destinationPath = Join-Path $downloadDir $fileName
+
+# Debugging: Output the constructed download URL and destination path
+# Write-Host "Download Link: $downloadLink"
+# Write-Host "File Name: $fileName"
+# Write-Host "Destination Path: $destinationPath"
+
+# Use BITS to download the file
+Write-Host "Downloading $fileName to $destinationPath..."
+Start-BitsTransfer -Source $downloadLink -Destination $destinationPath
+
+Write-Host "Xenia Manager downloaded successfully. File saved to $destinationFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
+	
+}
+
+
+
+elseif ($name -eq "mGBA") {
+    Write-Host "mGBA selected, proceeding with download logic." -ForegroundColor Yellow
+    
+    # mGBA download logic
+$downloadDir = Join-Path $emupath "mGBA"
+
+# Ensure the download directory exists
+if (-not (Test-Path $downloadDir)) {
+    New-Item -Path $downloadDir -ItemType Directory
+}
+
+# URL of the mGBA download page
+$downloadPageUrl = "https://mgba.io/downloads.html"
+
+# Download the HTML content of the download page
+$response = Invoke-WebRequest -Uri $downloadPageUrl
+
+# Debugging: Output the raw HTML content to ensure we're getting the correct HTML
+# Write-Host "HTML Content fetched from the website:"
+# Write-Host "=============================================="
+# Write-Host $response.Content
+# Write-Host "=============================================="
+
+# Parse the HTML to find the first link that contains 'mGBA-build-latest-win64.7z'
+$downloadLinkFound = $response.Content -match 'https://s3\.amazonaws\.com/mgba/mGBA-build-latest-win64\.7z'
+
+# Ensure we found the download link
+if (-not $downloadLinkFound) {
+    Write-Error "No download link found for 'mGBA-build-latest-win64.7z'"
+    exit
+}
+
+# The matched link is stored in $matches[0] after the regex match
+$downloadLink = $matches[0]
+
+# Extract the file name from the URL
+$fileName = [System.IO.Path]::GetFileName($downloadLink)
+
+# Define the full path where the file will be downloaded
+$destinationPath = Join-Path $downloadDir $fileName
+
+# Debugging: Output the constructed download URL and destination path
+Write-Host "Download Link: $downloadLink"
+Write-Host "File Name: $fileName"
+Write-Host "Destination Path: $destinationPath"
+
+# Use BITS to download the file
+Write-Host "Downloading $fileName to $destinationPath..."
+Start-BitsTransfer -Source $downloadLink -Destination $destinationPath
+
+Write-Host "mGBA download completed! files saved to: $destinationPath" -ForegroundColor "Green" -BackgroundColor "Black"
+
+}
+
+elseif ($name -eq "Rosalie's Mupen GUI") {
+    Write-Host "Rosalie's Mupen GUI selected, proceeding with download logic." -ForegroundColor Yellow
+    
+    # Rosalie's Mupen GUI download logic
+
+$downloadDir = Join-Path $emupath "RMG"
+
+# Ensure the download directory exists
+if (-not (Test-Path $downloadDir)) {
+    New-Item -Path $downloadDir -ItemType Directory
+}
+
+# GitHub API URL for the latest release of the repository
+$repoApiUrl = "https://api.github.com/repos/Rosalie241/RMG/releases/latest"
+
+# Set the User-Agent header required by GitHub API
+$headers = @{ "User-Agent" = "Powershell-Script" }
+
+# Fetch the latest release information from GitHub
+$response = Invoke-RestMethod -Uri $repoApiUrl -Headers $headers
+
+# Look for the asset that starts with "RMG-Portable-Windows64-"
+$asset = $response.assets | Where-Object { $_.name -like "RMG-Portable-Windows64-*" }
+
+# Ensure we found the asset
+if ($null -eq $asset) {
+    Write-Error "No file found that matches 'RMG-Portable-Windows64-*'"
+    exit
+}
+
+# Extract the download URL for the file
+$downloadUrl = $asset.browser_download_url
+$fileName = $asset.name
+
+# Define the full path where the file will be downloaded
+$destinationPath = Join-Path $downloadDir $fileName
+
+# Use BITS to download the file
+Write-Host "Downloading $fileName to $destinationPath..."
+Start-BitsTransfer -Source $downloadUrl -Destination $destinationPath
+
+Write-Host "Rosalie's Mupen GUI download complete. File saved to: $destinationPath" -ForegroundColor "Green" -BackgroundColor "Black"
+}
+
+	
+elseif ($name -eq "Stella") {
+    Write-Host "Stella selected, proceeding with download logic." -ForegroundColor Yellow
+    # Stella download logic
+$downloadDir = Join-Path $emupath "Stella"
+
+# Ensure the download directory exists
+if (-not (Test-Path $downloadDir)) {
+    New-Item -Path $downloadDir -ItemType Directory
+}
+
+# GitHub API URL for the latest release of the repository
+$repoApiUrl = "https://api.github.com/repos/stella-emu/stella/releases/latest"
+
+# Set the User-Agent header required by GitHub API
+$headers = @{ "User-Agent" = "Powershell-Script" }
+
+# Fetch the latest release information from GitHub
+$response = Invoke-RestMethod -Uri $repoApiUrl -Headers $headers
+
+# Look for the asset that starts with "Stella-" and ends with "-windows.zip"
+$asset = $response.assets | Where-Object { $_.name -like "Stella-*-windows.zip" }
+
+# Ensure we found the asset
+if ($null -eq $asset) {
+    Write-Error "No file found that matches 'Stella-*-windows.zip'"
+    exit
+}
+
+# Extract the download URL for the file
+$downloadUrl = $asset.browser_download_url
+$fileName = $asset.name
+
+# Define the full path where the file will be downloaded
+$destinationPath = Join-Path $downloadDir $fileName
+
+# Use BITS to download the file
+Write-Host "Downloading $fileName to $destinationPath..."
+Start-BitsTransfer -Source $downloadUrl -Destination $destinationPath
+
+Write-Host "Stella download complete. File saved to: $destinationPath" -ForegroundColor "Green" -BackgroundColor "Black"		
+	
+}
+
+
+elseif ($name -eq "Supermodel") {
+    Write-Host "Supermodel selected, proceeding with download logic." -ForegroundColor Yellow
+    
+    # Supermodel download logic
+
+$downloadDir = Join-Path $emupath "Supermodel"
+
+# Ensure the download directory exists
+if (-not (Test-Path $downloadDir)) {
+    New-Item -Path $downloadDir -ItemType Directory
+}
+
+# URL of the Supermodel3 download page
+$downloadPageUrl = "https://supermodel3.com/Download.html"
+
+# Download the HTML content of the download page
+$response = Invoke-WebRequest -Uri $downloadPageUrl
+
+# Debugging: Output the raw HTML content to ensure we're getting the correct HTML
+# Write-Host "HTML Content fetched from the website:"
+# Write-Host "=============================================="
+# Write-Host $response.Content
+# Write-Host "=============================================="
+
+# Parse the HTML content line-by-line to find the first link that contains 'Supermodel_' and ends with '_Win64.zip'
+$relativeDownloadLink = $response.Content -split "`n" | Where-Object { $_ -match 'href=".*Supermodel_.*_Win64\.zip"' } | Select-Object -First 1
+
+# Ensure we found the relative download link
+if (-not $relativeDownloadLink) {
+    Write-Error "No download link found for 'Supermodel_*_Win64.zip'"
+    exit
+}
+
+# Extract the relative download link using a proper match
+if ($relativeDownloadLink -match 'href="([^"]+)"') {
+    $relativeDownloadLink = $matches[1]
+} else {
+    Write-Error "Failed to extract the download link from the HTML"
+    exit
+}
+
+# Ensure the relative URL starts with '/'
+if ($relativeDownloadLink -notmatch '^/') {
+    $relativeDownloadLink = "/$relativeDownloadLink"
+}
+
+# Construct the full URL by appending the base URL
+$downloadLink = "https://supermodel3.com$relativeDownloadLink"
+
+# Extract the file name from the URL
+$fileName = [System.IO.Path]::GetFileName($downloadLink)
+
+# Loosened validation: We will allow any file name that starts with 'Supermodel_' and ends with '_Win64.zip'
+if (-not ($fileName -like 'Supermodel_*_Win64.zip')) {
+    Write-Error "The file name format is incorrect: $fileName"
+    exit
+}
+
+# Define the full path where the file will be downloaded
+$destinationPath = Join-Path $downloadDir $fileName
+
+# Debugging: Output the constructed download URL and destination path
+# Write-Host "Download Link: $downloadLink"
+# Write-Host "File Name: $fileName"
+# Write-Host "Destination Path: $destinationPath"
+
+# Use BITS to download the file
+# Write-Host "Downloading $fileName to $destinationPath..."
+Start-BitsTransfer -Source $downloadLink -Destination $destinationPath
+
+Write-Host "Supermodel download complete. File saved to: $destinationPath" -ForegroundColor "Green" -BackgroundColor "Black"	
+}	
+	
+elseif ($name -eq "mupen64plus") {
+    Write-Host "mupen64plus selected, proceeding with download logic." -ForegroundColor Yellow
+    
+    # mupen64plus download logic	
+# Append 'mupen64plus' to the path
+
+$downloadPath = Join-Path -Path $emupath -ChildPath "mupen64plus"
+
+# Ensure the directory exists; create it if it doesn't
+if (-not (Test-Path -Path $downloadPath)) {
+    New-Item -ItemType Directory -Path $downloadPath -Force
+}
+
+# GitHub API URL for latest release of Mupen64Plus
+$githubApiUrl = "https://api.github.com/repos/mupen64plus/mupen64plus-core/releases/latest"
+
+# Fetch the latest release information from GitHub
+try {
+    $releaseInfo = Invoke-RestMethod -Uri $githubApiUrl -Headers @{ 'User-Agent' = 'PowerShell Script' }
+} catch {
+    Write-Error "Failed to fetch release information from GitHub: $_"
+    exit 1
+}
+
+# Find the asset that starts with 'mupen64plus-bundle-win64'
+$asset = $releaseInfo.assets | Where-Object { $_.name -like "mupen64plus-bundle-win64*" }
+
+if (-not $asset) {
+    Write-Error "No asset found with the name starting with 'mupen64plus-bundle-win64'."
+    exit 1
+}
+
+# Get the download URL and asset name
+$downloadUrl = $asset.browser_download_url
+$assetName = $asset.name
+
+# Define the full destination file path
+$destinationFilePath = Join-Path -Path $downloadPath -ChildPath $assetName
+
+Write-Host "Downloading $assetName from $downloadUrl to $destinationFilePath"
+
+# Start the BITS transfer to download the file
+try {
+    Start-BitsTransfer -Source $downloadUrl -Destination $destinationFilePath -Priority Foreground
+    Write-Host "mupen64plus download complete. File saved to: $destinationFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
+} catch {
+    Write-Error "Failed to download the file using BITS: $_"
+    exit 1
+}
+}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	elseif ($name -eq "melonDS") {
@@ -1299,23 +1626,61 @@ if (-not $downloadedAnyFile) {
     $downloadUrl = $asset.browser_download_url
     $targetFilePath = Join-Path -Path $downloadPath -ChildPath $asset.name
     
-    Write-Host "Download URL: $downloadUrl" -ForegroundColor Cyan
-    Write-Host "Target File Path: $targetFilePath" -ForegroundColor Cyan
+    # Write-Host "Download URL: $downloadUrl" -ForegroundColor Cyan
+    # Write-Host "Target File Path: $targetFilePath" -ForegroundColor Cyan
     
     try {
         Write-Host "Downloading the latest melonDS release..." -ForegroundColor Green
         Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
-        Write-Host "Download completed successfully. File saved to $targetFilePath" -ForegroundColor Green
+        Write-Host "melonDS download completed successfully. File saved to $targetFilePath" --ForegroundColor "Green" -BackgroundColor "Black"
     } catch {
         Write-Error "Failed to download the file: $_"
     }
 }
-
 }
+
+
 
 # Main script loop
 $exit = $false
 
+# emulators not displayed due to downloads not working - waiting on fix
+# "Ryujinx",
+
+# Define the list of emulators in a simple array to avoid hardcoded numbering
+$emulatorNames = @(
+    "AppleWin",
+    "BigPEmu",
+    "CEMU",
+    "Dolphin",
+    "Duckstation",
+    "Lime3DS",
+    "MAME",
+    "melonDS",
+    "PCSX2",
+    "PPSSPP",
+    "Redream",
+    "RetroArch",
+    "RPCS3",
+    "shadps4",
+    "TeknoParrot (Web installer)",
+    "Vita3K",
+    "VICE",
+    "WinUAE",
+    "XEMU",
+    "XENIA",
+    "mupen64plus", 
+	"Rosalie's Mupen GUI",
+	"Stella",
+	"Supermodel",
+	"mGBA",
+	"Xenia Manager"
+)
+
+# Sort the emulator names alphabetically
+$sortedEmulatorNames = $emulatorNames | Sort-Object
+
+# Function to display the menu in two centered columns, aligned to "Select an option:"
 function Show-Menu {
     Clear-Host
     Write-Host "
@@ -1343,42 +1708,138 @@ function Show-Menu {
  #+++++-----++++#                                       #++++-----+++++# 
   ##++++++++++##                                         ##++++++++++##  
      ###++###                                               ##+++###     " -ForegroundColor "Blue" -BackgroundColor "Black"
-	 
-	 
-	Write-Host "          Welcome to the Emulator Auto-Downloader - Version: $scriptVersion" -ForegroundColor "Green" -BackgroundColor "Black"
-	Write-Host "            https://github.com/dbalcar/Emulator-Auto-downloads" -ForegroundColor "Green" -BackgroundColor "Black"
-	Write-Host "                Emulator download path: $path" -ForegroundColor "Green" -BackgroundColor "Black"
-	
-    Write-Host ""
-    Write-Host "                            Select an option:" -ForegroundColor "Green" -BackgroundColor "Black"
-    Write-Host ""
-    Write-Host "                      1. AppleWin          12. RetroArch" -ForegroundColor "Green" -BackgroundColor "Black"
-    Write-Host "                      2. BigPEmu           13. RPCS3" -ForegroundColor "Green" -BackgroundColor "Black"
-    Write-Host "                      3. CEMU              14. Ryujinx" -ForegroundColor "Green" -BackgroundColor "Black"
-    Write-Host "                      4. Dolphin           15. shadps4" -ForegroundColor "Green" -BackgroundColor "Black"
-    Write-Host "                      5. Duckstation       16. TeknoParrot (web installer)" -ForegroundColor "Green" -BackgroundColor "Black"
-    Write-Host "                      6. Lime3DS           17. Vita3K" -ForegroundColor "Green" -BackgroundColor "Black"
-    Write-Host "                      7. MAME              18. VICE" -ForegroundColor "Green" -BackgroundColor "Black"
-    Write-Host "                      8. melonDS           21. WinUAE" -ForegroundColor "Green" -BackgroundColor "Black"
-	Write-Host "                      9. PCSX2             20. XEMU" -ForegroundColor "Green" -BackgroundColor "Black"
-    Write-Host "                     10. PPSSPP            21. XENIA"-ForegroundColor "Green" -BackgroundColor "Black"
-	Write-Host "                     11. Redream " -ForegroundColor "Green" -BackgroundColor "Black"
-	Write-Host ""
-	
-	Write-Host ""
 
-    Write-Host "'all' to download all of the emulators" -ForegroundColor "Green" -BackgroundColor "Black"
-    Write-Host "'exit' to exit" -ForegroundColor "Green" -BackgroundColor "Black"
+    
+    	
+function DisplayCyclingText {
+    param (
+        [string]$textToDisplay,      # The text we want to display with the cycling effect
+        [int]$totalTimeInMilliseconds = 500  # Total time in milliseconds (3 seconds)
+    )
+
+    # Convert the text to an array of characters
+    $finalCharacters = $textToDisplay.ToCharArray()
+
+    # Calculate the total number of characters in the string
+    $charCount = $finalCharacters.Length
+
+    # Set a reasonable cycle limit per character (how many different letters it can show before the final one)
+    $maxCyclesPerLetter = 3
+
+    # Calculate the total number of steps (cycles)
+    $totalCycles = $charCount * $maxCyclesPerLetter
+
+    # Calculate the delay per cycle to ensure the entire animation fits within the desired total time
+    $delayPerCycle = [math]::Ceiling($totalTimeInMilliseconds / $totalCycles)
+
+    # Iterate over each character in the final string
+    for ($i = 0; $i -lt $finalCharacters.Length; $i++) {
+        # Get the final character for this position
+        $finalChar = $finalCharacters[$i]
+
+        # If the character is a letter, cycle through the alphabet
+        if ($finalChar -match '[a-zA-Z]') {
+            $currentChar = [char]65  # Start with 'A'
+
+            # If the final character is lowercase, adjust the starting point to 'a'
+            if ($finalChar -match '[a-z]') {
+                $currentChar = [char]97  # Start with 'a'
+            }
+
+            # Cycle through the alphabet, showing $maxCyclesPerLetter characters
+            for ($cycle = 1; $cycle -le $maxCyclesPerLetter; $cycle++) {
+                # Display current character in green on black background
+                Write-Host -NoNewline $currentChar -ForegroundColor Green -BackgroundColor Black
+                Start-Sleep -Milliseconds $delayPerCycle
+
+                # Overwrite the previous character
+                [System.Console]::SetCursorPosition([System.Console]::CursorLeft - 1, [System.Console]::CursorTop)
+
+                # Move to the next letter
+                $currentChar = [char]([int][char]$currentChar + 1)
+
+                # Wrap around after 'Z' or 'z'
+                if ($currentChar -eq [char]91) { $currentChar = [char]65 }   # After 'Z', reset to 'A'
+                if ($currentChar -eq [char]123) { $currentChar = [char]97 }  # After 'z', reset to 'a'
+
+                # Exit early if the current character matches the final character
+                if ($currentChar -eq $finalChar) { break }
+            }
+
+            # Print the final correct character (once the loop finishes)
+            Write-Host -NoNewline $finalChar -ForegroundColor Green -BackgroundColor Black
+        }
+        else {
+            # If it's not a letter, print the character immediately (spaces, numbers, punctuation, etc.)
+            Write-Host -NoNewline $finalChar -ForegroundColor Green -BackgroundColor Black
+        }
+    }
+
+    # Move to the next line when done
     Write-Host ""
 }
+
+# Usage: Define the text to be displayed and call the function
+$text = "          Welcome to the Emulator Auto-Downloader - Version: $scriptVersion"
+DisplayCyclingText -textToDisplay $text -totalTimeInMilliseconds 500
+
+	Write-Host "            https://github.com/dbalcar/Emulator-Auto-downloads" -ForegroundColor "Green" -BackgroundColor "Black"
+    Write-Host "                Emulator download path: $path" -ForegroundColor "Green" -BackgroundColor "Black"
+
+    Write-Host ""
+    
+    # Display the "Select an option:" line and capture the starting position
+    $optionText = "                            Select an option:"
+    Write-Host $optionText -ForegroundColor "Green" -BackgroundColor "Black"
+    Write-Host ""
+
+    # Calculate where to start aligning the emulator columns based on the "Select an option:" text length
+    $startPos = $optionText.Trim().Length
+
+    # Prepare emulators for two columns display
+    $halfCount = [math]::Ceiling($sortedEmulatorNames.Count / 2)
+
+    # Split the sorted emulators into two columns
+    $column1 = $sortedEmulatorNames[0..($halfCount - 1)]
+    $column2 = $sortedEmulatorNames[$halfCount..($sortedEmulatorNames.Count - 1)]
+
+    # Set the width of the first column, including the number and emulator name
+    $col1Width = 25  # Adjust this to minimize space between columns
+
+    # Output the emulators in two columns, aligned with "Select an option:"
+    for ($i = 0; $i -lt $halfCount; $i++) {
+        # Left column (Column 1) with a 2-character number and fixed width for the emulator name
+        $col1 = "{0,2}. {1,-$col1Width}" -f ($i + 1), $column1[$i]
+
+        # Right column (Column 2) with a 2-character number and aligned similarly
+        $col2 = if ($i -lt $column2.Count) { "{0,2}. {1}" -f ($i + 1 + $halfCount), $column2[$i] } else { "" }
+
+        # Combine columns without excessive spaces between them
+        $outputLine = "$col1$col2"
+
+        # Pad the line to start after the "Select an option:" text
+        $paddedLine = $outputLine.PadLeft($startPos + $outputLine.Length)
+
+        # Display the centered line
+        Write-Host $paddedLine -ForegroundColor "Green" -BackgroundColor "Black"
+    }
+
+    Write-Host ""
+    Write-Host "  'all' to download all of the emulators" -ForegroundColor "Green" -BackgroundColor "Black"
+    Write-Host "  'exit' to exit" -ForegroundColor "Green" -BackgroundColor "Black"
+    Write-Host ""
+}
+
+# Main script loop
+$exit = $false
 
 while (-not $exit) {
     Show-Menu
     # Display the prompt in red and capture the choice
-    Write-Host "Choose the emulator to download (1-21, 'all' to download all, or 'exit' to quit)" -ForegroundColor Red
+    Write-Host "Choose the emulator to download (1-$($emulatorNames.Count), 'all' to download all, or 'exit' to quit)" -ForegroundColor Red
     $choice = Read-Host
-    
-    # Input validation: if it's a number between 1 and 21, cast to int; otherwise, make lowercase
+
+    # Input validation: if it's a number between 1 and the number of emulators, cast to int; otherwise, make lowercase
     if ($choice -match '^\d+$') {
         $choice = [int]$choice
     } else {
@@ -1387,33 +1848,19 @@ while (-not $exit) {
 
     # Handle user input
     switch ($choice) {
-		1  { Download-Emulator -name "AppleWin" }
-		2  { Download-Emulator -name "BigPEmu" }
-		3  { Download-Emulator -name "CEMU" }
-		4  { Download-Emulator -name "Dolphin" }
-		5  { Download-Emulator -name "Duckstation" }
-		6  { Download-Emulator -name "Lime3DS" }
-		7  { Download-Emulator -name "MAME" }
-		8  { Download-Emulator -name "melonDS" }
-		9  { Download-Emulator -name "PCSX2" }
-		10 { Download-Emulator -name "PPSSPP" }
-		11 { Download-Emulator -name "Redream" }
-		12 { Download-Emulator -name "RetroArch" }
-		13 { Download-Emulator -name "RPCS3" }
-        14 { Download-Emulator -name "Ryujinx" }
-		15 { Download-Emulator -name "shadps4" }
-		16 { Download-Emulator -name "TeknoParrot" }
-        17 { Download-Emulator -name "Vita3K" }
-        18 { Download-Emulator -name "VICE" }
-		19 { Download-Emulator -name "WinUAE" }
-		20 { Download-Emulator -name "XEMU" }
-        21 { Download-Emulator -name "XENIA" }
-		
-		
+        # Individual emulator download based on selection
+        { $_ -ge 1 -and $_ -le $emulatorNames.Count } {
+            $emulator = $sortedEmulatorNames[$choice - 1]
+            if ($emulator) {
+                Download-Emulator -name $emulator
+            } else {
+                Write-Host "Invalid emulator selection." -ForegroundColor Yellow
+            }
+        }
 
         # Download all emulators
         "all" {
-            foreach ($emulator in @("AppleWin", "BigPEmu", "CEMU", "Dolphin", "Duckstation", "Lime3DS", "melonDS", "MAME", "PCSX2", "PPSSPP", "Redream", "RetroArch", "RPCS3", "Ryujinx", "shadps4", "TeknoParrot", "VICE", "WinUAE", "Vita3K", "XEMU", "XENIA")) {
+            foreach ($emulator in $sortedEmulatorNames) {
                 Download-Emulator -name $emulator
             }
         }
@@ -1426,9 +1873,11 @@ while (-not $exit) {
 
         # Default case for invalid input
         default {
-            Write-Host "Invalid choice. Please enter a number between 1 and 21, or type 'all' to download all, or 'exit' to quit."
+            Write-Host "Invalid choice. Please enter a valid number between 1 and $($emulatorNames.Count), or type 'all' to download all, or 'exit' to quit."
         }
     }
 }
+
+
 # Stop transcript logging - for debugging ONLY
-#Stop-Transcript
+# Stop-Transcript
