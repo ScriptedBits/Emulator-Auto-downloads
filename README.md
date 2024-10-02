@@ -15,7 +15,7 @@ This project is designed to help retro gamers easily download the latest Windows
 | **MAME**           | Arcade               |     | **VICE**                   | C64          |
 | **melonDS**        | DS                   |     | **Vita3K**                 | Vita         |
 | **mupen64plus**    | N64                  |     | **WinUAE**                 | Amiga        |
-|  **PCSX2**         | PS2                  |     | **XEMU**                   | Xbox         |
+| **PCSX2**          | PS2                  |     | **XEMU**                   | Xbox         |
 |                    |                      |     | **XENIA**                  | Xbox360      |
 |                    |                      |     |                            |              |
 
