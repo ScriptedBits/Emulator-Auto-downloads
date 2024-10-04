@@ -5,7 +5,7 @@
 
 # Welcome to the Emulator Auto-Download Project! #
 
-This project is designed to help retro gamers easily download the latest Windows versions of the top emulators in one convenient place.
+Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions of popular gaming emulators. Powered by PowerShell, this script eliminates the hassle of manually finding and updating emulators, letting users focus on their favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
 
 ## Currently Supported Emulators: ##
 
@@ -58,22 +58,20 @@ If your favorite emulator isn’t listed, you can request it by posting in [Disc
 
 ## Future Features (Coming Soon):
 
-- Ability to download emulators for **Windows**, **Mac**, or **Linux**.
+- Ability to select downloading of emulators for **Mac**, or **Linux** platforms.
 - Support for more emulators, including **Cxbx**, **fpPS4**, **Project64**, and more!
 - Improvements to the user interface.
 - Digital signatures for the script to enhance security.
 
 ---
 
-<img width="500" alt="ead main screen" src="https://github.com/user-attachments/assets/86ef04d3-9f2b-4bb8-ba37-e677ada5fe1f">
+<img width="500" alt="ead main screen" src="https://github.com/user-attachments/assets/f550c78e-4f4c-492c-be8f-699460a632d2">
 
 ---
 **Disclaimer**: All emulator names, trademarks and software are the property of their respective owners. This script is provided as-is without any warranty or guarantee of functionality.
 
-    The author of this script is not affiliated with any the emulator
-    projects or any emulator developers. This script is for personal 
-    use only to automate the process of downloading files from public 
-    sources.
+    The author of this script is not affiliated with any the emulator projects or any emulator developers. This script is for personal 
+    use only to automate the process of downloading files from public sources.
 ---
 
 
