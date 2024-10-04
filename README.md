@@ -1,3 +1,7 @@
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/dbalcar/Emulator-Auto-downloads)
+![GitHub All Releases](https://img.shields.io/github/downloads/dbalcar/Emulator-Auto-downloads/total)
+
+
 # Welcome to the Emulator Auto-Download Project! #
 
 This project is designed to help retro gamers easily download the latest Windows versions of the top emulators in one convenient place.
