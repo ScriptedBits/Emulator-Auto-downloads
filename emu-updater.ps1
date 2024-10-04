@@ -3,7 +3,7 @@
 $logFile = "logfile.txt"
 # Start transcript logging - This is for debugging
 #Start-Transcript -Path $logFile -Append
-$scriptVersion = "v2.9.1"
+$scriptVersion = "v2.9.2"
 <#
    ===============================================================
                           Emulator Auto-Downloader
@@ -58,12 +58,6 @@ $scriptVersion = "v2.9.1"
 # Clear the screen and set the console background to black
 $Host.UI.RawUI.BackgroundColor = "Black"
 
-# Reset the foreground color to default (white) for the rest of the script
-$Host.UI.RawUI.ForegroundColor = "White"  # Optional: change default font color to white
-
-#Clear-Host
-
-
 # Load required assembly for folder browsing
 Add-Type -AssemblyName System.Windows.Forms
 
@@ -99,7 +93,6 @@ function Read-IniFile {
             $ini[$section][$key] = $value
         }
     }
-
     return $ini
 }
 
@@ -115,7 +108,6 @@ function Create-IniFile {
 [Emulators]
 emupath = $emupath
 
-
 # change emupath to your download location example: r:\emulator-updates
 # The script will look for this file and get the emupath and append that to the download directory.
 # For example, if downloading MAME and the emupath is set to r:\emulator-updates, then the download location will be r:\emulator-updates\MAME
@@ -124,9 +116,9 @@ emupath = $emupath
     try {
         # Create the INI file with the specified content
         Set-Content -Path $iniFilePath -Value $content
-        Write-Host "emd.ini file created successfully at $iniFilePath."
+        Write-Host "emd.ini file created successfully at $iniFilePath."  -ForegroundColor "Green" -BackgroundColor "Black"
     } catch {
-        Write-Error "Failed to create emd.ini file: $_"
+        Write-Error "Failed to create emd.ini file: $_"  -ForegroundColor "Red" -BackgroundColor "Black"
         exit 1
     }
 }
@@ -155,7 +147,7 @@ function Get-EmulatorPath {
 
     # Check if the key exists in the section
     if (-not $ini[$section].ContainsKey($key)) {
-        Write-Error "Key '$key' not found in section '$section'."
+        Write-Error "Key '$key' not found in section '$section'." -ForegroundColor "Red" -BackgroundColor "Black"
         return $null
     }
 
@@ -188,7 +180,7 @@ if (-not (Test-Path $iniFilePath)) {
         $emupath = Browse-Folder
 
         if ($null -eq $emupath) {
-            Write-Host "No path selected. Exiting script."
+            Write-Host "No path selected. Exiting..."
             exit 1
         }
 
@@ -202,7 +194,7 @@ if (-not (Test-Path $iniFilePath)) {
         & $PSCommandPath
         exit 0
     } else {
-        Write-Host "Exiting script. Please create the emd.ini file manually."
+        Write-Host "Exiting script. Please create the emd.ini file manually." -ForegroundColor "Red" -BackgroundColor "Black"
         exit 1
     }
 }
@@ -211,7 +203,7 @@ if (-not (Test-Path $iniFilePath)) {
 $emupath = Get-EmulatorPath -iniFilePath $iniFilePath
 
 if ($null -eq $emupath) {
-    Write-Error "Emulator path is not defined in the INI file. Edit the emd.ini file with the correct path to download the Emulators"
+    Write-Error "Emulator path is not defined in the INI file. Edit the emd.ini file with the correct path to download the Emulators"  -ForegroundColor "Red" -BackgroundColor "Black"
     exit 1
 }
 
@@ -227,6 +219,7 @@ function Download-Emulator {
 
     if ($name -eq "XEMU") {
         # XEMU download logic
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
         $xemuDownloadPath = Join-Path $emupath "XEMU"
         if (-not (Test-Path -Path $xemuDownloadPath)) {
             Write-Host "Creating directory: $xemuDownloadPath"
@@ -237,14 +230,14 @@ function Download-Emulator {
 
         try {
             $release = Invoke-RestMethod -Uri $apiUrl -Headers $headers
-            Write-Host "Successfully fetched release information."
+            #Write-Host "Successfully fetched release information."
         } catch {
             Write-Error "Failed to retrieve latest release info: $_"
             exit 1
         }
 
         $version = $release.tag_name
-        Write-Host "Latest xemu release version: $version"
+        #Write-Host "Latest xemu release version: $version"
         $asset = $release.assets | Where-Object { $_.name -eq "xemu-win-release.zip" }
 
         if (-not $asset) {
@@ -256,18 +249,19 @@ function Download-Emulator {
         $targetFileName = "xemu-win-release-$version.zip"
         $targetFilePath = Join-Path $xemuDownloadPath $targetFileName
 
-        Write-Host "Downloading xemu-win-release.zip from: $downloadUrl"
-        Write-Host "Saving to: $targetFilePath"
+        #Write-Host "Downloading xemu-win-release.zip from: $downloadUrl"
+        #Write-Host "Saving to: $targetFilePath"
 
         try {
             Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
             Write-Host "XEMU download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
-            Write-Error "Failed to download xemu-win-release.zip: $_"
+            Write-Error "Failed to download xemu-win-release.zip: $_" -ForegroundColor "Red" -BackgroundColor "Black"
         }
     }
-    elseif ($name -eq "Ryujinx") {
+elseif ($name -eq "Ryujinx") {
         # Ryujinx download logic
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
         $ryujinxDownloadPath = Join-Path $emupath "Ryujinx"
         if (-not (Test-Path -Path $ryujinxDownloadPath)) {
             Write-Host "Creating directory: $ryujinxDownloadPath"
@@ -285,7 +279,7 @@ function Download-Emulator {
         }
 
         $version = $release.tag_name
-        Write-Host "Latest Ryujinx release version: $version"
+        #Write-Host "Latest Ryujinx release version: $version"
         $asset = $release.assets | Where-Object { $_.name -like "ryujinx*$version*win_x64.zip" }
 
         if (-not $asset) {
@@ -297,18 +291,19 @@ function Download-Emulator {
         $targetFileName = "Ryujinx-$version-win_x64.zip"
         $targetFilePath = Join-Path $ryujinxDownloadPath $targetFileName
 
-        Write-Host "Downloading Ryujinx from: $downloadUrl"
-        Write-Host "Saving to: $targetFilePath"
+        #Write-Host "Downloading Ryujinx from: $downloadUrl"
+        #Write-Host "Saving to: $targetFilePath"
 
         try {
             Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
             Write-Host "Ryujinx download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
-            Write-Error "Failed to download $($asset.name): $_"
+            Write-Error "Failed to download $($asset.name): $_" -ForegroundColor "Red" -BackgroundColor "Black"
         }
     }
-    elseif ($name -eq "XENIA") {
+elseif ($name -eq "XENIA") {
         # XENIA download logic
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
         $xeniaDownloadPath = Join-Path $emupath "XENIA"
         if (-not (Test-Path -Path $xeniaDownloadPath)) {
             Write-Host "Creating directory: $xeniaDownloadPath"
@@ -319,7 +314,7 @@ function Download-Emulator {
 
         try {
             $release = Invoke-RestMethod -Uri $apiUrl -Headers $headers
-            Write-Host "Successfully fetched release information."
+            #Write-Host "Successfully fetched release information."
         } catch {
             Write-Error "Failed to retrieve latest release info: $_"
             #exit 1
@@ -342,14 +337,15 @@ function Download-Emulator {
             Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
             Write-Host "XENIA download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
-            Write-Error "Failed to download $($asset.name): $_"
+            Write-Error "Failed to download $($asset.name): $_" -ForegroundColor "Red" -BackgroundColor "Black"
         }
     }
     elseif ($name -eq "Vita3K") {
         # Vita3K download logic
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
         $vita3kDownloadPath = Join-Path $emupath "Vita3K"
         if (-not (Test-Path -Path $vita3kDownloadPath)) {
-            Write-Host "Creating directory: $vita3kDownloadPath"
+            #Write-Host "Creating directory: $vita3kDownloadPath"
             New-Item -Path $vita3kDownloadPath -ItemType Directory -Force
         }
 
@@ -358,7 +354,7 @@ function Download-Emulator {
 
         try {
             $release = Invoke-RestMethod -Uri $apiUrl -Headers $headers
-            Write-Host "Successfully fetched release information."
+            #Write-Host "Successfully fetched release information."
         } catch {
             Write-Error "Failed to retrieve latest release info: $_"
             #exit 1
@@ -374,21 +370,22 @@ function Download-Emulator {
         $downloadUrl = $asset.browser_download_url
         $targetFilePath = Join-Path $vita3kDownloadPath "windows-latest.zip"
 
-        Write-Host "Downloading Vita3K from: $downloadUrl"
-        Write-Host "Saving to: $targetFilePath"
+        # Write-Host "Downloading Vita3K from: $downloadUrl"
+        # Write-Host "Saving to: $targetFilePath"
 
         try {
             Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
             Write-Host "Vita3K download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
-            Write-Error "Failed to download $($asset.name): $_"
+            Write-Error "Failed to download $($asset.name): $_" -ForegroundColor "Red" -BackgroundColor "Black"
         }
     }
     elseif ($name -eq "Redream") {
         # Redream download logic
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
         $redreamDownloadPath = Join-Path $emupath "Redream"
         if (-not (Test-Path -Path $redreamDownloadPath)) {
-            Write-Host "Creating directory: $redreamDownloadPath"
+            #Write-Host "Creating directory: $redreamDownloadPath"
             New-Item -Path $redreamDownloadPath -ItemType Directory -Force
         }
 
@@ -396,7 +393,7 @@ function Download-Emulator {
 
         try {
             $webpage = Invoke-WebRequest -Uri $redreamUrl -UseBasicParsing
-            Write-Host "Successfully fetched Redream download page."
+            #Write-Host "Successfully fetched Redream download page."
         } catch {
             Write-Error "Failed to fetch Redream download page: $_"
             exit 1
@@ -419,21 +416,22 @@ function Download-Emulator {
         $fileName = [System.IO.Path]::GetFileName($secondDownloadLink)
         $targetFilePath = Join-Path $redreamDownloadPath $fileName
 
-        Write-Host "Downloading Redream from: $secondDownloadLink"
-        Write-Host "Saving to: $targetFilePath"
+        #Write-Host "Downloading Redream from: $secondDownloadLink"
+        #Write-Host "Saving to: $targetFilePath"
 
         try {
             Start-BitsTransfer -Source $secondDownloadLink -Destination $targetFilePath
             Write-Host "Redream download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
-            Write-Error "Failed to download '$fileName': $_"
+            Write-Error "Failed to download '$fileName': $_" -ForegroundColor "Red" -BackgroundColor "Black"
         }
     }
-    elseif ($name -eq "PCSX2") {
+elseif ($name -eq "PCSX2") {
         # PCSX2 download logic
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
         $pcsx2DownloadPath = Join-Path $emupath "PCSX2"
         if (-not (Test-Path -Path $pcsx2DownloadPath)) {
-            Write-Host "Creating directory: $pcsx2DownloadPath"
+            #Write-Host "Creating directory: $pcsx2DownloadPath"
             New-Item -Path $pcsx2DownloadPath -ItemType Directory -Force
         }
 
@@ -442,7 +440,7 @@ function Download-Emulator {
 
         try {
             $releases = Invoke-RestMethod -Uri $apiUrl -Headers $headers
-            Write-Host "Successfully fetched releases information."
+            #Write-Host "Successfully fetched releases information."
         } catch {
             Write-Error "Failed to retrieve releases info: $_"
             exit 1
@@ -455,7 +453,7 @@ function Download-Emulator {
             exit 1
         }
 
-        Write-Host "Latest pre-release version: $($preRelease.tag_name)"
+        #Write-Host "Latest pre-release version: $($preRelease.tag_name)"
         $asset = $preRelease.assets | Where-Object { $_.name -like "*windows-x64-Qt.7z" }
 
         if (-not $asset) {
@@ -466,24 +464,25 @@ function Download-Emulator {
         $downloadUrl = $asset.browser_download_url
         $targetFilePath = Join-Path $pcsx2DownloadPath $asset.name
 
-        Write-Host "Downloading PCSX2 from: $downloadUrl"
-        Write-Host "Saving to: $targetFilePath"
+        #Write-Host "Downloading PCSX2 from: $downloadUrl"
+        #Write-Host "Saving to: $targetFilePath"
 
         try {
             Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
             Write-Host "PCSX2 download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
-            Write-Error "Failed to download $($asset.name): $_"
+            Write-Error "Failed to download $($asset.name): $_" -ForegroundColor "Red" -BackgroundColor "Black"
         }
     }
-    elseif ($name -eq "PPSSPP") {
+elseif ($name -eq "PPSSPP") {
     # PPSSPP download logic
+	Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
     # Append the 'PPSSPP' folder to the base path
     $ppssppDownloadPath = Join-Path $emupath "PPSSPP"
 
     # Check if the PPSSPP directory exists, if not, create it
     if (-not (Test-Path -Path $ppssppDownloadPath)) {
-        Write-Host "Creating directory: $ppssppDownloadPath"
+        #Write-Host "Creating directory: $ppssppDownloadPath"
         New-Item -Path $ppssppDownloadPath -ItemType Directory -Force
     }
 
@@ -493,7 +492,7 @@ function Download-Emulator {
     # Fetch the webpage containing the builds info
     try {
         $webpage = Invoke-WebRequest -Uri $ppssppBuildsUrl -UseBasicParsing
-        Write-Host "Successfully fetched PPSSPP builds webpage."
+        #Write-Host "Successfully fetched PPSSPP builds webpage."
     } catch {
         Write-Error "Failed to fetch PPSSPP builds webpage: $_"
         exit 1
@@ -521,23 +520,24 @@ function Download-Emulator {
     $targetFilePath = Join-Path $ppssppDownloadPath $fileName
 
     # Debugging: Check if $downloadUrl and $targetFilePath are correctly set
-    Write-Host "Download URL: $downloadUrl"
-    Write-Host "Target File Path: $targetFilePath"
+    #Write-Host "Download URL: $downloadUrl"
+    #Write-Host "Target File Path: $targetFilePath"
 
     # Use Start-BitsTransfer to download the file
     try {
         Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
         Write-Host "PPSSPP download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
     } catch {
-        Write-Error "Failed to download '$fileName': $_"
+        Write-Error "Failed to download '$fileName': $_" -ForegroundColor "Red" -BackgroundColor "Black"
     }
 }
 
-    elseif ($name -eq "MAME") {
+elseif ($name -eq "MAME") {
         # MAME download logic
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
         $mameDownloadPath = Join-Path $emupath "MAME"
         if (-not (Test-Path -Path $mameDownloadPath)) {
-            Write-Host "Creating directory: $mameDownloadPath"
+            #Write-Host "Creating directory: $mameDownloadPath"
             New-Item -Path $mameDownloadPath -ItemType Directory -Force
         }
 
@@ -567,16 +567,17 @@ function Download-Emulator {
 
         try {
             Start-BitsTransfer -Source $downloadUrl -Destination $outputFilePath
-            Write-Host "MAME download completed successfully. File saved as $outputFilePath"
+            Write-Host "MAME download completed successfully. File saved as $outputFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
-            Write-Error "Failed to download the file using Start-BitsTransfer."
+            Write-Error "Failed to download MAME the file using Start-BitsTransfer." -ForegroundColor "Red" -BackgroundColor "Black"
         }
     }
-    elseif ($name -eq "Duckstation") {
+elseif ($name -eq "Duckstation") {
         # Duckstation download logic
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
         $duckstationDownloadPath = Join-Path $emupath "Duckstation"
         if (-not (Test-Path -Path $duckstationDownloadPath)) {
-            Write-Host "Creating directory: $duckstationDownloadPath"
+            #Write-Host "Creating directory: $duckstationDownloadPath"
             New-Item -Path $duckstationDownloadPath -ItemType Directory -Force
         }
 
@@ -585,7 +586,7 @@ function Download-Emulator {
 
         try {
             $release = Invoke-RestMethod -Uri $apiUrl -Headers $headers
-            Write-Host "Successfully fetched latest Duckstation release information."
+            #Write-Host "Successfully fetched latest Duckstation release information."
         } catch {
             Write-Error "Failed to retrieve latest release info from GitHub: $_"
             exit 1
@@ -608,21 +609,22 @@ function Download-Emulator {
             Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
             Write-Host "Duckstation download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
-            Write-Error "Failed to download 'duckstation-windows-x64-release.zip': $_"
+            Write-Error "Failed to download 'duckstation-windows-x64-release.zip': $_" -ForegroundColor "Red" -BackgroundColor "Black"
         }
     }
-    elseif ($name -eq "BigPEmu") {
+elseif ($name -eq "BigPEmu") {
         # BigPEmu download logic
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
         $bigPemuDownloadPath = Join-Path $emupath "BigEmu"
         if (-not (Test-Path -Path $bigPemuDownloadPath)) {
-            Write-Host "Creating directory: $bigPemuDownloadPath"
+           #Write-Host "Creating directory: $bigPemuDownloadPath"
             New-Item -Path $bigPemuDownloadPath -ItemType Directory -Force
         }
 
         $downloadPageUrl = "https://www.richwhitehouse.com/jaguar/index.php?content=download"
 
         try {
-            Write-Host "Fetching the webpage: $downloadPageUrl"
+            #Write-Host "Fetching the webpage: $downloadPageUrl"
             $htmlContent = Invoke-WebRequest -Uri $downloadPageUrl -UseBasicParsing
         } catch {
             Write-Error "Failed to fetch the webpage. Please check the URL and your network connection."
@@ -643,25 +645,26 @@ function Download-Emulator {
             $firstZipUrl = [System.IO.Path]::Combine($uri.GetLeftPart("Scheme"), $firstZipUrl)
         }
 
-        Write-Host "Found .zip file URL: $firstZipUrl"
+        #Write-Host "Found .zip file URL: $firstZipUrl"
         $fileName = [System.IO.Path]::GetFileName($firstZipUrl)
         $outputFilePath = Join-Path -Path $bigPemuDownloadPath -ChildPath $fileName
 
-        Write-Host "Downloading BigPEmu from: $firstZipUrl"
-        Write-Host "Saving to: $outputFilePath"
+        # Write-Host "Downloading BigPEmu from: $firstZipUrl"
+        # Write-Host "Saving to: $outputFilePath"
 
         try {
             Start-BitsTransfer -Source $firstZipUrl -Destination $outputFilePath
             Write-Host "BigPEmu download completed successfully. File saved as $outputFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
-            Write-Error "Failed to download the .zip file."
+            Write-Error "Failed to download BigPEmu" -ForegroundColor "Red" -BackgroundColor "Black"
         }
     }
-    elseif ($name -eq "RPCS3") {
+elseif ($name -eq "RPCS3") {
         # RPCS3 download logic
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
         $rpcs3DownloadPath = Join-Path $emupath "RPCS3"
         if (-not (Test-Path -Path $rpcs3DownloadPath)) {
-            Write-Host "Creating directory: $rpcs3DownloadPath"
+            #Write-Host "Creating directory: $rpcs3DownloadPath"
             New-Item -Path $rpcs3DownloadPath -ItemType Directory -Force
         }
 
@@ -670,7 +673,7 @@ function Download-Emulator {
 
         try {
             $release = Invoke-RestMethod -Uri $apiUrl -Headers $headers
-            Write-Host "Successfully fetched latest RPCS3 release information."
+            #Write-Host "Successfully fetched latest RPCS3 release information."
         } catch {
             Write-Error "Failed to retrieve latest release info from GitHub: $_"
             exit 1
@@ -686,25 +689,25 @@ function Download-Emulator {
         $downloadUrl = $asset.browser_download_url
         $targetFilePath = Join-Path $rpcs3DownloadPath $asset.name
 
-        Write-Host "Downloading RPCS3 from: $downloadUrl"
-        Write-Host "Saving to: $targetFilePath"
+        # Write-Host "Downloading RPCS3 from: $downloadUrl"
+        # Write-Host "Saving to: $targetFilePath"
 
         try {
             Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
             Write-Host "RPCS3 download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
         } catch {
-            Write-Error "Failed to download '$($asset.name)': $_"
+            Write-Error "Failed to download '$($asset.name)': $_" -ForegroundColor "Red" -BackgroundColor "Black"
         }
     }
-
-	elseif ($name -eq "CEMU") {
+elseif ($name -eq "CEMU") {
         # CEMU download logic
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
 		# Create the CEMU directory under the defined emupath
 		$cemuDownloadPath = Join-Path $emupath "CEMU"
 
 		# Check if the CEMU directory exists, if not, create it
 	if (-not (Test-Path -Path $cemuDownloadPath)) {
-		Write-Host "Creating directory: $cemuDownloadPath"
+		#Write-Host "Creating directory: $cemuDownloadPath"
 		New-Item -Path $cemuDownloadPath -ItemType Directory -Force
 }
 
@@ -718,9 +721,9 @@ function Download-Emulator {
 
 		# Fetch the latest release information from GitHub
 	try {
-		Write-Host "Fetching latest release information from GitHub..."
+		#Write-Host "Fetching latest release information from GitHub..."
 		$release = Invoke-RestMethod -Uri $apiUrl -Headers $headers
-		Write-Host "Successfully fetched latest release information."
+		#Write-Host "Successfully fetched latest release information."
 	} catch {
 		Write-Error "Failed to retrieve latest release info from GitHub: $_"
 		exit 1
@@ -739,8 +742,8 @@ function Download-Emulator {
 	$targetFilePath = Join-Path $cemuDownloadPath $asset.name
 
 	# Debugging: Check if $downloadUrl and $targetFilePath are correctly set
-	Write-Host "Download URL: $downloadUrl"
-	Write-Host "Target File Path: $targetFilePath"
+	#Write-Host "Download URL: $downloadUrl"
+	#Write-Host "Target File Path: $targetFilePath"
 
 	# Ensure $downloadUrl and $targetFilePath are not null or empty
 	if (-not $downloadUrl) {
@@ -755,17 +758,17 @@ function Download-Emulator {
 
 	# Use Start-BitsTransfer to download the file
 	try {
-		Write-Host "Downloading CEMU release..."
+		#Write-Host "Downloading CEMU release..."
 		Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
 		Write-Host "CEMU download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
 	} catch {
-		Write-Error "Failed to download 'windows-x64.zip': $_"
+		Write-Error "Failed to download 'windows-x64.zip': $_" -ForegroundColor "Red" -BackgroundColor "Black"
 		exit 1
 }
 	}
 
-	elseif ($name -eq "Dolphin") {
-        Write-Host "Dolphin selected, proceeding with download logic." -ForegroundColor Yellow
+elseif ($name -eq "Dolphin") {
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
 		# Dolphin download logic
 		# Append 'Dolphin' to the path
 $downloadPath = Join-Path -Path $emupath -ChildPath "Dolphin"
@@ -803,27 +806,28 @@ $downloadUrl = $downloadLink.href
 $fileName = [System.IO.Path]::GetFileName($downloadUrl)
 $destinationFilePath = Join-Path -Path $downloadPath -ChildPath $fileName
 
-Write-Host "Downloading $fileName from $downloadUrl to $destinationFilePath"
+#Write-Host "Downloading $fileName from $downloadUrl to $destinationFilePath"
 
 # Start the BITS transfer to download the file
 try {
     Start-BitsTransfer -Source $downloadUrl -Destination $destinationFilePath -Priority Foreground
     Write-Host "Dolphin download completed successfully. File saved to $destinationFilePath"   -ForegroundColor "Green" -BackgroundColor "Black"
 } catch {
-    Write-Error "Failed to download the file using BITS: $_"
+    Write-Error "Failed to download the file using BITS: $_" -ForegroundColor "Red" -BackgroundColor "Black"
     exit 1
 
 }
 	}
 	
-	elseif ($name -eq "AppleWin") {
+elseif ($name -eq "AppleWin") {
         # AppleWin download logic
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
 		# Append the 'AppleWin' folder to the base path
 	$applewinDownloadPath = Join-Path $emupath "AppleWin"
 
 		# Check if the AppleWin directory exists, if not, create it
 	if (-not (Test-Path -Path $applewinDownloadPath)) {
-		Write-Host "Creating directory: $applewinDownloadPath"
+		#Write-Host "Creating directory: $applewinDownloadPath"
 		New-Item -Path $applewinDownloadPath -ItemType Directory -Force
 }
 		# GitHub API URL to get the latest release for the AppleWin project
@@ -835,9 +839,9 @@ try {
 }
 		# Fetch the latest release information from GitHub
 	try {
-		Write-Host "Fetching latest release information from GitHub..."
+		#Write-Host "Fetching latest release information from GitHub..."
 		$release = Invoke-RestMethod -Uri $apiUrl -Headers $headers
-		Write-Host "Successfully fetched latest release information."
+		#Write-Host "Successfully fetched latest release information."
 	} catch {
 		Write-Error "Failed to retrieve latest release info from GitHub: $_"
 		exit 1
@@ -854,8 +858,8 @@ try {
 	$targetFilePath = Join-Path $applewinDownloadPath $asset.name
 
 		# Debugging: Check if $downloadUrl and $targetFilePath are correctly set
-		Write-Host "Download URL: $downloadUrl"
-		Write-Host "Target File Path: $targetFilePath"
+		# Write-Host "Download URL: $downloadUrl"
+		# Write-Host "Target File Path: $targetFilePath"
 
 		# Ensure $downloadUrl and $targetFilePath are not null or empty
 	if (-not $downloadUrl) {
@@ -868,26 +872,24 @@ try {
 }
 		# Use Start-BitsTransfer to download the file
 	try {
-		Write-Host "Downloading AppleWin release..."
+		#Write-Host "Downloading AppleWin release..."
 		Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
 		Write-Host "AppleWin download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
 	} catch {
-		Write-Error "Failed to download 'AppleWin': $_"
+		Write-Error "Failed to download 'AppleWin': $_" -ForegroundColor "Red" -BackgroundColor "Black"
 		exit 1
 }
 	}
 	
-	elseif ($name -eq "Lime3DS") {
-	
-# Lime3DS download logic
-	#Write-Host "lime3ds selected, proceeding with download logic." -ForegroundColor Yellow
-
-		# Append the 'Lime3DS' folder to the base path
+elseif ($name -eq "Lime3DS") {
+	# Lime3DS download logic
+	Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
+	# Append the 'Lime3DS' folder to the base path
 	$lime3DSDownloadPath = Join-Path $emupath "Lime3DS"
 
 		# Check if the Lime3DS directory exists, if not, create it
 	if (-not (Test-Path -Path $lime3DSDownloadPath)) {
-			Write-Host "Creating directory: $lime3DSDownloadPath"
+			#Write-Host "Creating directory: $lime3DSDownloadPath"
     New-Item -Path $lime3DSDownloadPath -ItemType Directory -Force
 }
 		# GitHub API URL to get the latest release for the Lime3DS project
@@ -899,9 +901,9 @@ try {
 }
 		# Fetch the latest release information from GitHub
 	try {
-		Write-Host "Fetching latest release information from GitHub..."
+		#Write-Host "Fetching latest release information from GitHub..."
 		$release = Invoke-RestMethod -Uri $apiUrl -Headers $headers
-		Write-Host "Successfully fetched latest release information."
+		#Write-Host "Successfully fetched latest release information."
 	} catch {
 		Write-Error "Failed to retrieve latest release info from GitHub: $_"
 		exit 1
@@ -920,8 +922,8 @@ try {
     $targetFilePath = Join-Path $lime3DSDownloadPath $fileName
 
 		# Debugging: Check if $downloadUrl and $targetFilePath are correctly set
-    Write-Host "Download URL: $downloadUrl"
-    Write-Host "Target File Path: $targetFilePath"
+    #Write-Host "Download URL: $downloadUrl"
+    #Write-Host "Target File Path: $targetFilePath"
 
 		# Ensure $downloadUrl and $targetFilePath are not null or empty
     if (-not $downloadUrl) {
@@ -934,108 +936,124 @@ try {
     }
     # Use Start-BitsTransfer to download the file
     try {
-        Write-Host "Downloading $fileName..."
+        # Write-Host "Downloading $fileName..."
         Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
         Write-Host "Lime3DS download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
     } catch {
-        Write-Error "Failed to download '$fileName': $_"
+        Write-Error "Failed to download '$fileName': $_" -ForegroundColor "Red" -BackgroundColor "Black"
         exit 1
     }
 	}
 	}
 	
-	elseif ($name -eq "RetroArch") {
-	# RetroArch download logic
-	# Define the URL for RetroArch platforms page
-	$baseUrl = "https://www.retroarch.com/?page=platforms"
+elseif ($name -eq "RetroArch") {
+    # RetroArch download logic
+	Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
+    # Define the URL for RetroArch platforms page
+    $baseUrl = "https://www.retroarch.com/?page=platforms"
 
-# Define the path where the files will be downloaded (change this to your desired download location)
-$downloadPath = Join-Path -Path $emupath -ChildPath "RetroArch"
+    # Define the base path where the files will be downloaded (change this to your desired download location)
+    $downloadPathBase = Join-Path -Path $emupath -ChildPath "RetroArch"
 
-# Ensure the download directory exists, if not, create it
-if (-not (Test-Path -Path $downloadPath)) {
-    Write-Host "Creating directory: $downloadPath"
-    New-Item -Path $downloadPath -ItemType Directory -Force
-}
+    # Ensure the base download directory exists, if not, create it
+    if (-not (Test-Path -Path $downloadPathBase)) {
+        #Write-Host "Creating base directory: $downloadPathBase"
+        New-Item -Path $downloadPathBase -ItemType Directory -Force
+    }
 
-# Function to download files using BITS
-function Download-File {
-    param (
-        [string]$sourceUrl,
-        [string]$destinationPath
-    )
+    # Function to download files using BITS
+    function Download-File {
+        param (
+            [string]$sourceUrl,
+            [string]$destinationPath
+        )
 
-    Write-Host "Downloading file from $sourceUrl"
+        #Write-Host "Downloading file from $sourceUrl"
+        try {
+            Start-BitsTransfer -Source $sourceUrl -Destination $destinationPath
+            Write-Host "RetroArch download completed: $destinationPath" -ForegroundColor "Green" -BackgroundColor "Black"
+        } catch {
+            Write-Error "Failed to download $sourceUrl. Error: $_" -ForegroundColor "Red" -BackgroundColor "Black"
+        }
+    }
+
+    # Fetch the main webpage from the base URL
     try {
-        Start-BitsTransfer -Source $sourceUrl -Destination $destinationPath
-        Write-Host "Download completed: $destinationPath"
+        #Write-Host "Fetching RetroArch platforms page from: $baseUrl"
+        $webpage = Invoke-WebRequest -Uri $baseUrl -UseBasicParsing
     } catch {
-        Write-Error "Failed to download $sourceUrl. Error: $_"
+        Write-Error "Failed to fetch the platforms page from $baseUrl. Error: $_"
+        exit 1
     }
-}
 
-# Fetch the main webpage from the base URL
-	try {
-		Write-Host "Fetching RetroArch platforms page from: $baseUrl"
-		$webpage = Invoke-WebRequest -Uri $baseUrl -UseBasicParsing
-	} catch {
-		Write-Error "Failed to fetch the platforms page from $baseUrl. Error: $_"
-		exit 1
-	}
-
-# Parse the HTML content to find the section for "Windows 11 / 10 / 8.1 / 8 / 7"
-	$windowsSection = $webpage.Content -match '<h4>Windows 11 / 10 / 8.1 / 8 / 7</h4>'
-	if (-not $windowsSection) {
-		Write-Error "Could not find the Windows section on the page."
-		exit 1
-}
-
-# Extract the download link that contains "/windows/x86_64/"
-	$downloadLink = $null
-	$lines = $webpage.Content -split "`n"
-	foreach ($line in $lines) {
-    if ($line -match 'href="(.*?/windows/x86_64/.*?)"') {
-        $downloadLink = $matches[1]
-        break
+    # Parse the HTML content to find the section for "Windows 11 / 10 / 8.1 / 8 / 7"
+    $windowsSection = $webpage.Content -match '<h4>Windows 11 / 10 / 8.1 / 8 / 7</h4>'
+    if (-not $windowsSection) {
+        Write-Error "Could not find the Windows section on the page."
+        exit 1
     }
+
+    # Extract the download link that contains "/windows/x86_64/"
+    $downloadLink = $null
+    $lines = $webpage.Content -split "`n"
+    foreach ($line in $lines) {
+        if ($line -match 'href="(.*?/windows/x86_64/.*?)"') {
+            $downloadLink = $matches[1]
+            #Write-Host "Download link found: $downloadLink" -ForegroundColor Cyan
+            break
+        }
+    }
+
+    # If no download link is found, exit with an error
+    if (-not $downloadLink) {
+        Write-Error "Failed to find the download link for the Windows x86_64 version."
+        exit 1
+    }
+
+    # Now strip the filename (if any) from the downloadLink and keep only the directory part
+    $directoryUrl = $downloadLink -replace '[^/]+$', '' # Removes the last part after the last '/' to get the directory URL
+    $fullDirectoryUrl = $directoryUrl
+    #Write-Host "Directory URL for downloads: $fullDirectoryUrl" -ForegroundColor Yellow
+
+    # Extract the version number right after /stable/
+    if ($fullDirectoryUrl -match '/stable/([^/]+)/') {
+        $version = $matches[1]
+        #Write-Host "Extracted version number: $version" -ForegroundColor Green
+    } else {
+        Write-Host "Unable to extract version number from the URL: $fullDirectoryUrl" -ForegroundColor Red
+        Write-Error "Could not extract version number from the directory URL."
+        exit 1
+    }
+
+    # Create a subdirectory under the base path with the version number
+    $versionedDownloadPath = Join-Path -Path $downloadPathBase -ChildPath $version
+
+    # Ensure the versioned download directory exists, if not, create it
+    if (-not (Test-Path -Path $versionedDownloadPath)) {
+        #Write-Host "Creating versioned directory: $versionedDownloadPath"
+        New-Item -Path $versionedDownloadPath -ItemType Directory -Force
+    }
+
+    # Define the files to download
+    $filesToDownload = @("RetroArch.7z", "RetroArch_cores.7z")
+
+    foreach ($file in $filesToDownload) {
+        # Construct the full download URL by appending the filename to the directory URL
+        $downloadUrl = $fullDirectoryUrl + $file
+        $targetFilePath = Join-Path -Path $versionedDownloadPath -ChildPath $file
+
+        # Download the file using BITS
+        Download-File -sourceUrl $downloadUrl -destinationPath $targetFilePath
+    }
+
+    Write-Host "RetroArch files downloaded successfully to $versionedDownloadPath" -ForegroundColor "Green" -BackgroundColor "Black"
 }
-
-# If no download link is found, exit with an error
-	if (-not $downloadLink) {
-    Write-Error "Failed to find the download link for the Windows x86_64 version."
-    exit 1
-}
-
-# Now strip the filename (if any) from the downloadLink and keep only the directory part
-	$directoryUrl = $downloadLink -replace '[^/]+$', '' # Removes the last part after the last '/' to get the directory URL
-	$fullDirectoryUrl =  $directoryUrl
-
-Write-Host "Directory URL for downloads: $fullDirectoryUrl"
-
-# Define the files to download
-	$filesToDownload = @("RetroArch.7z", "RetroArch_cores.7z")
-
-foreach ($file in $filesToDownload) {
-    # Construct the full download URL by appending the filename to the directory URL
-    $downloadUrl = $fullDirectoryUrl + $file
-    $targetFilePath = Join-Path -Path $downloadPath -ChildPath $file
-
-    # Download the file using BITS
-    Download-File -sourceUrl $downloadUrl -destinationPath $targetFilePath
-}
-
-Write-Host "RetroArch files downloaded successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
-
-
-	}
 
 elseif ($name -eq "shadps4") {
-    Write-Host "shadps4 selected, proceeding with download logic." -ForegroundColor Yellow
-    
-    # shadps4 download logic
-    $downloadPath = Join-Path -Path $emupath -ChildPath "shadps4"
-# Append 'shadps4' to the path
-$downloadPath = Join-Path -Path $emupath -ChildPath "shadps4"
+		# shadps4 download logic
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
+		# Append 'shadps4' to the path
+	$downloadPath = Join-Path -Path $emupath -ChildPath "shadps4"
 
 # Ensure the directory exists
 if (-not (Test-Path -Path $downloadPath)) {
@@ -1047,7 +1065,7 @@ $githubApiUrl = "https://api.github.com/repos/shadps4-emu/shadPS4/releases/lates
 
 # Use Invoke-RestMethod to get the latest release information
 try {
-    $releaseInfo = Invoke-RestMethod -Uri $githubApiUrl -Headers @{ 'User-Agent' = 'PowerShell Script' }
+    $releaseInfo = Invoke-RestMethod -Uri $githubApiUrl -Headers @{ 'User-Agent' = 'Mozilla/5.0' }
 } catch {
     Write-Error "Failed to fetch release information from GitHub. $_"
     exit 1
@@ -1067,22 +1085,22 @@ $downloadUrl = $asset.browser_download_url
 # Define the destination file path
 $destinationFilePath = Join-Path -Path $downloadPath -ChildPath $asset.name
 
-Write-Host "Downloading $($asset.name) from $downloadUrl to $destinationFilePath"
+# Write-Host "Downloading $($asset.name) from $downloadUrl to $destinationFilePath"
 
 # Start the BITS transfer to download the file
 try {
     Start-BitsTransfer -Source $downloadUrl -Destination $destinationFilePath -Priority Foreground
     Write-Host "shadps4 downloaded successfully. File saved to $destinationFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
 } catch {
-    Write-Error "Failed to download the file. $_"
+    Write-Error "Failed to download the file. $_" -ForegroundColor "Red" -BackgroundColor "Black"
     exit 1
 }
-
 }
-	elseif ($name -eq "TeknoParrot (Web installer)") {
-    Write-Host "TeknoParrot (Web installer) selected, proceeding with download logic." -ForegroundColor Yellow
-	# Append 'TeknoParrot' to the path
-$downloadPath = Join-Path -Path $emupath -ChildPath "TeknoParrot"
+
+elseif ($name -eq "TeknoParrot (Web installer)") {
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
+		# Append 'TeknoParrot' to the path
+	$downloadPath = Join-Path -Path $emupath -ChildPath "TeknoParrot"
 
 # Ensure the directory exists; create it if it doesn't
 if (-not (Test-Path -Path $downloadPath)) {
@@ -1094,7 +1112,7 @@ $githubApiUrl = "https://api.github.com/repos/nzgamer41/TPBootstrapper/releases/
 
 # Fetch the latest release information using Invoke-RestMethod
 try {
-    $releaseInfo = Invoke-RestMethod -Uri $githubApiUrl -Headers @{ 'User-Agent' = 'PowerShell Script' }
+    $releaseInfo = Invoke-RestMethod -Uri $githubApiUrl -Headers @{ 'User-Agent' = 'Mozilla/5.0' }
 } catch {
     Write-Error "Failed to fetch release information from GitHub: $_"
     exit 1
@@ -1114,22 +1132,19 @@ $downloadUrl = $asset.browser_download_url
 # Define the full destination file path
 $destinationFilePath = Join-Path -Path $downloadPath -ChildPath $asset.name
 
-Write-Host "Downloading $($asset.name) from $downloadUrl to $destinationFilePath"
+#Write-Host "Downloading $($asset.name) from $downloadUrl to $destinationFilePath"
 
 # Start the BITS transfer to download the file
 try {
     Start-BitsTransfer -Source $downloadUrl -Destination $destinationFilePath -Priority Foreground
     Write-Host "TeknoParrot downloaded successfully. File saved to $destinationFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
 } catch {
-    Write-Error "Failed to download the file using BITS: $_"
+    Write-Error "Failed to download the TeknoParrot (web installer) $_" -ForegroundColor "Red" -BackgroundColor "Black"
     exit 1
 }
 	}
-	
-	
-	elseif ($name -eq "WinUAE") {
-    Write-Host "WinUAE selected, proceeding with download logic." -ForegroundColor Yellow
-    
+elseif ($name -eq "WinUAE") {
+	Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
     # WinUAE download logic
 	# Append 'WinUAE' to the path
 $downloadPath = Join-Path -Path $emupath -ChildPath "WinUAE"
@@ -1173,23 +1188,22 @@ if ($downloadUrl -notmatch "^https?://") {
 $fileName = [System.IO.Path]::GetFileName($downloadUrl)
 $destinationFilePath = Join-Path -Path $downloadPath -ChildPath $fileName
 
-Write-Host "Downloading $fileName from $downloadUrl to $destinationFilePath"
+# Write-Host "Downloading $fileName from $downloadUrl to $destinationFilePath"
 
 # Start the BITS transfer to download the file
 try {
     Start-BitsTransfer -Source $downloadUrl -Destination $destinationFilePath -Priority Foreground
     Write-Host "WinUAE downloaded successfully. File saved to $destinationFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
 } catch {
-    Write-Error "Failed to download the file using BITS: $_"
+    Write-Error "Failed to download WinUAE $_" -ForegroundColor "Red" -BackgroundColor "Black"
     exit 1
 }
 	}
 	
 elseif ($name -eq "VICE") {
-    Write-Host "VICE selected, proceeding with download logic." -ForegroundColor Yellow
-    
-    # VICE download logic	
-# Append 'VICE' to the path
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
+		# VICE download logic	
+		# Append 'VICE' to the path
 $downloadPath = Join-Path -Path $emupath -ChildPath "VICE"
 
 # Ensure the directory exists; create it if it doesn't
@@ -1202,7 +1216,7 @@ $githubApiUrl = "https://api.github.com/repos/VICE-Team/svn-mirror/releases"
 
 # Use Invoke-RestMethod to get all releases information
 try {
-    $releases = Invoke-RestMethod -Uri $githubApiUrl -Headers @{ 'User-Agent' = 'PowerShell Script' }
+    $releases = Invoke-RestMethod -Uri $githubApiUrl -Headers @{ 'User-Agent' = 'Mozilla/5.0' }
 } catch {
     Write-Error "Failed to fetch release information from GitHub: $_"
     exit 1
@@ -1217,7 +1231,7 @@ if (-not $preRelease) {
 }
 
 # Output the name of the pre-release to confirm it's correct
-Write-Host "Found pre-release: $($preRelease.tag_name)"
+#Write-Host "Found pre-release: $($preRelease.tag_name)"
 
 # Updated regex patterns for the file names based on the format you provided
 $gtkPattern = "^GTK3VICE-\d+\.\d+-win64-r\d+\.7z$"
@@ -1242,7 +1256,7 @@ $preRelease.assets | ForEach-Object {
         # Define the destination file path
         $destinationFilePath = Join-Path -Path $downloadPath -ChildPath $assetName
 
-        Write-Host "Downloading $assetName from $downloadUrl to $destinationFilePath"
+        #Write-Host "Downloading $assetName from $downloadUrl to $destinationFilePath"
 
         # Start the BITS transfer to download the file
         try {
@@ -1250,7 +1264,7 @@ $preRelease.assets | ForEach-Object {
             Write-Host "VICE downloaded successfully. File saved to $destinationFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
             $downloadedAnyFile = $true
         } catch {
-            Write-Error "Failed to download the file using BITS: $_"
+            Write-Error "Failed to download $_.name" -ForegroundColor "Red" -BackgroundColor "Black"
         }
     }
 }
@@ -1261,12 +1275,10 @@ if (-not $downloadedAnyFile) {
 }
 }
 	
-	elseif ($name -eq "Xenia Manager") {
-    Write-Host "Xenia Manager selected, proceeding with download logic." -ForegroundColor Yellow
-    
-    # Xenia Manager download logic
-	
-$downloadDir = Join-Path $emupath "Xenia Manager"
+elseif ($name -eq "Xenia Manager") {
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow    
+		# Xenia Manager download logic
+	$downloadDir = Join-Path $emupath "Xenia Manager"
 
 # Ensure the download directory exists
 if (-not (Test-Path $downloadDir)) {
@@ -1277,7 +1289,7 @@ if (-not (Test-Path $downloadDir)) {
 $apiUrl = "https://api.github.com/repos/xenia-manager/xenia-manager/releases/latest"
 
 # Set a User-Agent header for the request (required by GitHub API)
-$headers = @{ "User-Agent" = "PowershellScript" }
+$headers = @{ "User-Agent" = "Mozilla/5.0" }
 
 # Fetch the latest release info from GitHub
 $response = Invoke-RestMethod -Uri $apiUrl -Headers $headers
@@ -1303,21 +1315,20 @@ $destinationPath = Join-Path $downloadDir $fileName
 # Write-Host "Download Link: $downloadLink"
 # Write-Host "File Name: $fileName"
 # Write-Host "Destination Path: $destinationPath"
+# Write-Host "Downloading $fileName to $destinationPath..."
 
-# Use BITS to download the file
-Write-Host "Downloading $fileName to $destinationPath..."
-Start-BitsTransfer -Source $downloadLink -Destination $destinationPath
-
-Write-Host "Xenia Manager downloaded successfully. File saved to $destinationFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
-	
-}
-
-
+# Start the BITS transfer to download the file
+        try {
+			Start-BitsTransfer -Source $downloadLink -Destination $destinationPath
+			Write-Host "Xenia Manager downloaded successfully. File saved to $destinationFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
+        } catch {
+            Write-Error "Failed to download $filename" -ForegroundColor "Red" -BackgroundColor "Black"
+        }
+	}
 
 elseif ($name -eq "mGBA") {
-    Write-Host "mGBA selected, proceeding with download logic." -ForegroundColor Yellow
-    
-    # mGBA download logic
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow    
+		# mGBA download logic
 $downloadDir = Join-Path $emupath "mGBA"
 
 # Ensure the download directory exists
@@ -1356,23 +1367,23 @@ $fileName = [System.IO.Path]::GetFileName($downloadLink)
 $destinationPath = Join-Path $downloadDir $fileName
 
 # Debugging: Output the constructed download URL and destination path
-Write-Host "Download Link: $downloadLink"
-Write-Host "File Name: $fileName"
-Write-Host "Destination Path: $destinationPath"
+# Write-Host "Download Link: $downloadLink"
+# Write-Host "File Name: $fileName"
+# Write-Host "Destination Path: $destinationPath"
 
-# Use BITS to download the file
-Write-Host "Downloading $fileName to $destinationPath..."
-Start-BitsTransfer -Source $downloadLink -Destination $destinationPath
-
-Write-Host "mGBA download completed! files saved to: $destinationPath" -ForegroundColor "Green" -BackgroundColor "Black"
-
-}
+# Start the BITS transfer to download the file
+#Write-Host "Downloading $fileName to $destinationPath..."
+        try {
+			Start-BitsTransfer -Source $downloadLink -Destination $destinationPath
+			Write-Host "mGBA download completed! files saved to: $destinationPath" -ForegroundColor "Green" -BackgroundColor "Black"
+        } catch {
+            Write-Error "Failed to download $filename" -ForegroundColor "Red" -BackgroundColor "Black"
+        }
+	}
 
 elseif ($name -eq "Rosalie's Mupen GUI") {
-    Write-Host "Rosalie's Mupen GUI selected, proceeding with download logic." -ForegroundColor Yellow
-    
-    # Rosalie's Mupen GUI download logic
-
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow    
+		# Rosalie's Mupen GUI download logic
 $downloadDir = Join-Path $emupath "RMG"
 
 # Ensure the download directory exists
@@ -1384,7 +1395,7 @@ if (-not (Test-Path $downloadDir)) {
 $repoApiUrl = "https://api.github.com/repos/Rosalie241/RMG/releases/latest"
 
 # Set the User-Agent header required by GitHub API
-$headers = @{ "User-Agent" = "Powershell-Script" }
+$headers = @{ "User-Agent" = "Mozilla/5.0" }
 
 # Fetch the latest release information from GitHub
 $response = Invoke-RestMethod -Uri $repoApiUrl -Headers $headers
@@ -1405,17 +1416,19 @@ $fileName = $asset.name
 # Define the full path where the file will be downloaded
 $destinationPath = Join-Path $downloadDir $fileName
 
-# Use BITS to download the file
-Write-Host "Downloading $fileName to $destinationPath..."
-Start-BitsTransfer -Source $downloadUrl -Destination $destinationPath
-
-Write-Host "Rosalie's Mupen GUI download complete. File saved to: $destinationPath" -ForegroundColor "Green" -BackgroundColor "Black"
-}
-
+# Start the BITS transfer to download the file
+#Write-Host "Downloading $fileName to $destinationPath..."
+        try {
+			Start-BitsTransfer -Source $downloadUrl -Destination $destinationPath
+			Write-Host "Rosalie's Mupen GUI download complete. File saved to: $destinationPath" -ForegroundColor "Green" -BackgroundColor "Black"
+        } catch {
+            Write-Error "Failed to download $filename" -ForegroundColor "Red" -BackgroundColor "Black"
+        }
+	}
 	
 elseif ($name -eq "Stella") {
-    Write-Host "Stella selected, proceeding with download logic." -ForegroundColor Yellow
-    # Stella download logic
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
+		# Stella download logic
 $downloadDir = Join-Path $emupath "Stella"
 
 # Ensure the download directory exists
@@ -1427,7 +1440,7 @@ if (-not (Test-Path $downloadDir)) {
 $repoApiUrl = "https://api.github.com/repos/stella-emu/stella/releases/latest"
 
 # Set the User-Agent header required by GitHub API
-$headers = @{ "User-Agent" = "Powershell-Script" }
+$headers = @{ "User-Agent" = "Mozilla/5.0" }
 
 # Fetch the latest release information from GitHub
 $response = Invoke-RestMethod -Uri $repoApiUrl -Headers $headers
@@ -1448,20 +1461,19 @@ $fileName = $asset.name
 # Define the full path where the file will be downloaded
 $destinationPath = Join-Path $downloadDir $fileName
 
-# Use BITS to download the file
-Write-Host "Downloading $fileName to $destinationPath..."
-Start-BitsTransfer -Source $downloadUrl -Destination $destinationPath
-
-Write-Host "Stella download complete. File saved to: $destinationPath" -ForegroundColor "Green" -BackgroundColor "Black"		
-	
-}
-
+# Start the BITS transfer to download the file
+#Write-Host "Downloading $fileName to $destinationPath..."
+        try {
+			Start-BitsTransfer -Source $downloadUrl -Destination $destinationPath
+			Write-Host "Stella download complete. File saved to: $destinationPath" -ForegroundColor "Green" -BackgroundColor "Black"		
+        } catch {
+            Write-Error "Failed to download $filename" -ForegroundColor "Red" -BackgroundColor "Black"
+        }
+	}
 
 elseif ($name -eq "Supermodel") {
-    Write-Host "Supermodel selected, proceeding with download logic." -ForegroundColor Yellow
-    
-    # Supermodel download logic
-
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow
+		# Supermodel download logic
 $downloadDir = Join-Path $emupath "Supermodel"
 
 # Ensure the download directory exists
@@ -1522,20 +1534,21 @@ $destinationPath = Join-Path $downloadDir $fileName
 # Write-Host "Download Link: $downloadLink"
 # Write-Host "File Name: $fileName"
 # Write-Host "Destination Path: $destinationPath"
-
-# Use BITS to download the file
-# Write-Host "Downloading $fileName to $destinationPath..."
-Start-BitsTransfer -Source $downloadLink -Destination $destinationPath
-
-Write-Host "Supermodel download complete. File saved to: $destinationPath" -ForegroundColor "Green" -BackgroundColor "Black"	
-}	
+	
+	# Start the BITS transfer to download the file
+#Write-Host "Downloading $fileName to $destinationPath..."
+        try {
+			Start-BitsTransfer -Source $downloadLink -Destination $destinationPath
+			Write-Host "Supermodel download complete. File saved to: $destinationPath" -ForegroundColor "Green" -BackgroundColor "Black"	
+        } catch {
+            Write-Error "Failed to download Supermodel" -ForegroundColor "Red" -BackgroundColor "Black"
+        }
+	}
 	
 elseif ($name -eq "mupen64plus") {
-    Write-Host "mupen64plus selected, proceeding with download logic." -ForegroundColor Yellow
-    
-    # mupen64plus download logic	
-# Append 'mupen64plus' to the path
-
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow    
+		# mupen64plus download logic
+		# Append 'mupen64plus' to the path
 $downloadPath = Join-Path -Path $emupath -ChildPath "mupen64plus"
 
 # Ensure the directory exists; create it if it doesn't
@@ -1548,7 +1561,7 @@ $githubApiUrl = "https://api.github.com/repos/mupen64plus/mupen64plus-core/relea
 
 # Fetch the latest release information from GitHub
 try {
-    $releaseInfo = Invoke-RestMethod -Uri $githubApiUrl -Headers @{ 'User-Agent' = 'PowerShell Script' }
+    $releaseInfo = Invoke-RestMethod -Uri $githubApiUrl -Headers @{ 'User-Agent' = 'Mozilla/5.0' }
 } catch {
     Write-Error "Failed to fetch release information from GitHub: $_"
     exit 1
@@ -1569,34 +1582,24 @@ $assetName = $asset.name
 # Define the full destination file path
 $destinationFilePath = Join-Path -Path $downloadPath -ChildPath $assetName
 
-Write-Host "Downloading $assetName from $downloadUrl to $destinationFilePath"
+#Write-Host "Downloading $assetName from $downloadUrl to $destinationFilePath"
 
 # Start the BITS transfer to download the file
 try {
     Start-BitsTransfer -Source $downloadUrl -Destination $destinationFilePath -Priority Foreground
     Write-Host "mupen64plus download complete. File saved to: $destinationFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
 } catch {
-    Write-Error "Failed to download the file using BITS: $_"
+    Write-Error "Failed to download mupen64plus $_" -ForegroundColor "Red" -BackgroundColor "Black"
     exit 1
 }
-}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	elseif ($name -eq "melonDS") {
-    Write-Host "melonDS selected, proceeding with download logic." -ForegroundColor Yellow
-    
-    # melonDS download logic
+}	
+elseif ($name -eq "melonDS") {
+		Write-Host "$name selected, proceeding with download." -ForegroundColor Yellow    
+		# melonDS download logic
     $downloadPath = Join-Path -Path $emupath -ChildPath "melonDS"
     
     if (-not (Test-Path -Path $downloadPath)) {
-        Write-Host "Creating directory: $downloadPath"
+        #Write-Host "Creating directory: $downloadPath"
         New-Item -Path $downloadPath -ItemType Directory -Force
     }
     
@@ -1608,7 +1611,7 @@ try {
     }
     
     try {
-        Write-Host "Fetching latest melonDS release information from GitHub..." -ForegroundColor Cyan
+        #Write-Host "Fetching latest melonDS release information from GitHub..." -ForegroundColor Cyan
         $release = Invoke-RestMethod -Uri $apiUrl -Headers $headers
         Write-Host "Successfully fetched latest melonDS release information." -ForegroundColor Green
     } catch {
@@ -1630,22 +1633,21 @@ try {
     # Write-Host "Target File Path: $targetFilePath" -ForegroundColor Cyan
     
     try {
-        Write-Host "Downloading the latest melonDS release..." -ForegroundColor Green
+        #Write-Host "Downloading the latest melonDS release..." -ForegroundColor Green
         Start-BitsTransfer -Source $downloadUrl -Destination $targetFilePath
-        Write-Host "melonDS download completed successfully. File saved to $targetFilePath" --ForegroundColor "Green" -BackgroundColor "Black"
+        Write-Host "melonDS download completed successfully. File saved to $targetFilePath" -ForegroundColor "Green" -BackgroundColor "Black"
     } catch {
-        Write-Error "Failed to download the file: $_"
+        Write-Error "Failed to download the file: $_" -ForegroundColor "Red" -BackgroundColor "Black"
     }
 }
 }
 
-
-
 # Main script loop
 $exit = $false
 
-# emulators not displayed due to downloads not working - waiting on fix
+# emulators not displayed due to downloads not working - waiting on project update
 # "Ryujinx",
+#"PPSSPP",
 
 # Define the list of emulators in a simple array to avoid hardcoded numbering
 $emulatorNames = @(
@@ -1658,7 +1660,6 @@ $emulatorNames = @(
     "MAME",
     "melonDS",
     "PCSX2",
-    "PPSSPP",
     "Redream",
     "RetroArch",
     "RPCS3",
@@ -1835,8 +1836,8 @@ $exit = $false
 
 while (-not $exit) {
     Show-Menu
-    # Display the prompt in red and capture the choice
-    Write-Host "Choose the emulator to download (1-$($emulatorNames.Count), 'all' to download all, or 'exit' to quit)" -ForegroundColor Red
+    # Display the prompt and capture the choice
+    Write-Host "Choose the emulator to download (1-$($emulatorNames.Count), 'all' to download all, or 'exit' to quit)" -ForegroundColor Green
     $choice = Read-Host
 
     # Input validation: if it's a number between 1 and the number of emulators, cast to int; otherwise, make lowercase
@@ -1877,7 +1878,6 @@ while (-not $exit) {
         }
     }
 }
-
 
 # Stop transcript logging - for debugging ONLY
 # Stop-Transcript
