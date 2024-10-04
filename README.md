@@ -7,26 +7,27 @@
 
 This project is designed to help retro gamers easily download the latest Windows versions of the top emulators in one convenient place.
 
-## Supported Emulators: ##
+## Currently Supported Emulators: ##
 
-| **Emulator**   | **System**          |     |      **Emulator**               | **System**   |
-|----------------|---------------------|-----|---------------------------------|--------------|
-| **AppleWin**       | Apple ][             |     | **PPSSPP**                 | PSP          |
-| **BigPEmu**        | Atari Jaguar         |     | **Redream**                | Dreamcast    |
-| **CEMU**           | Wii U                |     | **RetroArch**              | Frontend     |
-| **Dolphin**        | Wii / GameCube       |     | **Rosalie's Mupen GUI**    | N64          |
-| **Duckstation**    | PS!                  |     | **RPCS3**                  | PS3          |
-| **Lime3DS**        | DS                   |     | **shadps4**                | PS4          |
-| **MAME**           | Arcade               |     | **VICE**                   | C64          |
-| **melonDS**        | DS                   |     | **Vita3K**                 | Vita         |
-| **mupen64plus**    | N64                  |     | **WinUAE**                 | Amiga        |
-| **PCSX2**          | PS2                  |     | **XEMU**                   | Xbox         |
-|                    |                      |     | **XENIA**                  | Xbox360      |
-|                    |                      |     |                            |              |
+| **Emulators**            | **Systems**            | **Emulators**               | **Systems**            |
+|--------------------------|------------------------|-----------------------------|------------------------|
+| AppleWin                 | Apple II               | PCSX2                       | PlayStation 2          |
+| BigPEmu                  | Atari Jaguar           | Redream                     | Dreamcast              |
+| CEMU                     | Wii U                  | RetroArch                   | Multi-System           |
+| Dolphin                  | GameCube/Wii           | RPCS3                       | PlayStation 3          |
+| Duckstation              | PlayStation 1          | shadps4                     | PlayStation 4          |
+| Lime3DS                  | Nintendo 3DS           | TeknoParrot (Web installer) | Arcade                 |
+| MAME                     | Multiple Arcade        | Vita3K                      | PlayStation Vita       |
+| melonDS                  | Nintendo DS            | VICE                        | Commodore 64           |
+| mupen64plus              | Nintendo 64            | WinUAE                      | Amiga                  |
+| Rosalie's Mupen GUI      | Nintendo 64            | XEMU                        | Xbox                   |
+| Stella                   | Atari 2600             | XENIA                       | Xbox 360               |
+| Supermodel               | Sega Model 3           | Xenia Manager               | Xbox 360               |
+| mGBA                     | Game Boy Advance       |                             |                        |
 
 
+If your favorite emulator isn’t listed, you can request it by posting in [Discussions](https://github.com/dbalcar/Emulator-Auto-downloads/discussions)
 
-If your favorite emulator isn’t listed, you can request it by leaving a comment.
 
 ## Requirements:
 
@@ -58,12 +59,15 @@ If your favorite emulator isn’t listed, you can request it by leaving a commen
 ## Future Features (Coming Soon):
 
 - Ability to download emulators for **Windows**, **Mac**, or **Linux**.
-- Support for more emulators, including **RetroArch**, **Supermodel**, **Cxbx**, **ShadPS4**, **fpPS4**, **Project64**, and more!
+- Support for more emulators, including **Cxbx**, **fpPS4**, **Project64**, and more!
 - Improvements to the user interface.
 - Digital signatures for the script to enhance security.
 
 ---
 
+<img width="500" alt="ead main screen" src="https://github.com/user-attachments/assets/86ef04d3-9f2b-4bb8-ba37-e677ada5fe1f">
+
+---
 **Disclaimer**: All emulator names, trademarks and software are the property of their respective owners. This script is provided as-is without any warranty or guarantee of functionality.
 
     The author of this script is not affiliated with any the emulator
@@ -72,6 +76,6 @@ If your favorite emulator isn’t listed, you can request it by leaving a commen
     sources.
 ---
 
-<img width="513" alt="ead main screen" src="https://github.com/user-attachments/assets/fd163bb6-2302-43fb-81ba-f07227a7aae2">
+
 
 
