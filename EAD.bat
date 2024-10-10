@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass -File .\EAD-3.ps1
