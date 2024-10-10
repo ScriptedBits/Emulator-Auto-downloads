@@ -59,7 +59,9 @@ For easy execution on Windows 10/11 systems, a compiled EXE using PS2EXE is now 
 4. **Select Emulators**
    - After that, you will be shown a list of emulators. You can pick the ones you want or download all of them at once.
 
-      <img width="374" alt="Emulator selection page" src="https://github.com/user-attachments/assets/7cef2bc7-559b-4e6b-bc1b-3018c3bb2f9e">
+     <img width="413" alt="Emulator selection page" src="https://github.com/user-attachments/assets/d0665964-b4a6-4f8d-9552-483947ab0d1a">
+
+
      
 
 
