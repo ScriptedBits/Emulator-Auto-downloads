@@ -5,7 +5,11 @@
 
 # Welcome to the Emulator Auto-Download Project! #
 
-Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions of popular gaming emulators. Powered by PowerShell, this script eliminates the hassle of manually finding and updating emulators, letting users focus on their favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
+Tired of scouring the web for emulators? 
+
+Supercharge Your Retro Gaming Setup with a Click!
+
+Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions the top-tier gaming emulators. Powered by PowerShell, the **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
 
 ## Currently Supported Emulators: ##
 
@@ -34,7 +38,7 @@ If your favorite emulator isn’t listed, you can request it by posting in [Disc
 
 # Announcement 🚀 #
 
-We’re thrilled to announce the release of **Emulator Auto-Download v3.0!** This major update adds support for downloading Windows, Mac, and Linux versions of over 30 emulators, along with a completely rewritten menu system and extensive backend improvements.
+We’re thrilled to announce the release of **Emulator Auto-Download v3.0!** This major update adds support for downloading Windows, Mac, and Linux versions of over 30 emulators, along with a completely rewritten menu system and extensive back end improvements.
 
 For easy execution on Windows 10/11 systems, a compiled EXE using PS2EXE is now included.
 
