@@ -1,5 +1,5 @@
 # Emulator Auto-Downloads
-# Copyright (C) 2023 David Balcar
+# Copyright (C) 2024 David Balcar
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -13,8 +13,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
-
-$scriptVersion = "v3.0.1"
+$scriptVersion = "v3.1.0"
 
 <#
    ===========================================================================================
@@ -53,6 +52,114 @@ $host.ui.rawui.BufferSize = New-Object Management.Automation.Host.Size($Width, 1
 
 # Clear the screen and set the console background to black
 $Host.UI.RawUI.BackgroundColor = "Black"
+
+# Check for Emulator Auto-Downloads updates
+# GitHub API URL for the latest release of the script
+$repoUrl = "https://api.github.com/repos/dbalcar/Emulator-Auto-downloads/releases/latest"
+
+# Define the paths
+$scriptPath = $PSCommandPath              # Full path to the current script
+$exePath = Join-Path $PSScriptRoot "EAD-3.exe"  # Path to the exe file (if running from an exe)
+
+# GitHub API URL for the latest release of the script
+$repoUrl = "https://api.github.com/repos/dbalcar/Emulator-Auto-downloads/releases/latest"
+
+# Determine the current directory where the script or .exe is running from
+$currentDir = if ($PSScriptRoot) {
+    $PSScriptRoot
+} else {
+    [System.IO.Path]::GetDirectoryName($MyInvocation.MyCommand.Definition)
+}
+
+# Define paths for both the .exe and .ps1 based on the current directory
+$exePath = Join-Path $currentDir "EAD-3.exe"
+$ps1Path = Join-Path $currentDir "EAD-3.ps1"
+
+# Function to check for updates
+function Check-ForUpdate {
+    try {
+        # Get the latest release info from GitHub
+        $latestRelease = Invoke-RestMethod -Uri $repoUrl -Headers @{ "User-Agent" = "PowerShell" }
+
+        # Get the latest version from the GitHub release
+        $latestVersion = $latestRelease.tag_name
+
+        Write-Host "Current script version: $scriptVersion"
+        Write-Host "Latest available version: $latestVersion"
+
+        # Check if the latest version starts with 'v3'
+        if ($latestVersion -match "^v3\.\d+\.\d+$") {
+            # Compare versions only if the latest version is within v3.*.*
+            if ($scriptVersion -lt $latestVersion) {
+                Write-Host "A new version ($latestVersion) is available." -ForegroundColor Yellow
+
+                # Ask the user if they want to update
+                $updateResponse = Read-Host "Would you like to update to the latest version? (y/n)"
+
+                if ($updateResponse -eq 'y' -or $updateResponse -eq 'yes') {
+                    # Proceed with the update
+                    Write-Host "Updating to version $latestVersion..." -ForegroundColor Yellow
+
+                    # Find and download both the .ps1 and .exe files
+                    $assets = $latestRelease.assets | Where-Object { $_.name -match '\.ps1$|\.exe$' }
+
+                    if (-not $assets) {
+                        Write-Host "No valid assets (.ps1 or .exe) found in the latest release." -ForegroundColor Red
+                        return
+                    }
+
+                    # Download all matching assets (.ps1 and .exe)
+                    foreach ($asset in $assets) {
+                        $downloadUrl = $asset.browser_download_url
+                        $fileName = $asset.name
+                        $destinationFilePath = Join-Path $currentDir $fileName
+
+                        Write-Host "Downloading $fileName from $downloadUrl..."
+                        Start-BitsTransfer -Source $downloadUrl -Destination $destinationFilePath
+                        Write-Host "Update downloaded to $destinationFilePath"
+                    }
+
+                    # Check if we are running the .exe version or the .ps1 script
+                    if ($MyInvocation.MyCommand.Path -match "\.exe$") {
+                        Write-Host "Restarting the updated .exe file..."
+                        if (Test-Path $exePath) {
+                            Start-Process -FilePath $exePath
+                        } else {
+                            Write-Error "EAD-3.exe not found at $exePath"
+                        }
+                    } else {
+                        Write-Host "Restarting the updated script..."
+                        if (Test-Path $ps1Path) {
+                            # Restart the script with any original arguments if applicable
+                            if ($args.Count -gt 0) {
+                                Start-Process -FilePath "powershell.exe" -ArgumentList "-ExecutionPolicy Bypass -File `"$ps1Path`" $args"
+                            } else {
+                                Start-Process -FilePath "powershell.exe" -ArgumentList "-ExecutionPolicy Bypass -File `"$ps1Path`""
+                            }
+                        } else {
+                            Write-Error "EAD-3.ps1 not found at $ps1Path"
+                        }
+                    }
+
+                    # Exit the current script to allow the new one to run
+                    exit 0
+                } else {
+                    Write-Host "Continuing with the current version ($scriptVersion)." -ForegroundColor Cyan
+                }
+            } else {
+                Write-Host "You are running the latest version ($scriptVersion)." -ForegroundColor Green
+            }
+        } else {
+            Write-Host "Latest version ($latestVersion) is outside the v3 series. No update will be performed." -ForegroundColor Red
+        }
+
+    } catch {
+        Write-Error "Failed to check for updates: $_"
+    }
+}
+
+# Run the update check
+Check-ForUpdate
 
 # Load required assembly for folder browsing
 Add-Type -AssemblyName System.Windows.Forms
