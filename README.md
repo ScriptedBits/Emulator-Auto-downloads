@@ -3,11 +3,11 @@
 ![GitHub issues](https://img.shields.io/github/issues/dbalcar/Emulator-Auto-downloads)
 
 
-# Welcome to the Emulator Auto-Download Project! #
+# Welcome to the Emulator Auto-Downloads Project! #
 
 Tired of scouring the web for emulators? 
 
-Supercharge Your Retro Gaming Setup with a Click!
+Supercharge Your Retro Gaming Setup with one Click!
 
 Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions the top-tier gaming emulators. Powered by PowerShell, the **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
 
@@ -70,7 +70,7 @@ For easy execution on Windows 10/11 systems, a compiled EXE using PS2EXE is now 
 
 
 
-> [!NOTE]
+> [!TIP]
 > If you want to change the download folder later, you can edit the `emd.ini` file in any text editor. Just update the `emupath` setting with the new location.
 
 ## *Optional: If you you would like to run the PowerShell script instead of the exe*
@@ -87,7 +87,7 @@ For easy execution on Windows 10/11 systems, a compiled EXE using PS2EXE is now 
 4. **Select Emulators**
    - After that, the script will show you a list of emulators. You can pick the ones you want or download all of them at once.
 
-> [!NOTE]
+> [!TIP]
 > If you want to change the download folder later, you can edit the `emd.ini` file in any text editor. Just update the `emupath` setting with the new location.
 
  
@@ -98,7 +98,9 @@ For easy execution on Windows 10/11 systems, a compiled EXE using PS2EXE is now 
 
 ## Future Features (Coming Soon):
 
+- Cross platform version to run on Windows, Linux or OSX
 - Support for more emulators, including **Cxbx**, **fpPS4** and more!
+- Abilty for emulators to be extracted / installed
 - Improvements to the user interface.
 - Digital signatures for the script to enhance security.
 
