@@ -14,16 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-# $host.UI.RawUI.WindowSize = New-Object Management.Automation.Host.Size(100, 100)
-$scriptVersion = "v3.0.0"
-
-# Set the window size
-$Width = 100
-$Height = 50
-$host.ui.rawui.windowSize = New-Object Management.Automation.Host.Size($Width, $Height)
-
-# set the buffer size as well
-$host.ui.rawui.BufferSize = New-Object Management.Automation.Host.Size($Width, 100)
+$scriptVersion = "v3.0.1"
 
 <#
    ===========================================================================================
@@ -52,6 +43,13 @@ $host.ui.rawui.BufferSize = New-Object Management.Automation.Host.Size($Width, 1
     ==========================================================================================
 #>
 
+# Set the window size
+$Width = 100
+$Height = 50
+$host.ui.rawui.windowSize = New-Object Management.Automation.Host.Size($Width, $Height)
+
+# set the buffer size as well
+$host.ui.rawui.BufferSize = New-Object Management.Automation.Host.Size($Width, 100)
 
 # Clear the screen and set the console background to black
 $Host.UI.RawUI.BackgroundColor = "Black"
@@ -187,27 +185,20 @@ if (-not (Test-Path $iniFilePath)) {
 
         Write-Host "INI file created successfully."
 
-        # Automatically run EAD-3.exe after creating the INI file
-        Write-Host "Running EAD-3.exe..."
-        Start-Sleep -Seconds 1
-
         # Use $PSScriptRoot to get the path of the current script
         $eadExePath = Join-Path -Path $PSScriptRoot -ChildPath "EAD-3.exe"
 
         # Check if EAD-3.exe exists and run it
         if (Test-Path $eadExePath) {
             Start-Process -FilePath $eadExePath
-            exit 0
         } else {
-            Write-Error "EAD-3.exe not found in the current script's directory ($PSScriptRoot). Exiting..."
-            exit 1
+            Write-Error "EAD-3.exe not found in the current script's directory ($PSScriptRoot)."
         }
     } else {
         Write-Host "Exiting script. Please create the emd.ini file manually." -ForegroundColor "Red" -BackgroundColor "Black"
         exit 1
     }
 }
-
 
 # Main script starts here
 $emupath = Get-EmulatorPath -iniFilePath $iniFilePath
@@ -1358,9 +1349,6 @@ switch ($global:SelectedOS) {
 
                 Write-Host "RetroArch files downloaded successfully to $versionedDownloadPath" -ForegroundColor "Green" -BackgroundColor "Black"
             
-            default {
-                Write-Host "$emulatorName is not available for Windows." -ForegroundColor Red
-            }
 			}
 				"shadPS4" {
 					# shadPS4 Download Logic for Windows
@@ -2117,9 +2105,12 @@ switch ($global:SelectedOS) {
 									Write-Error "Failed to download the file: $_" -ForegroundColor "Red" -BackgroundColor "Black"
 								}
 							}
+							default {
+                Write-Host "$emulatorName is not available for Windows." -ForegroundColor Red
+            }
 	}
 	}
-
+   
         "MacOS" {
             switch ($emulatorName) {
               "Vita3K" {
