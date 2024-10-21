@@ -21,7 +21,7 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **CEMU**                | Wii U               |     | **RPCS3**                | PS3          |
 | **Dolphin**             | Wii / GameCube      |     | **Snes9x**               | SNES         |
 | **Duckstation**         | PS1                 |     | **Stella**               | Atari 2600   |
-| **Lime3DS**             | DS                  |     | **Sudachi**              | Multi-system |
+| **Lime3DS**             | DS                  |     | **Sudachi**              | Switch       |
 | **MAME**                | Arcade              |     | **Supermodel**           | Sega Model 3 |
 | **Mednafen**            | Multi-system        |     | **TeknoParrot**          | Arcade       |
 | **melonDS**             | DS                  |     | **VisualBoyAdvance-m**   | Game Boy Advance |
