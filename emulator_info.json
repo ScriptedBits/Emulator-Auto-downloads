@@ -1,0 +1,189 @@
+{
+    "AppleWin": {
+        "description": "Apple II emulator for Windows.",
+        "url": "https://github.com/AppleWin/AppleWin",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "512 MB",
+            "OS": "Windows 7 and above",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "A7800": {
+        "description": "Atari 7800 emulator with high compatibility.",
+        "url": "https://www.progettosnaps.net/a7800/",
+        "requirements": {
+            "CPU": "1 GHz Processor",
+            "RAM": "256 MB",
+            "OS": "Windows, MacOS",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "Cemu": {
+        "description": "Wii U emulator with support for HD graphics.",
+        "url": "https://github.com/cemu-project/Cemu",
+        "requirements": {
+            "CPU": "Intel or AMD Processor with OpenGL 4.5 support",
+            "RAM": "4 GB",
+            "OS": "Windows 7 (x64) or above",
+            "GPU": "NVIDIA or AMD GPU recommended"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2017 Redistributable (x64)"
+    },
+    "DuckStation": {
+        "description": "PlayStation 1 emulator focused on speed, accuracy, and maintainability.",
+        "url": "https://github.com/stenzek/duckstation",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Windows, MacOS, Linux, Android",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2015-2019 Redistributable"
+    },
+    "Dolphin": {
+        "description": "Nintendo GameCube and Wii emulator supporting HD and VR.",
+        "url": "https://dolphin-emu.org/",
+        "requirements": {
+            "CPU": "Intel/AMD Processor with SSE2 support",
+            "RAM": "2 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "NVIDIA or AMD GPU recommended"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2019 Redistributable"
+    },
+    "Lime3DS": {
+        "description": "Experimental Nintendo 3DS emulator.",
+        "url": "https://github.com/Lime3DS/Lime3DS",
+        "requirements": {
+            "CPU": "Intel Core i3 or better",
+            "RAM": "4 GB",
+            "OS": "Windows",
+            "GPU": "Dedicated GPU recommended"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2015-2019 Redistributable"
+    },
+    "MAME": {
+        "description": "Multiple Arcade Machine Emulator, supports various arcade systems.",
+        "url": "https://www.mamedev.org/",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "Mednafen": {
+        "description": "Multi-system emulator with a focus on accuracy.",
+        "url": "https://mednafen.github.io/",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "512 MB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2017 Redistributable"
+    },
+    "melonDS": {
+        "description": "Nintendo DS emulator with focus on accuracy.",
+        "url": "https://melonds.kuribo64.net/",
+        "requirements": {
+            "CPU": "Intel Core i5 or better",
+            "RAM": "1 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2015-2019 Redistributable"
+    },
+    "mGBA": {
+        "description": "Game Boy Advance emulator for speed and compatibility.",
+        "url": "https://mgba.io/",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "512 MB",
+            "OS": "Windows, MacOS, Linux, 3DS, Switch",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "Mupen64Plus": {
+        "description": "Nintendo 64 emulator with plugins for high performance.",
+        "url": "https://mupen64plus.org/",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "Rosalie's Mupen GUI": {
+        "description": "GUI for Mupen64Plus, a Nintendo 64 emulator.",
+        "url": "https://github.com/Rosalie241/RMG",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Windows, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "RPCS3": {
+        "description": "PlayStation 3 emulator and debugger.",
+        "url": "https://rpcs3.net/",
+        "requirements": {
+            "CPU": "Intel/AMD Processor with AVX2 support",
+            "RAM": "8 GB",
+            "OS": "Windows, Linux",
+            "GPU": "NVIDIA or AMD GPU recommended"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2019 Redistributable"
+    },
+    "Snes9x": {
+        "description": "Super Nintendo Entertainment System emulator.",
+        "url": "https://www.snes9x.com/",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "256 MB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "Stella": {
+        "description": "Atari 2600 emulator.",
+        "url": "https://stella-emu.github.io/",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "256 MB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "Supermodel": {
+        "description": "Sega Model 3 arcade emulator.",
+        "url": "https://www.supermodel3.com/",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Windows, Linux",
+            "GPU": "NVIDIA or AMD GPU recommended"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2013 Redistributable"
+    },
+    "RetroArch": {
+        "description": "Frontend for emulators, game engines, and media players.",
+        "url": "https://www.retroarch.com/",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    }
+}
