@@ -144,7 +144,7 @@
         "additional_requirements": "None"
     },
     "Rosalie's Mupen GUI": {
-        "description": "PlayStation 2 (PS2) emulator",
+        "description": "Rosalie's Mupen GUI is a free and open-source mupen64plus front-end written in C++.",
         "url": "https://github.com/Rosalie241/RMG",
         "requirements": {
             "CPU": "Intel/AMD Processor",
