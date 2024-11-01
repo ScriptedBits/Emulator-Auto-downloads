@@ -1,5 +1,5 @@
 {
-"version": "1.0.2",
+"version": "1.0.3",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -266,25 +266,25 @@
     },
     "Xenia": {
         "description": "Microsoft XBOX 360 emulator.",
-        "url": "https://www.winuae.net/",
+        "url": "https://xenia.jp/",
         "requirements": {
-            "CPU": "Intel/AMD Processor - SSE2 capable CPU",
-            "RAM": "1 GB",
-            "OS": "Windows 7 or newer recommended (32-bit or 64-bit)",
-            "GPU": "NVIDIA or AMD GPU recommended"
+            "CPU": "Intel or AMD 64-bit x86 processor with AVX(2) support ",
+            "RAM": "6 GB",
+            "OS": "Windows 10 or newer recommended (32-bit or 64-bit)",
+            "GPU": "Direct3D 12-compatible or Vulkan-compatible GPU"
         },
-        "additional_requirements": "Direct3D 11 mode: Windows 7: KB2670838, Windows 8 or newer: no extra dependencies."
+        "additional_requirements": "2017/2019 x64 Visual C++ Redistributable."
     },
     "Xenia-Manager": {
         "description": "Manager App for Xeina XBOX 360 emulator",
-        "url": "https://www.winuae.net/",
+        "url": "https://github.com/xenia-manager/xenia-manager",
         "requirements": {
             "CPU": "Intel/AMD Processor - SSE2 capable CPU",
-            "RAM": "1 GB",
-            "OS": "Windows 7 or newer recommended (32-bit or 64-bit)",
-            "GPU": "NVIDIA or AMD GPU recommended"
+            "RAM": "6 GB",
+            "OS": "Windows 10 or higher",
+            "GPU": "Direct3D 12-compatible or Vulkan-compatible GPU"
         },
-        "additional_requirements": "Direct3D 11 mode: Windows 7: KB2670838, Windows 8 or newer: no extra dependencies."
+        "additional_requirements": "Microsoft .NET 8 Desktop Runtime,"
     },
     "RetroArch": {
         "description": "Frontend for emulators, game engines, and media players.",
