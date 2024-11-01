@@ -264,8 +264,8 @@
         },
         "additional_requirements": "GPU that supports shader interlock."
     },
-    "Xenia": {
-        "description": "Microsoft XBOX 360 emulator.",
+    "Xenia-Canary": {
+        "description": "Microsoft XBOX 360 emulator (Dev version).",
         "url": "https://xenia.jp/",
         "requirements": {
             "CPU": "Intel or AMD 64-bit x86 processor with AVX(2) support ",
