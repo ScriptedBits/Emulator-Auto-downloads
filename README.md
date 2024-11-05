@@ -9,7 +9,7 @@ Tired of scouring the web for emulators?
 
 Supercharge Your Retro Gaming Setup with one Click!
 
-Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions the top-tier gaming emulators. Powered by PowerShell, the **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
+Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions the top-tier gaming emulators. The **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
 
 ## Currently Supported Emulators: ##
 
@@ -38,73 +38,21 @@ If your favorite emulator isn’t listed, you can request it by posting in [Disc
 
 # Announcement 🚀 #
 
-We’re thrilled to announce the release of **Emulator Auto-Download v3.0!** This major update adds support for downloading Windows, Mac, and Linux versions of over 30 emulators, along with a completely rewritten menu system and extensive back end improvements.
+We’re thrilled to announce the release of **Emulator Auto-Download v4.0!** This major update adds support for downloading Windows, Mac, and Linux versions of over 30 emulators, along with a completely rewritten menu system and extensive back end improvements in a full GUI.
 
-For easy execution on Windows 10/11 systems, a compiled EXE using PS2EXE is now included.
+
+![EAD-4 0-main-menu](https://github.com/user-attachments/assets/ac535165-e1fb-478e-97bf-7e0e5eea6a8e)
+
+
+
+Also a download history to help track the versions downloaded.
+
+![EAD-4 0-History](https://github.com/user-attachments/assets/ccbd7464-7b67-4b66-bb59-a81e6258cf8f)
+
+
 
 ## Requirements:
-
-- A Windows 10 or 11 PC
-- PowerShell version 5 or higher (PowerShell is already installed on most Windows PCs)
-
-## Easy Installation Steps:
-
-1. **Download the Latest Version**
-   - Visit the project’s release page and download the latest version.
-
-2. **Run the EAD-3.exe file**
-
-   - On the first run, you will be asked you where you’d like to download the emulators. Choose a folder on your computer where you want to keep them.
-
-3. **Select which OS versions of the Emulators to download**
-
-      <img width="347" alt="OS selection page" src="https://github.com/user-attachments/assets/c3366c66-e311-4692-9cec-8a2196d02631">
-
-4. **Select Emulators**
-   - After that, you will be shown a list of emulators. You can pick the ones you want or download all of them at once.
-
-     <img width="413" alt="Emulator selection page" src="https://github.com/user-attachments/assets/d0665964-b4a6-4f8d-9552-483947ab0d1a">
-
-
-     
-
-
-
-> [!TIP]
-> If you want to change the download folder later, you can edit the `emd.ini` file in any text editor. Just update the `emupath` setting with the new location.
-
-## *Optional: If you you would like to run the PowerShell script instead of the exe*
-
-1. **Run the batch file**
-   - In a cmd window, type the following command and press **Enter**:
-     ```bash
-     EAD-3.bat
-     ```
-     **The emu-updater.bat need to be in the same directory as the script.**
-     
-   - On the first run, the script will ask you where you’d like to download the emulators. Choose a folder on your computer where you want to keep them.
-
-4. **Select Emulators**
-   - After that, the script will show you a list of emulators. You can pick the ones you want or download all of them at once.
-
-> [!TIP]
-> If you want to change the download folder later, you can edit the `emd.ini` file in any text editor. Just update the `emupath` setting with the new location.
-
- 
- 
-
-
-
-
-## Future Features (Coming Soon):
-
-- Cross platform version to run on Windows, Linux or OSX
-- Support for more emulators, including **Cxbx**, **fpPS4** and more!
-- Abilty for emulators to be extracted / installed
-- Improvements to the user interface.
-- Digital signatures for the script to enhance security.
-
----
+- Windows 10 / 11
 
 
 
