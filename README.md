@@ -54,7 +54,8 @@ Also a download history to help track the versions downloaded.
 ## Requirements:
 - Windows 10 / 11
 
-
+> [!NOTE]
+> # For Version 3.x see - [README.3.x.md](README.3.x.md) #
 
 ---
 **Disclaimer**: All emulator names, trademarks and software are the property of their respective owners. This script is provided as-is without any warranty or guarantee of functionality.
