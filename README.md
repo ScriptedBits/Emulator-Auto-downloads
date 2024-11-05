@@ -38,8 +38,9 @@ If your favorite emulator isn’t listed, you can request it by posting in [Disc
 
 # Announcement 🚀 #
 
-We’re thrilled to announce the release of **Emulator Auto-Download v4.0!** This major update adds support for downloading Windows, Mac, and Linux versions of over 30 emulators, along with a completely rewritten menu system and extensive back end improvements in a full GUI.
+# Exciting News: Emulator Auto-Download v4.0 Is Here! #
 
+We’re proud to introduce Emulator Auto-Download v4.0, a major update packed with powerful new features and enhancements. This latest version now supports downloading Windows, Mac, and Linux versions of over 30 different emulators. We've also redesigned the menu system from the ground up and implemented comprehensive back-end improvements, delivering a seamless and fully integrated GUI experience.
 
 ![EAD-4 0-main-menu](https://github.com/user-attachments/assets/ac535165-e1fb-478e-97bf-7e0e5eea6a8e)
 
