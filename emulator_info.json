@@ -22,6 +22,17 @@
         },
         "additional_requirements": "None"
     },
+    "ares": {
+        "description": "ares is a multi-system emulator that began development on October 14th, 2004. It is a descendant of higan and bsnes, and focuses on accuracy and preservation.",
+        "url": "https://ares-emu.net/",
+        "requirements": {
+            "CPU": "1 GHz Processor",
+            "RAM": "4 gb",
+            "OS": "Windows, MacOS",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    }, 
     "Cemu": {
         "description": "Wii U emulator with support for HD graphics",
         "url": "https://github.com/cemu-project/Cemu",
