@@ -9,28 +9,29 @@ Tired of scouring the web for emulators?
 
 Supercharge Your Retro Gaming Setup with one Click!
 
-Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions the top-tier gaming emulators. The **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
+Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions of the top-tier gaming emulators. The **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
 
 ## Currently Supported Emulators: ##
 
 | **Emulator**           | **System**          | --- | **Emulator**            | **System**   |
 |------------------------|---------------------|-----|-------------------------|--------------|
-| **a7800**               | Atari 7800          |     | **Redream**              | Dreamcast    |
-| **AppleWin**            | Apple ][            |     | **RetroArch**            | Frontend     |
-| **BigPEmu**             | Atari Jaguar        |     | **Rosalie's Mupen GUI**  | Nintendo 64  |
-| **CEMU**                | Wii U               |     | **RPCS3**                | PS3          |
-| **Dolphin**             | Wii / GameCube      |     | **Snes9x**               | SNES         |
-| **Duckstation**         | PS1                 |     | **Stella**               | Atari 2600   |
-| **Lime3DS**             | DS                  |     | **Sudachi**              | Switch       |
-| **MAME**                | Arcade              |     | **Supermodel**           | Sega Model 3 |
-| **Mednafen**            | Multi-system        |     | **TeknoParrot**          | Arcade       |
-| **melonDS**             | DS                  |     | **VisualBoyAdvance-m**   | Game Boy Advance |
-| **mGBA**                | Game Boy Advance    |     | **VICE**                 | Commodore 64 |
-| **PCSX2**               | PS2                 |     | **Vita3K**               | Vita         |
-| **PPSSPP**              | PSP                 |     | **WinUAE**               | Amiga        |
-| **Project64**           | Nintendo 64         |     | **XEMU**                 | Xbox         |
-| **shadPS4**             | PS4                 |     | **XENIA**                | Xbox360      |
-|                        |                     |     | **Xenia Manager**        | Xbox360      |
+| **a7800**              | Atari 7800          |     | **Redream**             | Dreamcast    |
+| **AppleWin**           | Apple ][            |     | **RetroArch**           | Frontend     |
+| **Ares**               | Multi-system        |     | **Rosalie's Mupen GUI** | Nintendo 64  |
+| **BigPEmu**            | Atari Jaguar        |     | **RPCS3**               | PS3          |
+| **CEMU**               | Wii U               |     | **Snes9x**              | SNES         |
+| **Dolphin**            | Wii / GameCube      |     | **Stella**              | Atari 2600   |
+| **Duckstation**        | PS1                 |     | **Sudachi**             | Switch       |
+| **Lime3DS**            | DS                  |     | **Supermodel**          | Sega Model 3 |
+| **MAME**               | Arcade              |     | **TeknoParrot**         | Arcade       |
+| **Mednafen**           | Multi-system        |     | **VisualBoyAdvance-m**  | Game Boy Advance |
+| **melonDS**            | DS                  |     | **VICE**                | Commodore 64 |
+| **mGBA**               | Game Boy Advance    |     | **Vita3K**              | Vita         |
+| **PCSX2**              | PS2                 |     | **WinUAE**              | Amiga        |
+| **PPSSPP**             | PSP                 |     | **XEMU**                | Xbox         |
+| **Project64**          | Nintendo 64         |     | **XENIA**               | Xbox360      |
+| **shadPS4**            | PS4                 |     | **Xenia Manager**       | Xbox360      |
+
 
 
 If your favorite emulator isn’t listed, you can request it by posting in [Discussions](https://github.com/dbalcar/Emulator-Auto-downloads/discussions)
