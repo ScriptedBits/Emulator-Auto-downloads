@@ -165,6 +165,28 @@
         },
         "additional_requirements": "None"
     },
+    "ProSystem": {
+        "description": "Atari 7800 emulator for the PC and Windows OS",
+        "url": "https://github.com/gstanton/ProSystem1_3",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "4 GB",
+            "OS": "Windows 10 or higher",
+            "GPU": "Direct3D 11"
+        },
+        "additional_requirements": "None"
+    },
+    "RetroArch": {
+        "description": "Frontend for emulators, game engines, and media players.",
+        "url": "https://www.retroarch.com/",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
     "Rosalie's Mupen GUI": {
         "description": "Rosalie's Mupen GUI is a free and open-source mupen64plus front-end written in C++.",
         "url": "https://github.com/Rosalie241/RMG",
@@ -242,6 +264,17 @@
         },
         "additional_requirements": "Microsoft Visual C++ 2013 Redistributable"
     },
+     "uoYabause": {
+        "description": "uoYabause is a unofficial port of Yabause SEGA Saturn Emulator",
+        "url": "https://www.uoyabause.org/",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "4gb",
+            "OS": "Windows 7 and above",
+            "GPU": "graphics card that support vulcan / OpenGL"
+        },
+        "additional_requirements": "None"
+    },
     "WinUAE": {
         "description": "Amiga emulator.",
         "url": "https://www.winuae.net/",
@@ -307,16 +340,5 @@
             "GPU": "Direct3D 12-compatible or Vulkan-compatible GPU"
         },
         "additional_requirements": "Microsoft .NET 8 Desktop Runtime,"
-    },
-    "RetroArch": {
-        "description": "Frontend for emulators, game engines, and media players.",
-        "url": "https://www.retroarch.com/",
-        "requirements": {
-            "CPU": "Intel/AMD Processor",
-            "RAM": "1 GB",
-            "OS": "Windows, MacOS, Linux",
-            "GPU": "Integrated graphics"
-        },
-        "additional_requirements": "None"
     }
 }
