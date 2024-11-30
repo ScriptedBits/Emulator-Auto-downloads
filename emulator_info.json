@@ -23,7 +23,7 @@
         "additional_requirements": "None"
     },
     "ares": {
-        "description": "BizHawk is a multi-platform emulator with full rerecording support and Lua scripting.",
+        "description": "ares is a multi-system emulator that began development on October 14th, 2004. It is a descendant of higan and bsnes, and focuses on accuracy and preservation.",
         "url": "https://ares-emu.net/",
         "requirements": {
             "CPU": "1 GHz Processor",
@@ -34,7 +34,7 @@
         "additional_requirements": "None"
     }, 
     "BizHawk": {
-        "description": "ares is a multi-system emulator that began development on October 14th, 2004. It is a descendant of higan and bsnes, and focuses on accuracy and preservation.",
+        "description": "BizHawk is a multi-platform emulator with full rerecording support and Lua scripting.",
         "url": "https://github.com/TASEmulators/BizHawk",
         "requirements": {
             "CPU": "1 GHz Processor",
