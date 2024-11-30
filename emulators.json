@@ -33,5 +33,5 @@
     { "emulator": "XEMU", "system": "Xbox" },
     { "emulator": "Xenia Manager", "system": "Xbox360" },
     { "emulator": "XENIA", "system": "Xbox360" },
-    { "emulator": "uoYabause1", "system": "Sega Saturn" }
+    { "emulator": "uoYabause", "system": "Sega Saturn" }
 ]
