@@ -13,27 +13,26 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 
 ## Currently Supported Emulators: ##
 
-| **Emulator** | **System** |   | **Emulator** | **System** |
-|--------------|------------|---|--------------|------------|
-| **a7800** | Atari 7800 |   | **AppleWin** | Apple ][ |
-| **Ares** | Multi-system |   | **BigPEmu** | Atari Jaguar |
-| **BizHawk** | Multi-system |   | **CEMU** | Wii U |
-| **Dolphin** | Wii / GameCube |   | **Duckstation** | PS1 |
-| **Lime3DS** | DS |   | **MAME** | Arcade |
-| **Mednafen** | Multi-system |   | **melonDS** | DS |
-| **mGBA** | Game Boy Advance |   | **PCSX2** | PS2 |
-| **PPSSPP** | PSP |   | **Project64** | Nintendo 64 |
-| **ProSystem** | Atari 7800 |   | **RetroArch** | Frontend |
-| **Rosalie's Mupen GUI** | Nintendo 64 |   | **RPCS3** | PS3 |
-| **shadPS4** | PS4 |   | **Snes9x** | SNES |
-| **Stella** | Atari 2600 |   | **Sudachi** | Switch |
-| **Supermodel** | Sega Model 3 |   | **TeknoParrot** | Arcade |
-| **uoYabause** | Sega Saturn |   | **VICE** | Commodore 64 |
-| **VisualBoyAdvance-m** | Game Boy Advance |   | **Vita3K** | Vita |
-| **WinUAE** | Amiga |   | **XEMU** | Xbox |
-| **Xenia Manager** | Xbox360 |   | **XENIA** | Xbox360 |
-
-<!-- Updated at 2024-11-30 20:35:18 --> 2024-11-30 20:23:53.412432 -->
+| **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
+|------------------------|---------------------|-----|------------------------|---------------------|
+| **a7800** | Atari 7800  |     | **RetroArch** | Frontend |
+| **AppleWin** | Apple ][  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
+| **Ares** | Multi-system  |     | **RPCS3** | PS3 |
+| **BigPEmu** | Atari Jaguar  |     | **shadPS4** | PS4 |
+| **BizHawk** | Multi-system  |     | **Snes9x** | SNES |
+| **CEMU** | Wii U  |     | **Stella** | Atari 2600 |
+| **Dolphin** | Wii / GameCube  |     | **Sudachi** | Switch |
+| **Duckstation** | PS1  |     | **Supermodel** | Sega Model 3 |
+| **Lime3DS** | DS  |     | **TeknoParrot** | Arcade |
+| **MAME** | Arcade  |     | **uoYabause** | Sega Saturn |
+| **Mednafen** | Multi-system  |     | **VICE** | Commodore 64 |
+| **melonDS** | DS  |     | **VisualBoyAdvance-m** | Game Boy Advance |
+| **mGBA** | Game Boy Advance  |     | **Vita3K** | Vita |
+| **PCSX2** | PS2  |     | **WinUAE** | Amiga |
+| **PPSSPP** | PSP  |     | **XEMU** | Xbox |
+| **Project64** | Nintendo 64  |     | **XENIA** | Xbox360 |
+| **ProSystem** | Atari 7800  |     | **Xenia Manager** | Xbox360 |
+<!-- Updated at 2024-11-30 22:45:36 UTC -->
 ## Requirements:
 - Windows 10 / 11
 
