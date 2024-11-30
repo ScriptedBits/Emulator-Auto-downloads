@@ -1,5 +1,5 @@
 {
-"version": "1.0.6",
+"version": "1.0.7",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -23,7 +23,7 @@
         "additional_requirements": "None"
     },
     "ares": {
-        "description": "ares is a multi-system emulator that began development on October 14th, 2004. It is a descendant of higan and bsnes, and focuses on accuracy and preservation.",
+        "description": "BizHawk is a multi-platform emulator with full rerecording support and Lua scripting.",
         "url": "https://ares-emu.net/",
         "requirements": {
             "CPU": "1 GHz Processor",
@@ -33,6 +33,17 @@
         },
         "additional_requirements": "None"
     }, 
+    "BizHawk": {
+        "description": "ares is a multi-system emulator that began development on October 14th, 2004. It is a descendant of higan and bsnes, and focuses on accuracy and preservation.",
+        "url": "https://github.com/TASEmulators/BizHawk",
+        "requirements": {
+            "CPU": "1 GHz Processor",
+            "RAM": "4 gb",
+            "OS": "Windows",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "Visual C++ 2010 SP1 Runtime (x64), KB2999226 (prerequisite for installing 'UCRT' on vista-win8.1), Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019' (x64), .Net Framework v4.8 and DirectX"
+    },    
     "Cemu": {
         "description": "Wii U emulator with support for HD graphics",
         "url": "https://github.com/cemu-project/Cemu",
@@ -151,6 +162,17 @@
             "RAM": "2 GB",
             "OS": "Windows, MacOS, Linux",
             "GPU": "OpenGL / Vulkin 1.1 supported graphics card"
+        },
+        "additional_requirements": "None"
+    },
+    "ProSystem: {
+        "description": "The ProSystem Emulator is an Atari 7800 emulator for Windows OS.",
+        "url": "https://github.com/gstanton/ProSystem1_3",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "4 GB",
+            "OS": "Windows",
+            "GPU": "DirectX"
         },
         "additional_requirements": "None"
     },
