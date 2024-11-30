@@ -13,28 +13,27 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 
 ## Currently Supported Emulators: ##
 
+| **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
+|------------------------|---------------------|-----|------------------------|---------------------|
+| **a7800** | Atari 7800  | **RetroArch** | Frontend |
+| **AppleWin** | Apple ][ | **Rosalie's Mupen GUI** | Nintendo 64 |
+| **Ares** | Multi-system | **RPCS3** | PS3         |
+| **BigPEmu** | Atari Jaguar | **shadPS4** | PS4       |
+| **BizHawk** | Multi-system | **Snes9x** | SNES       |
+| **CEMU** | Wii U        | **Stella** | Atari 2600 |
+| **Dolphin** | Wii / GameCube | **Sudachi** | Switch    |
+| **Duckstation** | PS1   | **Supermodel** | Sega Model 3 |
+| **Lime3DS** | DS        | **TeknoParrot** | Arcade |
+| **MAME** | Arcade       | **uoYabause** | Sega Saturn |
+| **Mednafen** | Multi-system | **VICE** | Commodore 64 |
+| **melonDS** | DS        | **VisualBoyAdvance-m** | Game Boy Advance |
+| **mGBA** | Game Boy Advance | **Vita3K** | Vita       |
+| **PCSX2** | PS2         | **WinUAE** | Amiga      |
+| **PPSSPP** | PSP        | **XEMU** | Xbox         |
+| **Project64** | Nintendo 64 | **XENIA** | Xbox360     |
+| **ProSystem** | Atari 7800 | **Xenia Manager** | Xbox360 |
 
-
-
-If your favorite emulator isn’t listed, you can request it by posting in [Discussions](https://github.com/dbalcar/Emulator-Auto-downloads/discussions)
-
-
-# Announcement 🚀 #
-
-# Exciting News: Emulator Auto-Download v4.0 Is Here! #
-
-We’re proud to introduce Emulator Auto-Download v4.0, a major update packed with powerful new features and enhancements. This latest version now supports downloading Windows, Mac, and Linux versions of over 30 different emulators. We've also redesigned the menu system from the ground up and implemented comprehensive back-end improvements, delivering a seamless and fully integrated GUI experience.
-
-![EAD-4 0-main-menu](https://github.com/user-attachments/assets/ac535165-e1fb-478e-97bf-7e0e5eea6a8e)
-
-
-
-Also a download history to help track the versions downloaded.
-
-![EAD-4 0-History](https://github.com/user-attachments/assets/ccbd7464-7b67-4b66-bb59-a81e6258cf8f)
-
-
-
+<!-- Updated at 2024-11-30 20:23:53.412432 -->
 ## Requirements:
 - Windows 10 / 11
 
