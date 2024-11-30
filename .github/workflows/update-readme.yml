@@ -3,58 +3,53 @@ name: Update README
 on:
   push:
     paths:
-      - emulators.json  # Trigger when this file is updated.
-  workflow_dispatch:  # Allow manual triggers.
+      - emulators.json
+  workflow_dispatch:
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
-      - name: Checkout repository
+      # Step 1: Check out the repository
+      - name: Check out repository
         uses: actions/checkout@v3
 
-      # Set up Python
+      # Step 2: Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: "3.x"
 
-      # Debug: List repository contents
-      - name: List repository contents
-        run: ls -la
+      # Step 3: Install dependencies (if needed)
+      - name: Install dependencies
+        run: pip install -r requirements.txt || echo "No requirements.txt found"
 
-      # Debug: Show Git status
-      - name: Show Git status
-        run: git status
-
-      # Run the script to update README.md
-      - name: Run script to update README.md
+      # Step 4: Run the update script
+      - name: Update README.md
         run: python update_readme.py
 
-      # Debug: Check README content
-      - name: Debug README content
-        run: cat README.md
-
-      # Check for changes
-      - name: Check for changes
-        id: git_diff
-        run: |
-          git diff --quiet || echo "changes_detected=true" >> $GITHUB_ENV
-          echo "changes_detected=false" >> $GITHUB_ENV
-
-      # Commit and push changes if detected
-      - name: Commit and push changes
-        if: env.changes_detected == 'true'
+      # Step 5: Check if there are changes
+      - name: Check for changes in README.md
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "Auto-update README.md with supported emulators"
+          git diff --cached --exit-code || echo "changes_detected=true" >> $GITHUB_ENV
+
+      # Step 6: Commit and push changes (if any)
+      - name: Commit and push changes if detected
+        if: env.changes_detected == 'true'
+        run: |
+          git commit -m "Auto-update README.md based on emulators.json" || echo "No changes to commit"
           git push
 
-      # No changes detected
-      - name: No changes detected
-        if: env.changes_detected == 'false'
-        run: echo "No changes detected. Skipping commit."
+      # Step 7: Force update README.md if manually triggered
+      - name: Force update README.md on manual trigger
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Manual trigger: Force update README.md" || echo "No changes to commit"
+          git push
