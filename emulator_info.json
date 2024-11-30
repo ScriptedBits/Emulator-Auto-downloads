@@ -1,5 +1,5 @@
 {
-"version": "1.0.7",
+"version": "1.0.8",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -172,7 +172,7 @@
             "CPU": "Intel/AMD Processor",
             "RAM": "4 GB",
             "OS": "Windows",
-            "GPU": "DirectX"
+            "GPU": "Direct3D 11"
         },
         "additional_requirements": "None"
     },
@@ -184,17 +184,6 @@
             "RAM": "8 GB",
             "OS": "Windows 10 Version 1809 (64-bit), MacOS 11.0 (Big Sur), Ubuntu 22.04/Debian or newer, Arch Linux, or other distro (64-bit)",
             "GPU": "Direct3D 11 (Feature Level 10.0) support, OpenGL 3.3 support, Vulkan 1.1 support"
-        },
-        "additional_requirements": "None"
-    },
-    "ProSystem": {
-        "description": "Atari 7800 emulator for the PC and Windows OS",
-        "url": "https://github.com/gstanton/ProSystem1_3",
-        "requirements": {
-            "CPU": "Intel/AMD Processor",
-            "RAM": "4 GB",
-            "OS": "Windows 10 or higher",
-            "GPU": "Direct3D 11"
         },
         "additional_requirements": "None"
     },
