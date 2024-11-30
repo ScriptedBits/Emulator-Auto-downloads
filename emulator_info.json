@@ -350,6 +350,6 @@
             "OS": "Windows 10 or higher",
             "GPU": "Direct3D 12-compatible or Vulkan-compatible GPU"
         },
-        "additional_requirements": "Microsoft .NET 8 Desktop Runtime,"
+        "additional_requirements": "Microsoft .NET 8 Desktop Runtime"
     }
 }
