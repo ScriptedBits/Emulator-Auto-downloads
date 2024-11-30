@@ -165,7 +165,7 @@
         },
         "additional_requirements": "None"
     },
-    "ProSystem: {
+    "ProSystem": {
         "description": "The ProSystem Emulator is an Atari 7800 emulator for Windows OS.",
         "url": "https://github.com/gstanton/ProSystem1_3",
         "requirements": {
