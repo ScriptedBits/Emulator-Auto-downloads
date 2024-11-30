@@ -1,5 +1,5 @@
 {
-"version": "1.0.9",
+"version": "1.0.10",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -32,6 +32,17 @@
             "GPU": "Integrated graphics"
         },
         "additional_requirements": "None"
+    },
+    "BigPEmu": {
+        "description": "BigPEmu can run every game in the Jaguar's retail library.",
+        "url": "https://www.richwhitehouse.com/jaguar/",
+        "requirements": {
+            "CPU": "1 GHz Processor",
+            "RAM": "4 gb",
+            "OS": "Windows",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "Visual C++ 2010 SP1 Runtime (x64), KB2999226 (prerequisite for installing 'UCRT' on vista-win8.1), Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019' (x64), .Net Framework v4.8 and DirectX"
     }, 
     "BizHawk": {
         "description": "BizHawk is a multi-platform emulator with full rerecording support and Lua scripting.",
