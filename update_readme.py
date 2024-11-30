@@ -3,14 +3,18 @@ import math
 import re
 from datetime import datetime
 
-# Load emulator data from emulators.json
-with open("emulators.json", "r") as f:
+# File paths
+EMULATORS_JSON_PATH = "emulators.json"
+README_PATH = "README.md"
+
+# Load emulator data
+with open(EMULATORS_JSON_PATH, "r") as f:
     emulators = json.load(f)
 
-# Sort the emulators alphabetically by name
+# Sort emulators alphabetically
 emulators = sorted(emulators, key=lambda x: x["emulator"].lower())
 
-# Split emulators into two columns for the table
+# Split emulators into two columns for table
 midpoint = math.ceil(len(emulators) / 2)
 column1 = emulators[:midpoint]
 column2 = emulators[midpoint:]
@@ -24,23 +28,25 @@ for col1, col2 in zip(column1, column2):
     col2_text = f"**{col2['emulator']}** | {col2['system']}" if col2 else ""
     new_table += f"| {col1_text:<23} | {col2_text:<23} |\n"
 
-# Add a timestamp to force changes (optional)
+# Add a timestamp for debugging purposes
 timestamp = f"<!-- Updated at {datetime.now()} -->"
 
-# Load the existing README.md
-with open("README.md", "r") as f:
+# Load README.md
+with open(README_PATH, "r") as f:
     readme_content = f.read()
 
-# Use a regex to replace the "Currently Supported Emulators" section
-updated_readme = re.sub(
-    r"(## Currently Supported Emulators: ##\n\n\|.*?\|\n)",
-    f"## Currently Supported Emulators: ##\n\n{new_table}\n{timestamp}",
-    readme_content,
-    flags=re.DOTALL
-)
+# Regex to find the "Currently Supported Emulators" section
+regex_pattern = r"(## Currently Supported Emulators: ##\n\n.*?)(?=\n##|$)"
+new_emulators_section = f"## Currently Supported Emulators: ##\n\n{new_table}\n{timestamp}"
 
-# Write the updated content back to README.md
-with open("README.md", "w") as f:
-    f.write(updated_readme)
+# Replace the section in README.md
+updated_readme = re.sub(regex_pattern, new_emulators_section, readme_content, flags=re.DOTALL)
 
-print("README.md updated successfully.")
+# Check if changes were made
+if updated_readme != readme_content:
+    # Write the updated content back to README.md
+    with open(README_PATH, "w") as f:
+        f.write(updated_readme)
+    print("README.md updated successfully.")
+else:
+    print("No changes detected in README.md.")
