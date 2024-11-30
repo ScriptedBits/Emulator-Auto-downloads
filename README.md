@@ -13,24 +13,6 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 
 ## Currently Supported Emulators: ##
 
-| **Emulator**           | **System**          | --- | **Emulator**            | **System**   |
-|------------------------|---------------------|-----|-------------------------|--------------|
-| **a7800**              | Atari 7800          |     | **Redream**             | Dreamcast    |
-| **AppleWin**           | Apple ][            |     | **RetroArch**           | Frontend     |
-| **Ares**               | Multi-system        |     | **Rosalie's Mupen GUI** | Nintendo 64  |
-| **BigPEmu**            | Atari Jaguar        |     | **RPCS3**               | PS3          |
-| **CEMU**               | Wii U               |     | **Snes9x**              | SNES         |
-| **Dolphin**            | Wii / GameCube      |     | **Stella**              | Atari 2600   |
-| **Duckstation**        | PS1                 |     | **Sudachi**             | Switch       |
-| **Lime3DS**            | DS                  |     | **Supermodel**          | Sega Model 3 |
-| **MAME**               | Arcade              |     | **TeknoParrot**         | Arcade       |
-| **Mednafen**           | Multi-system        |     | **VisualBoyAdvance-m**  | Game Boy Advance |
-| **melonDS**            | DS                  |     | **VICE**                | Commodore 64 |
-| **mGBA**               | Game Boy Advance    |     | **Vita3K**              | Vita         |
-| **PCSX2**              | PS2                 |     | **WinUAE**              | Amiga        |
-| **PPSSPP**             | PSP                 |     | **XEMU**                | Xbox         |
-| **Project64**          | Nintendo 64         |     | **XENIA**               | Xbox360      |
-| **shadPS4**            | PS4                 |     | **Xenia Manager**       | Xbox360      |
 
 
 
