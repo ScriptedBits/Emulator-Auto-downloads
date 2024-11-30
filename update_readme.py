@@ -40,4 +40,4 @@ updated_readme = re.sub(
 with open("README.md", "w") as f:
     f.write(updated_readme)
 
-print("Supported emulators table updated successfully.")
+# print("Supported emulators table updated successfully.")
