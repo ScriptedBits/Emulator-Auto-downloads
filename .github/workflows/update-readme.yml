@@ -3,7 +3,8 @@ name: Update README
 on:
   push:
     paths:
-      - emulators.json  # Trigger the action when this file is updated.
+      - emulators.json  # Trigger when this file is updated.
+  workflow_dispatch:  # Allow manual triggering of this workflow.
 
 jobs:
   update-readme:
