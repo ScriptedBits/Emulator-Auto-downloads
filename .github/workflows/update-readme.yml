@@ -1,0 +1,34 @@
+name: Update README
+
+on:
+  push:
+    paths:
+      - emulators.json  # Trigger the action when this file is updated.
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies (if any)
+        run: |
+          pip install -r requirements.txt || echo "No dependencies to install"
+
+      - name: Run script to update README.md
+        run: python update_readme.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Auto-update README.md with supported emulators"
+          git push
