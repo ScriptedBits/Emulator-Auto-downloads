@@ -1,52 +1,55 @@
 import json
-import math
-import re
 from datetime import datetime
 
 # File paths
-EMULATORS_JSON_PATH = "emulators.json"
 README_PATH = "README.md"
+EMULATORS_JSON_PATH = "emulators.json"
 
-# Load emulator data
-with open(EMULATORS_JSON_PATH, "r") as f:
-    emulators = json.load(f)
+# Function to update the README
+def update_readme():
+    # Load emulators data
+    with open(EMULATORS_JSON_PATH, "r") as f:
+        emulators = json.load(f)
+    
+    # Build the table rows
+    rows = []
+    for i in range(0, len(emulators), 2):
+        emulator1 = emulators[i]
+        emulator2 = emulators[i+1] if i + 1 < len(emulators) else {"name": "", "system": ""}
+        row = f"| **{emulator1['name']}** | {emulator1['system']} |   | **{emulator2['name']}** | {emulator2['system']} |"
+        rows.append(row)
+    
+    # Table header and separator
+    header = "| **Emulator** | **System** |   | **Emulator** | **System** |"
+    separator = "|--------------|------------|---|--------------|------------|"
+    
+    # Combine header, separator, and rows
+    table = "\n".join([header, separator] + rows)
+    
+    # Update the README
+    with open(README_PATH, "r") as f:
+        readme = f.read()
+    
+    # Find and replace the section in README
+    start_marker = "## Currently Supported Emulators: ##"
+    end_marker = "<!-- Updated at"
+    updated_at = f"<!-- Updated at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} -->"
+    start_idx = readme.find(start_marker)
+    end_idx = readme.find(end_marker)
+    
+    if start_idx != -1 and end_idx != -1:
+        updated_readme = (
+            readme[:start_idx + len(start_marker)] +
+            "\n\n" + table + "\n\n" +
+            updated_at +
+            readme[end_idx + len(end_marker):]
+        )
+        
+        with open(README_PATH, "w") as f:
+            f.write(updated_readme)
+        print("README.md updated successfully.")
+    else:
+        print("Could not find the 'Currently Supported Emulators' section in README.md.")
 
-# Sort emulators alphabetically
-emulators = sorted(emulators, key=lambda x: x["emulator"].lower())
-
-# Split emulators into two columns for table
-midpoint = math.ceil(len(emulators) / 2)
-column1 = emulators[:midpoint]
-column2 = emulators[midpoint:]
-
-# Generate the new table format
-new_table = "| **Emulator**           | **System**          | --- | **Emulator**           | **System**          |\n"
-new_table += "|------------------------|---------------------|-----|------------------------|---------------------|\n"
-
-for col1, col2 in zip(column1, column2):
-    col1_text = f"**{col1['emulator']}** | {col1['system']}"
-    col2_text = f"**{col2['emulator']}** | {col2['system']}" if col2 else ""
-    new_table += f"| {col1_text:<23} | {col2_text:<23} |\n"
-
-# Add a timestamp for debugging purposes
-timestamp = f"<!-- Updated at {datetime.now()} -->"
-
-# Load README.md
-with open(README_PATH, "r") as f:
-    readme_content = f.read()
-
-# Regex to find the "Currently Supported Emulators" section
-regex_pattern = r"(## Currently Supported Emulators: ##\n\n.*?)(?=\n##|$)"
-new_emulators_section = f"## Currently Supported Emulators: ##\n\n{new_table}\n{timestamp}"
-
-# Replace the section in README.md
-updated_readme = re.sub(regex_pattern, new_emulators_section, readme_content, flags=re.DOTALL)
-
-# Check if changes were made
-if updated_readme != readme_content:
-    # Write the updated content back to README.md
-    with open(README_PATH, "w") as f:
-        f.write(updated_readme)
-    print("README.md updated successfully.")
-else:
-    print("No changes detected in README.md.")
+if __name__ == "__main__":
+    update_readme()
