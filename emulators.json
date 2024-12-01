@@ -5,6 +5,7 @@
     {"name": "BigPEmu", "system": "Atari Jaguar"},
     {"name": "BizHawk", "system": "Multi-system"},
     {"name": "CEMU", "system": "Wii U"},
+    {"name": "Cxbx-Reloaded", "system": "Xbox"},
     {"name": "Dolphin", "system": "Wii / GameCube"},
     {"name": "Duckstation", "system": "PS1"},
     {"name": "Lime3DS", "system": "DS"},
