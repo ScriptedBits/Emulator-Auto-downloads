@@ -66,6 +66,17 @@
         },
         "additional_requirements": "Microsoft Visual C++ 2017 Redistributable (x64)"
     },
+    "Cxbx-Reloaded": {
+        "description": "Cxbx-Reloaded is an emulator for running Microsoft Xbox (and eventually, Chihiro) games on Microsoft Windows and Wine.",
+        "url": "https://github.com/Cxbx-Reloaded/Cxbx-Reloaded",
+        "requirements": {
+            "CPU": "Intel or AMD Processor with OpenGL 4.5 support",
+            "RAM": "4 GB",
+            "OS": "Windows 7+ x64, or x86-64 Linux with Wine. 32-bit is not supported. ",
+            "GPU": "Any GPU that supports Direct3D 9.0c with Pixel Shader Model 2.x, and Vertex Shader Model 3.0."
+        },
+        "additional_requirements": "32-bit (x86) Visual C++ 2022 Redistributable, Npcap, WinUSB"
+    },
     "DuckStation": {
         "description": "PlayStation 1 emulator focused on speed, accuracy, and maintainability.",
         "url": "https://github.com/stenzek/duckstation",
