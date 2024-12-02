@@ -1,5 +1,5 @@
 {
-"version": "1.0.11",
+"version": "1.0.12",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -275,6 +275,17 @@
         },
         "additional_requirements": "None"
     },
+    "simple64": {
+        "description": "simple64 is an emulator based on a heavily modified version of mupen64plus-core, and ParaLLEl ",
+        "url": "https://simple64.github.io/",
+        "requirements": {
+            "CPU": "A CPU that is capable of x86-64-v3 instructions (AVX2) instructions",
+            "RAM": "4gb",
+            "OS": "Windows",
+            "GPU": "A GPU that can support Vulkan 1.1 or higher."
+        },
+        "additional_requirements": "Bandicam causes simple64 to crash. Uninstall Bandicam if you want to use simple64"
+    },    
     "Sudachi": {
         "description": "Nintendo Switch emulator.",
         "url": "https://sudachi.emuplace.app/",
