@@ -23,6 +23,7 @@
     {"name": "shadPS4", "system": "PS4"},
     {"name": "Snes9x", "system": "SNES"},
     {"name": "Stella", "system": "Atari 2600"},
+    {"name": "simple64", "system": "Nintendo 64"},
     {"name": "Sudachi", "system": "Switch"},
     {"name": "Supermodel", "system": "Sega Model 3"},
     {"name": "TeknoParrot", "system": "Arcade"},
