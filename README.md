@@ -19,21 +19,21 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **AppleWin** | Apple ][  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
 | **Ares** | Multi-system  |     | **RPCS3** | PS3 |
 | **BigPEmu** | Atari Jaguar  |     | **shadPS4** | PS4 |
-| **BizHawk** | Multi-system  |     | **Snes9x** | SNES |
-| **CEMU** | Wii U  |     | **Stella** | Atari 2600 |
-| **Cxbx-Reloaded** | Xbox  |     | **Sudachi** | Switch |
-| **Dolphin** | Wii / GameCube  |     | **Supermodel** | Sega Model 3 |
-| **Duckstation** | PS1  |     | **TeknoParrot** | Arcade |
-| **Lime3DS** | DS  |     | **uoYabause** | Sega Saturn |
-| **MAME** | Arcade  |     | **VICE** | Commodore 64 |
-| **Mednafen** | Multi-system  |     | **VisualBoyAdvance-m** | Game Boy Advance |
-| **melonDS** | DS  |     | **Vita3K** | Vita |
-| **mGBA** | Game Boy Advance  |     | **WinUAE** | Amiga |
-| **PCSX2** | PS2  |     | **XEMU** | Xbox |
-| **PPSSPP** | PSP  |     | **XENIA** | Xbox360 |
-| **Project64** | Nintendo 64  |     | **Xenia Manager** | Xbox360 |
-| **ProSystem** | Atari 7800  |     |  |  |
-<!-- Updated at 2024-12-01 22:13:03 UTC -->
+| **BizHawk** | Multi-system  |     | **simple64** | Nintendo 64 |
+| **CEMU** | Wii U  |     | **Snes9x** | SNES |
+| **Cxbx-Reloaded** | Xbox  |     | **Stella** | Atari 2600 |
+| **Dolphin** | Wii / GameCube  |     | **Sudachi** | Switch |
+| **Duckstation** | PS1  |     | **Supermodel** | Sega Model 3 |
+| **Lime3DS** | DS  |     | **TeknoParrot** | Arcade |
+| **MAME** | Arcade  |     | **uoYabause** | Sega Saturn |
+| **Mednafen** | Multi-system  |     | **VICE** | Commodore 64 |
+| **melonDS** | DS  |     | **VisualBoyAdvance-m** | Game Boy Advance |
+| **mGBA** | Game Boy Advance  |     | **Vita3K** | Vita |
+| **PCSX2** | PS2  |     | **WinUAE** | Amiga |
+| **PPSSPP** | PSP  |     | **XEMU** | Xbox |
+| **Project64** | Nintendo 64  |     | **XENIA** | Xbox360 |
+| **ProSystem** | Atari 7800  |     | **Xenia Manager** | Xbox360 |
+<!-- Updated at 2024-12-02 19:46:33 UTC -->
 ## Requirements:
 - Windows 10 / 11
 
