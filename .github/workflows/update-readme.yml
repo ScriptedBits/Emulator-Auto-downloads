@@ -41,15 +41,17 @@ jobs:
       - name: Commit and push changes if detected
         if: env.changes_detected == 'true'
         run: |
+          git checkout -b update-readme-branch || git checkout main
           git commit -m "Auto-update README.md based on emulators.json" || echo "No changes to commit"
-          git push
+          git push origin HEAD:main || echo "Push failed"
 
       # Step 7: Force update README.md if manually triggered
       - name: Force update README.md on manual trigger
         if: github.event_name == 'workflow_dispatch'
         run: |
+          git checkout -b update-readme-branch || git checkout main
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
           git commit -m "Manual trigger: Force update README.md" || echo "No changes to commit"
-          git push
+          git push origin HEAD:main || echo "Push failed"
