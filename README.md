@@ -23,8 +23,9 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **CEMU** | Wii U  |     | **Snes9x** | SNES |
 | **Cxbx-Reloaded** | Xbox  |     | **Stella** | Atari 2600 |
 | **Dolphin** | Wii / GameCube  |     | **Sudachi** | Switch |
-| **Duckstation** | PS1  |     | **Supermodel** | Sega Model 3 |
-| **Lime3DS** | DS  |     | **TeknoParrot** | Arcade |
+| **DREAMM** | LucasArts  |     | **Supermodel** | Sega Model 3 |
+| **Duckstation** | PS1  |     | **Tanuki3DS** | 3DS |
+| **Lime3DS** | 3DS  |     | **TeknoParrot** | Arcade |
 | **MAME** | Arcade  |     | **uoYabause** | Sega Saturn |
 | **Mednafen** | Multi-system  |     | **VICE** | Commodore 64 |
 | **melonDS** | DS  |     | **VisualBoyAdvance-m** | Game Boy Advance |
@@ -33,7 +34,7 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **PPSSPP** | PSP  |     | **XEMU** | Xbox |
 | **Project64** | Nintendo 64  |     | **XENIA** | Xbox360 |
 | **ProSystem** | Atari 7800  |     | **Xenia Manager** | Xbox360 |
-<!-- Updated at 2024-12-03 23:01:30 UTC -->
+<!-- Updated at 2024-12-06 15:19:04 UTC -->
 ## Requirements:
 - Windows 10 / 11
 
