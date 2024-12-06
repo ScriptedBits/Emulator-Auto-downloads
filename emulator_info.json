@@ -1,5 +1,5 @@
 {
-"version": "1.0.13",
+"version": "1.0.14",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -98,6 +98,17 @@
             "GPU": "NVIDIA or AMD GPU recommended"
         },
         "additional_requirements": "Microsoft Visual C++ 2019 Redistributable"
+    },
+    "DREAMM": {
+       "description": "DREAMM is a bespoke emulator for LucasArts games",
+       "url": "https://aarongiles.com/dreamm/",
+       "requirements": {
+           "CPU": "Intel/AMD Processor with SSE2 support",
+           "RAM": "2 GB",
+           "OS": "Windows, MacOS, Linux",
+           "GPU": "NVIDIA, AMD GPU recommended or Imbedded graphics"
+       },
+       "additional_requirements": "None"
     },
     "Lime3DS": {
         "description": "Experimental Nintendo 3DS emulator.",
@@ -318,6 +329,17 @@
             "GPU": "NVIDIA or AMD GPU recommended"
         },
         "additional_requirements": "Microsoft Visual C++ 2013 Redistributable"
+    },
+    "Tanuki3DS": {
+        "description": "Tanuki3DS is a new HLE 3DS emulator for MacOS and Linux ",
+        "url": "https://github.com/burhanr13/Tanuki3DS",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Linux, MacOS",
+            "GPU": "NVIDIA or AMD GPU recommended"
+        },
+        "additional_requirements": "You need the following dependencies installed to build and run: sdl2, glew, xbyak (build only), xxhash (build only), capstone (build only)"
     },
      "uoYabause": {
         "description": "uoYabause is a unofficial port of Yabause SEGA Saturn Emulator",
