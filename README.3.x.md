@@ -38,7 +38,7 @@
      ```bash
      EAD-3.bat
      ```
-     **The emu-updater.bat need to be in the same directory as the script.**
+     **The emu-updater.bat needs to be in the same directory as the script.**
      
    - On the first run, the script will ask you where you’d like to download the emulators. Choose a folder on your computer where you want to keep them.
 
