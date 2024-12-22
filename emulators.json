@@ -9,6 +9,7 @@
     {"name": "Dolphin", "system": "Wii / GameCube"},
     {"name": "Duckstation", "system": "PS1"},
     {"name": "DREAMM", "system": "LucasArts"},
+    {"name": "Gearboy", "system": "Game Boy/Game Boy Color"},
     {"name": "Lime3DS", "system": "3DS"},
     {"name": "MAME", "system": "Arcade"},
     {"name": "Mednafen", "system": "Multi-system"},
