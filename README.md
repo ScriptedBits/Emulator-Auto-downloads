@@ -25,16 +25,17 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **Dolphin** | Wii / GameCube  |     | **Sudachi** | Switch |
 | **DREAMM** | LucasArts  |     | **Supermodel** | Sega Model 3 |
 | **Duckstation** | PS1  |     | **Tanuki3DS** | 3DS |
-| **Lime3DS** | 3DS  |     | **TeknoParrot** | Arcade |
-| **MAME** | Arcade  |     | **uoYabause** | Sega Saturn |
-| **Mednafen** | Multi-system  |     | **VICE** | Commodore 64 |
-| **melonDS** | DS  |     | **VisualBoyAdvance-m** | Game Boy Advance |
-| **mGBA** | Game Boy Advance  |     | **Vita3K** | Vita |
-| **PCSX2** | PS2  |     | **WinUAE** | Amiga |
-| **PPSSPP** | PSP  |     | **XEMU** | Xbox |
-| **Project64** | Nintendo 64  |     | **XENIA** | Xbox360 |
-| **ProSystem** | Atari 7800  |     | **Xenia Manager** | Xbox360 |
-<!-- Updated at 2024-12-07 21:37:19 UTC -->
+| **Gearboy** | Game Boy/Game Boy Color  |     | **TeknoParrot** | Arcade |
+| **Lime3DS** | 3DS  |     | **uoYabause** | Sega Saturn |
+| **MAME** | Arcade  |     | **VICE** | Commodore 64 |
+| **Mednafen** | Multi-system  |     | **VisualBoyAdvance-m** | Game Boy Advance |
+| **melonDS** | DS  |     | **Vita3K** | Vita |
+| **mGBA** | Game Boy Advance  |     | **WinUAE** | Amiga |
+| **PCSX2** | PS2  |     | **XEMU** | Xbox |
+| **PPSSPP** | PSP  |     | **XENIA** | Xbox360 |
+| **Project64** | Nintendo 64  |     | **Xenia Manager** | Xbox360 |
+| **ProSystem** | Atari 7800  |     |  |  |
+<!-- Updated at 2024-12-22 16:40:52 UTC -->
 ## Requirements:
 - Windows 10 / 11
 
