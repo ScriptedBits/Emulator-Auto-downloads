@@ -1,5 +1,5 @@
 {
-"version": "1.0.14",
+"version": "1.0.15",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -109,6 +109,17 @@
            "GPU": "NVIDIA, AMD GPU recommended or Imbedded graphics"
        },
        "additional_requirements": "None"
+    },
+    "Gearboy": {
+       "description": "Gearboy is a cross-platform Game Boy / Game Boy Color emulator written in C++ that runs on Windows, macOS, Linux, BSD and RetroArch.",
+       "url": "https://github.com/drhelius/Gearboy",
+       "requirements": {
+           "CPU": "Intel/AMD Processor with SSE2 support",
+           "RAM": "2 GB",
+           "OS": "Windows, MacOS, Linux",
+           "GPU": "NVIDIA, AMD GPU recommended or Imbedded graphics"
+       },
+       "additional_requirements": "Microsoft Visual C++ Redistributable"
     },
     "Lime3DS": {
         "description": "Experimental Nintendo 3DS emulator.",
