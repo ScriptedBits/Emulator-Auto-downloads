@@ -154,7 +154,7 @@
 			"GPU": "Integrated graphics"
 		},
 		"additional_requirements": "Microsoft Visual C++ 2017 Redistributable",
-		"systems": ["NES", "SNES", "Game Boy", "Game Boy Advance", "PlayStation"]
+		"systems": ["NES", "SNES", "Game Boy", "Game Boy Advance", "PlayStation 1"]
 	},
 	"melonDS": {
 		"description": "Nintendo DS emulator with focus on accuracy.",
