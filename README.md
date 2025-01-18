@@ -20,22 +20,24 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **Ares** | Multi-system  |     | **RPCS3** | PS3 |
 | **BigPEmu** | Atari Jaguar  |     | **shadPS4** | PS4 |
 | **BizHawk** | Multi-system  |     | **simple64** | Nintendo 64 |
-| **CEMU** | Wii U  |     | **Snes9x** | SNES |
-| **Cxbx-Reloaded** | Xbox  |     | **Stella** | Atari 2600 |
-| **Dolphin** | Wii / GameCube  |     | **Sudachi** | Switch |
-| **DREAMM** | LucasArts  |     | **Supermodel** | Sega Model 3 |
-| **Duckstation** | PS1  |     | **Tanuki3DS** | 3DS |
-| **Gearboy** | Game Boy/Game Boy Color  |     | **TeknoParrot** | Arcade |
-| **Lime3DS** | 3DS  |     | **uoYabause** | Sega Saturn |
-| **MAME** | Arcade  |     | **VICE** | Commodore 64 |
-| **Mednafen** | Multi-system  |     | **VisualBoyAdvance-m** | Game Boy Advance |
-| **melonDS** | DS  |     | **Vita3K** | Vita |
+| **CEMU** | Wii U  |     | **SimpleLauncher** | Frontend |
+| **Cxbx-Reloaded** | Xbox  |     | **Snes9x** | SNES |
+| **Dolphin** | Wii / GameCube  |     | **Stella** | Atari 2600 |
+| **DREAMM** | LucasArts  |     | **Sudachi** | Switch |
+| **Duckstation** | PS1  |     | **Supermodel** | Sega Model 3 |
+| **Gearboy** | Game Boy/Game Boy Color  |     | **Tanuki3DS** | 3DS |
+| **Gopher2600** | Atari 2600/  |     | **TeknoParrot** | Arcade |
+| **gopher64** | Nintendo 64  |     | **uoYabause** | Sega Saturn |
+| **Lime3DS** | 3DS  |     | **VICE** | Commodore 64 |
+| **MAME** | Arcade  |     | **VisualBoyAdvance-m** | Game Boy Advance |
+| **Mednafen** | Multi-system  |     | **Vita3K** | Vita |
+| **melonDS** | DS  |     | **WinDurango** | Xbox One |
 | **mGBA** | Game Boy Advance  |     | **WinUAE** | Amiga |
 | **PCSX2** | PS2  |     | **XEMU** | Xbox |
-| **PPSSPP** | PSP  |     | **XENIA** | Xbox360 |
-| **Project64** | Nintendo 64  |     | **Xenia Manager** | Xbox360 |
+| **PPSSPP** | PSP  |     | **XENIA** | Xbox 360 |
+| **Project64** | Nintendo 64  |     | **Xenia Manager** | Xbox 360 |
 | **ProSystem** | Atari 7800  |     |  |  |
-<!-- Updated at 2024-12-29 20:48:14 UTC -->
+<!-- Updated at 2025-01-18 19:36:12 UTC -->
 ## Requirements:
 - Windows 10 / 11
 
