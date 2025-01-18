@@ -1,5 +1,5 @@
 {
-    "version": "1.0.16",
+    "version": "1.0.17",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -131,6 +131,30 @@
             "GPU": "Integrated graphics"
         },
         "additional_requirements": "Microsoft Visual C++ Redistributable"
+    },
+    "gopher64": {
+        "description": "Nintendo 64 emulator written in Rust.",
+        "url": "https://github.com/gopher64/gopher64",
+        "systems": ["Nintendo 64"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor with SSE2 support",
+            "RAM": "2 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "Rust installed"
+    },
+    "Gopher2600": {
+        "description": "Atari 2600 emulator written in Rust.",
+        "url": "https://github.com/JetSetIlly/Gopher2600",
+        "systems": ["Atari 2600"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor with SSE2 support",
+            "RAM": "2 GB",
+            "OS": "Windows, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
     },
     "MAME": {
         "description": "Multiple Arcade Machine Emulator, supports various arcade systems.",
@@ -335,6 +359,18 @@
 		},
 		"additional_requirements": "Bandicam causes simple64 to crash. Uninstall Bandicam if you want to use simple64",
 		"systems": ["Nintendo 64"]
+	},
+	"SimpleLauncher": {
+		"description": "Simple Launcher is an emulator frontend that makes playing retro games a breeze.",
+		"url": "https://github.com/drpetersonfernandes/SimpleLauncher/",
+		"requirements": {
+			"CPU": "CPU requiremnents for emulated games",
+			"RAM": "4 GB",
+			"OS": "Windows",
+			"GPU": "A GPU that can support Vulkan 1.1 or higher or OpenGL needed for games."
+		},
+		"additional_requirements": "Bandicam causes simple64 to crash. Uninstall Bandicam if you want to use simple64",
+		"systems": ["Multi-system"]
 	},
 	"Sudachi": {
 		"description": "Nintendo Switch emulator.",
