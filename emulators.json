@@ -10,6 +10,8 @@
     {"name": "Duckstation", "system": "PS1"},
     {"name": "DREAMM", "system": "LucasArts"},
     {"name": "Gearboy", "system": "Game Boy/Game Boy Color"},
+    {"name": "gopher64", "system": "Nintendo 64"},
+    {"name": "Gopher2600", "system": "Atari 2600/"},
     {"name": "Lime3DS", "system": "3DS"},
     {"name": "MAME", "system": "Arcade"},
     {"name": "Mednafen", "system": "Multi-system"},
@@ -26,6 +28,7 @@
     {"name": "Snes9x", "system": "SNES"},
     {"name": "Stella", "system": "Atari 2600"},
     {"name": "simple64", "system": "Nintendo 64"},
+    {"name": "SimpleLauncher", "system": "Frontend"},
     {"name": "Sudachi", "system": "Switch"},
     {"name": "Supermodel", "system": "Sega Model 3"},
     {"name": "Tanuki3DS", "system": "3DS"},
@@ -35,7 +38,8 @@
     {"name": "VisualBoyAdvance-m", "system": "Game Boy Advance"},
     {"name": "Vita3K", "system": "Vita"},
     {"name": "WinUAE", "system": "Amiga"},
+    {"name": "WinDurango", "system": "Xbox One"},
     {"name": "XEMU", "system": "Xbox"},
-    {"name": "Xenia Manager", "system": "Xbox360"},
-    {"name": "XENIA", "system": "Xbox360"}
+    {"name": "Xenia Manager", "system": "Xbox 360"},
+    {"name": "XENIA", "system": "Xbox 360"}
 ]
