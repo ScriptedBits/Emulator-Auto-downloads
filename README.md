@@ -5,6 +5,9 @@
 
 # Welcome to the Emulator Auto-Downloads Project! #
 
+## 🎉 Emulator Auto-Download v5.0 Pre-Release is out NOW! 🚀 ##
+## https://github.com/dbalcar/Emulator-Auto-downloads/releases/tag/v5.0 ##
+
 Tired of scouring the web for emulators? 
 
 Supercharge Your Retro Gaming Setup with one Click!
@@ -38,8 +41,11 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **Project64** | Nintendo 64  |     | **Xenia Manager** | Xbox 360 |
 | **ProSystem** | Atari 7800  |     |  |  |
 <!-- Updated at 2025-02-21 15:51:15 UTC -->
+
+
 ## Requirements:
 - Windows 10 / 11
+
 
 > [!NOTE]
 > # For Version 3.x see - [README.3.x.md](README.3.x.md) #
