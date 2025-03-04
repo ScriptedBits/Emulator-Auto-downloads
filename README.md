@@ -1,12 +1,12 @@
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/dbalcar/Emulator-Auto-downloads)
-![GitHub All Releases](https://img.shields.io/github/downloads/dbalcar/Emulator-Auto-downloads/total)
-![GitHub issues](https://img.shields.io/github/issues/dbalcar/Emulator-Auto-downloads)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/ScriptedBits/Emulator-Auto-downloads)
+![GitHub All Releases](https://img.shields.io/github/downloads/ScriptedBits/Emulator-Auto-downloads/total)
+![GitHub issues](https://img.shields.io/github/issues/ScriptedBits/Emulator-Auto-downloads)
 
 
 # Welcome to the Emulator Auto-Downloads Project! #
 
 ## 🎉 Emulator Auto-Download v5.0 Pre-Release is out NOW! 🚀 ##
-## https://github.com/dbalcar/Emulator-Auto-downloads/releases/tag/v5.0 ##
+## https://github.com/ScriptedBits/Emulator-Auto-downloads/releases/tag/v5.0 ##
 
 Tired of scouring the web for emulators? 
 
