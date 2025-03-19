@@ -8,6 +8,10 @@
 ## 🎉 Emulator Auto-Download v5.0 Pre-Release is out NOW! 🚀 ##
 ## https://github.com/ScriptedBits/Emulator-Auto-downloads/releases/tag/v5.0 ##
 
+
+> [!NOTE]
+> Be sure to check out our newest project at https://github.com/ScriptedBits/GameVault-Relocator
+
 Tired of scouring the web for emulators? 
 
 Supercharge Your Retro Gaming Setup with one Click!
