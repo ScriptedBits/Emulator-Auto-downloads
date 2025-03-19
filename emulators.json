@@ -2,6 +2,7 @@
     {"name": "a7800", "system": "Atari 7800"},
     {"name": "AppleWin", "system": "Apple ]["},
     {"name": "Ares", "system": "Multi-system"},
+    {"name": "Azahar", "system": "3DS"},
     {"name": "BigPEmu", "system": "Atari Jaguar"},
     {"name": "BizHawk", "system": "Multi-system"},
     {"name": "CEMU", "system": "Wii U"},
