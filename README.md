@@ -2,6 +2,8 @@
 ![GitHub All Releases](https://img.shields.io/github/downloads/ScriptedBits/Emulator-Auto-downloads/total)
 ![GitHub issues](https://img.shields.io/github/issues/ScriptedBits/Emulator-Auto-downloads)
 
+![Latest Release Downloads](https://img.shields.io/github/downloads/ScriptedBits/Emulator-Auto-downloads/latest/total)
+
 
 # Welcome to the Emulator Auto-Downloads Project! #
 
