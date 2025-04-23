@@ -1,5 +1,5 @@
 {
-    "version": "1.0.20",
+    "version": "1.0.21",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -420,7 +420,7 @@
 		"additional_requirements": "Microsoft Visual C++ 2013 Redistributable",
 		"systems": ["Sega Model 3"]
 	},
-	"Supermodel-Dojo": {
+	"Supermodel_Dojo": {
 		"description": "Sega Model 3 arcade emulator front end.",
 		"url": "https://github.com/blueminder/supermodel-dojo/",
 		"requirements": {
