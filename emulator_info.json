@@ -1,5 +1,5 @@
 {
-    "version": "1.0.18",
+    "version": "1.0.19",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -180,7 +180,19 @@
         },
         "additional_requirements": "None"
     },
-	"Mednafen": {
+    "MegaBoy: {
+        "description": "Cross-platform, accurate Gameboy/Color Emulator made in C++",
+        "url": "https://github.com/MeGaL0DoN/MegaBoy",
+        "systems": ["Gameboy/Color"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor with SSE2 support",
+            "RAM": "2 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "Mednafen": {
 		"description": "Multi-system emulator with a focus on accuracy.",
 		"url": "https://mednafen.github.io/",
 		"requirements": {
@@ -399,6 +411,18 @@
 	"Supermodel": {
 		"description": "Sega Model 3 arcade emulator.",
 		"url": "https://www.supermodel3.com/",
+		"requirements": {
+			"CPU": "Intel/AMD Processor",
+			"RAM": "1 GB",
+			"OS": "Windows, Linux",
+			"GPU": "NVIDIA or AMD GPU recommended"
+		},
+		"additional_requirements": "Microsoft Visual C++ 2013 Redistributable",
+		"systems": ["Sega Model 3"]
+	},
+	"Supermodel-Dojo": {
+		"description": "Sega Model 3 arcade emulator front end.",
+		"url": "https://github.com/blueminder/supermodel-dojo/",
 		"requirements": {
 			"CPU": "Intel/AMD Processor",
 			"RAM": "1 GB",
