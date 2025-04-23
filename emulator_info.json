@@ -1,5 +1,5 @@
 {
-    "version": "1.0.19",
+    "version": "1.0.20",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -180,7 +180,7 @@
         },
         "additional_requirements": "None"
     },
-    "MegaBoy: {
+    "MegaBoy": {
         "description": "Cross-platform, accurate Gameboy/Color Emulator made in C++",
         "url": "https://github.com/MeGaL0DoN/MegaBoy",
         "systems": ["Gameboy/Color"],
