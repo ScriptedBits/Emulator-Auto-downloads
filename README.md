@@ -47,7 +47,7 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **PCSX2** | PS2  |     | **XEMU** | Xbox |
 | **PPSSPP** | PSP  |     | **XENIA** | Xbox 360 |
 | **Project64** | Nintendo 64  |     | **Xenia Manager** | Xbox 360 |
-<!-- Updated at 2025-04-25 09:21:56 UTC -->
+<!-- Updated at 2025-04-27 22:08:21 UTC -->
 
 
 ## Requirements:
