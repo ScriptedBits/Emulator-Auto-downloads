@@ -24,7 +24,7 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 
 | **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
 |------------------------|---------------------|-----|------------------------|---------------------|
-| **a7800** | Atari 7800  |     | **ProSystem** | Atari 7800 |
+| **a7800** | Atari 7800  |     | **Redream** | Dreamcast |
 | **AppleWin** | Apple ][  |     | **RetroArch** | Frontend |
 | **Ares** | Multi-system  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
 | **Azahar** | 3DS  |     | **RPCS3** | PS3 |
@@ -47,7 +47,8 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **PCSX2** | PS2  |     | **XEMU** | Xbox |
 | **PPSSPP** | PSP  |     | **XENIA** | Xbox 360 |
 | **Project64** | Nintendo 64  |     | **Xenia Manager** | Xbox 360 |
-<!-- Updated at 2025-04-27 22:08:21 UTC -->
+| **ProSystem** | Atari 7800  |     |  |  |
+<!-- Updated at 2025-04-30 06:25:33 UTC -->
 
 
 ## Requirements:
