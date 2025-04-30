@@ -7,8 +7,8 @@
 
 # Welcome to the Emulator Auto-Downloads Project! #
 
-## 🎉 Emulator Auto-Download v5.0 Pre-Release is out NOW! 🚀 ##
-## https://github.com/ScriptedBits/Emulator-Auto-downloads/releases/tag/v5.0 ##
+## 🎉 Emulator Auto-Download v5.0 Beta 2 Pre-Release is out NOW! 🚀 ##
+## [https://github.com/ScriptedBits/Emulator-Auto-downloads/releases/tag/v5.0](https://github.com/ScriptedBits/Emulator-Auto-downloads/releases/tag/v5.0-Beta.2) ##
 
 
 > [!NOTE]
