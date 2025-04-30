@@ -24,6 +24,7 @@
     {"name": "Project64", "system": "Nintendo 64"},
     {"name": "ProSystem", "system": "Atari 7800"},
     {"name": "RetroArch", "system": "Frontend"},
+    {"name": "Redream", "system": "Dreamcast"},
     {"name": "Rosalie's Mupen GUI", "system": "Nintendo 64"},
     {"name": "RPCS3", "system": "PS3"},
     {"name": "shadPS4", "system": "PS4"},
