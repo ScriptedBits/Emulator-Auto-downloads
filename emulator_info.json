@@ -156,7 +156,7 @@
         },
         "additional_requirements": "None"
     },
-    "Hypseus-Singe": {
+    "Hypseus_Singe": {
         "description": "Hypseus is a SDL2 version of Daphne and Singe. Laserdisc game emulation.",
         "url": "https://github.com/DirtBagXon/hypseus-singe",
         "systems": ["Daphne and Singe"],
