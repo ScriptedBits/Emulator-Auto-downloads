@@ -1,5 +1,5 @@
 {
-    "version": "1.0.23",
+    "version": "1.0.24",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -152,6 +152,18 @@
             "CPU": "Intel/AMD Processor with SSE2 support",
             "RAM": "2 GB",
             "OS": "Windows, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "Hypseus-Singe": {
+        "description": "Hypseus is a SDL2 version of Daphne and Singe. Laserdisc game emulation.",
+        "url": "https://github.com/DirtBagXon/hypseus-singe",
+        "systems": ["Daphne and Singe"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor with SSE2 support",
+            "RAM": "2 GB",
+            "OS": "Windows",
             "GPU": "Integrated graphics"
         },
         "additional_requirements": "None"
