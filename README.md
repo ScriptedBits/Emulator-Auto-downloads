@@ -38,17 +38,17 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **Gearboy** | Game Boy/Game Boy Color  |     | **Supermodel** | Sega Model 3 |
 | **Gopher2600** | Atari 2600/  |     | **Supermodel-Dojo** | Sega Model 3 |
 | **gopher64** | Nintendo 64  |     | **Tanuki3DS** | 3DS |
-| **Lime3DS** | 3DS  |     | **TeknoParrot** | Arcade |
-| **MAME** | Arcade  |     | **uoYabause** | Sega Saturn |
-| **Mednafen** | Multi-system  |     | **VICE** | Commodore 64 |
-| **MegaBoy** | Game Boy/Game Boy Color  |     | **VisualBoyAdvance-m** | Game Boy Advance |
-| **melonDS** | DS  |     | **Vita3K** | Vita |
-| **mGBA** | Game Boy Advance  |     | **WinDurango** | Xbox One |
-| **Mupen64Plus** | Nintendo 64  |     | **WinUAE** | Amiga |
+| **MAME** | Arcade  |     | **TeknoParrot** | Arcade |
+| **Mednafen** | Multi-system  |     | **uoYabause** | Sega Saturn |
+| **MegaBoy** | Game Boy/Game Boy Color  |     | **VICE** | Commodore 64 |
+| **melonDS** | DS  |     | **VisualBoyAdvance-m** | Game Boy Advance |
+| **mGBA** | Game Boy Advance  |     | **Vita3K** | Vita |
+| **Mupen64Plus** | Nintendo 64  |     | **WinDurango** | Xbox One |
+| **Panda3DS** | 3DS  |     | **WinUAE** | Amiga |
 | **PCSX2** | PS2  |     | **XEMU** | Xbox |
 | **PPSSPP** | PSP  |     | **XENIA** | Xbox 360 |
 | **Project64** | Nintendo 64  |     | **Xenia Manager** | Xbox 360 |
-<!-- Updated at 2025-05-13 15:05:08 UTC -->
+<!-- Updated at 2025-05-13 15:13:35 UTC -->
 
 
 ## Requirements:
