@@ -19,6 +19,7 @@
     {"name": "MegaBoy", "system": "Game Boy/Game Boy Color"},
     {"name": "melonDS", "system": "DS"},
     {"name": "mGBA", "system": "Game Boy Advance"},
+    {"name": "Mupen64Plus", "system": "Nintendo 64"},
     {"name": "PCSX2", "system": "PS2"},
     {"name": "PPSSPP", "system": "PSP"},
     {"name": "Project64", "system": "Nintendo 64"},
