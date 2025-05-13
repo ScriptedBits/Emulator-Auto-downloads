@@ -24,31 +24,31 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 
 | **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
 |------------------------|---------------------|-----|------------------------|---------------------|
-| **a7800** | Atari 7800  |     | **Redream** | Dreamcast |
-| **AppleWin** | Apple ][  |     | **RetroArch** | Frontend |
-| **Ares** | Multi-system  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
-| **Azahar** | 3DS  |     | **RPCS3** | PS3 |
-| **BigPEmu** | Atari Jaguar  |     | **shadPS4** | PS4 |
-| **BizHawk** | Multi-system  |     | **simple64** | Nintendo 64 |
-| **CEMU** | Wii U  |     | **SimpleLauncher** | Frontend |
-| **Cxbx-Reloaded** | Xbox  |     | **Snes9x** | SNES |
-| **Dolphin** | Wii / GameCube  |     | **Stella** | Atari 2600 |
-| **DREAMM** | LucasArts  |     | **Sudachi** | Switch |
-| **Duckstation** | PS1  |     | **Supermodel** | Sega Model 3 |
-| **Gearboy** | Game Boy/Game Boy Color  |     | **Supermodel-Dojo** | Sega Model 3 |
-| **Gopher2600** | Atari 2600/  |     | **Tanuki3DS** | 3DS |
-| **gopher64** | Nintendo 64  |     | **TeknoParrot** | Arcade |
-| **Lime3DS** | 3DS  |     | **uoYabause** | Sega Saturn |
-| **MAME** | Arcade  |     | **VICE** | Commodore 64 |
-| **Mednafen** | Multi-system  |     | **VisualBoyAdvance-m** | Game Boy Advance |
-| **MegaBoy** | Game Boy/Game Boy Color  |     | **Vita3K** | Vita |
-| **melonDS** | DS  |     | **WinDurango** | Xbox One |
-| **mGBA** | Game Boy Advance  |     | **WinUAE** | Amiga |
+| **a7800** | Atari 7800  |     | **ProSystem** | Atari 7800 |
+| **AppleWin** | Apple ][  |     | **Redream** | Dreamcast |
+| **Ares** | Multi-system  |     | **RetroArch** | Frontend |
+| **Azahar** | 3DS  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
+| **BigPEmu** | Atari Jaguar  |     | **RPCS3** | PS3 |
+| **BizHawk** | Multi-system  |     | **shadPS4** | PS4 |
+| **CEMU** | Wii U  |     | **simple64** | Nintendo 64 |
+| **Cxbx-Reloaded** | Xbox  |     | **SimpleLauncher** | Frontend |
+| **Dolphin** | Wii / GameCube  |     | **Snes9x** | SNES |
+| **DREAMM** | LucasArts  |     | **Stella** | Atari 2600 |
+| **Duckstation** | PS1  |     | **Sudachi** | Switch |
+| **Gearboy** | Game Boy/Game Boy Color  |     | **Supermodel** | Sega Model 3 |
+| **Gopher2600** | Atari 2600/  |     | **Supermodel-Dojo** | Sega Model 3 |
+| **gopher64** | Nintendo 64  |     | **Tanuki3DS** | 3DS |
+| **Lime3DS** | 3DS  |     | **TeknoParrot** | Arcade |
+| **MAME** | Arcade  |     | **uoYabause** | Sega Saturn |
+| **Mednafen** | Multi-system  |     | **VICE** | Commodore 64 |
+| **MegaBoy** | Game Boy/Game Boy Color  |     | **VisualBoyAdvance-m** | Game Boy Advance |
+| **melonDS** | DS  |     | **Vita3K** | Vita |
+| **mGBA** | Game Boy Advance  |     | **WinDurango** | Xbox One |
+| **Mupen64Plus** | Nintendo 64  |     | **WinUAE** | Amiga |
 | **PCSX2** | PS2  |     | **XEMU** | Xbox |
 | **PPSSPP** | PSP  |     | **XENIA** | Xbox 360 |
 | **Project64** | Nintendo 64  |     | **Xenia Manager** | Xbox 360 |
-| **ProSystem** | Atari 7800  |     |  |  |
-<!-- Updated at 2025-05-10 18:02:09 UTC -->
+<!-- Updated at 2025-05-13 15:05:08 UTC -->
 
 
 ## Requirements:
