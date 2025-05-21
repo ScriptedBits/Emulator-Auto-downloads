@@ -28,6 +28,7 @@
     {"name": "Redream", "system": "Dreamcast"},
     {"name": "Rosalie's Mupen GUI", "system": "Nintendo 64"},
     {"name": "RPCS3", "system": "PS3"},
+    {"name": "SaveState", "system": "Game saves"},
     {"name": "shadPS4", "system": "PS4"},
     {"name": "Snes9x", "system": "SNES"},
     {"name": "Stella", "system": "Atari 2600"},
