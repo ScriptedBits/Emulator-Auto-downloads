@@ -24,11 +24,11 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 
 | **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
 |------------------------|---------------------|-----|------------------------|---------------------|
-| **a7800** | Atari 7800  |     | **ProSystem** | Atari 7800 |
-| **AppleWin** | Apple ][  |     | **Redream** | Dreamcast |
-| **Ares** | Multi-system  |     | **RetroArch** | Frontend |
-| **Azahar** | 3DS  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
-| **BigPEmu** | Atari Jaguar  |     | **RPCS3** | PS3 |
+| **a7800** | Atari 7800  |     | **Redream** | Dreamcast |
+| **AppleWin** | Apple ][  |     | **RetroArch** | Frontend |
+| **Ares** | Multi-system  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
+| **Azahar** | 3DS  |     | **RPCS3** | PS3 |
+| **BigPEmu** | Atari Jaguar  |     | **SaveState** | Game saves |
 | **BizHawk** | Multi-system  |     | **shadPS4** | PS4 |
 | **CEMU** | Wii U  |     | **simple64** | Nintendo 64 |
 | **Cxbx-Reloaded** | Xbox  |     | **SimpleLauncher** | Frontend |
@@ -48,7 +48,8 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **PCSX2** | PS2  |     | **XEMU** | Xbox |
 | **PPSSPP** | PSP  |     | **XENIA** | Xbox 360 |
 | **Project64** | Nintendo 64  |     | **Xenia Manager** | Xbox 360 |
-<!-- Updated at 2025-05-18 15:37:20 UTC -->
+| **ProSystem** | Atari 7800  |     |  |  |
+<!-- Updated at 2025-05-21 12:07:14 UTC -->
 
 
 ## Requirements:
