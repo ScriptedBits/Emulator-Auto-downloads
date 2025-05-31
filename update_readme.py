@@ -30,14 +30,19 @@ def update_readme():
         "|------------------------|---------------------|-----|------------------------|---------------------|\n"
     )
     table_content = "\n".join(table_rows)
-    updated_table = f"## Currently Supported Emulators: ##\n\n{table_header}{table_content}\n<!-- Updated at {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')} -->"
+    # updated_table = f"## Currently Supported Emulators: ##\n\n{table_header}{table_content}\n<!-- Updated at {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')} -->"
 
+    emulator_count = len(sorted_emulators)
+    updated_table = f"## Currently Supported Emulators: {emulator_count} ##\n\n{table_header}{table_content}\n<!-- Updated at {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')} -->"
+
+    
     # Load the existing README
     with open("README.md", "r", encoding="utf-8") as f:
         readme = f.read()
 
     # Locate the supported emulators section
-    start_marker = "## Currently Supported Emulators: ##"
+    # start_marker = "## Currently Supported Emulators: ##"
+    start_marker = "## Currently Supported Emulators:"
     end_marker = "<!-- Updated at"
     start_idx = readme.find(start_marker)
     end_idx = readme.find(end_marker)
