@@ -20,7 +20,7 @@ Supercharge Your Retro Gaming Setup with one Click!
 
 Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions of the top-tier gaming emulators. The **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
 
-## Currently Supported Emulators: ##
+## Currently Supported Emulators: 50 ##
 
 | **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
 |------------------------|---------------------|-----|------------------------|---------------------|
@@ -49,7 +49,7 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **PPSSPP** | PSP  |     | **XEMU** | Xbox |
 | **Project64** | Nintendo 64  |     | **XENIA** | Xbox 360 |
 | **ProSystem** | Atari 7800  |     | **Xenia Manager** | Xbox 360 |
-<!-- Updated at 2025-05-29 15:17:40 UTC -->
+<!-- Updated at 2025-05-31 16:51:06 UTC -->
 
 
 ## Requirements:
