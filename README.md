@@ -7,8 +7,8 @@
 
 # Welcome to the Emulator Auto-Downloads Project! #
 
-## 🎉 Emulator Auto-Download v5.0 RC2 is out NOW! 🚀 ##
-## [https://github.com/ScriptedBits/Emulator-Auto-downloads/releases/tag/v5.0-RC2](https://github.com/ScriptedBits/Emulator-Auto-downloads/releases/tag/v5.0-RC2) ##
+## 🎉 Emulator Auto-Download v5.0 is out NOW! 🚀 ##
+## [https://github.com/ScriptedBits/Emulator-Auto-downloads/releases/tag/v5.0](https://github.com/ScriptedBits/Emulator-Auto-downloads/releases/tag/v5.0) ##
 
 
 > [!NOTE]
@@ -53,11 +53,8 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 
 
 ## Requirements:
-- Windows 10 / 11
+- Windows 10 / 11 / MacOS / Linux
 
-
-> [!NOTE]
-> # For Version 3.x see - [README.3.x.md](README.3.x.md) #
 
 ---
 **Disclaimer**: All emulator names, trademarks and software are the property of their respective owners. This script is provided as-is without any warranty or guarantee of functionality.
