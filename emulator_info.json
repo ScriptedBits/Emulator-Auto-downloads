@@ -1,5 +1,5 @@
 {
-    "version": "1.0.26",
+    "version": "1.0.27",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -322,6 +322,18 @@
 			"GPU": "Integrated graphics"
 		},
 		"additional_requirements": "None",
+		"systems": ["Multi-system"]
+	},
+	"RetroBat": {
+		"description": "Frontend for emulators, game engines",
+		"url": "https://www.retrobat.org/",
+		"requirements": {
+			"CPU": "CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.",
+			"RAM": "8 GB",
+			"OS": "Windows 8.1 64 Bits, Windows 10 64 Bits, Windows 11 64 Bits",
+			"GPU": "If you want to use emulators such as Dolphin, PCSX2, RPCS3 etc.. you need a modern graphics card that supports Direct3D 11.1 / OpenGL 4.4 / Vulkan"
+		},
+		"additional_requirements": "VC++ Redistributables (both 32 & 64 bits) & DirectX",
 		"systems": ["Multi-system"]
 	},
 	"Rosalie's Mupen GUI": {
