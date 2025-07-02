@@ -20,13 +20,13 @@ Supercharge Your Retro Gaming Setup with one Click!
 
 Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions of the top-tier gaming emulators. The **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
 
-## Currently Supported Emulators: 50 ##
+## Currently Supported Emulators: 51 ##
 
 | **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
 |------------------------|---------------------|-----|------------------------|---------------------|
-| **a7800** | Atari 7800  |     | **psOff** | PS4 |
-| **AppleWin** | Apple ][  |     | **Redream** | Dreamcast |
-| **Ares** | Multi-system  |     | **RetroArch** | Frontend |
+| **a7800** | Atari 7800  |     | **Redream** | Dreamcast |
+| **AppleWin** | Apple ][  |     | **RetroArch** | Frontend |
+| **Ares** | Multi-system  |     | **RetroBat** | Frontend |
 | **Azahar** | 3DS  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
 | **BigPEmu** | Atari Jaguar  |     | **RPCS3** | PS3 |
 | **BizHawk** | Multi-system  |     | **SaveState** | Game saves |
@@ -49,7 +49,8 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **PPSSPP** | PSP  |     | **XEMU** | Xbox |
 | **Project64** | Nintendo 64  |     | **XENIA** | Xbox 360 |
 | **ProSystem** | Atari 7800  |     | **Xenia Manager** | Xbox 360 |
-<!-- Updated at 2025-06-01 22:04:45 UTC -->
+| **psOff** | PS4  |     |  |  |
+<!-- Updated at 2025-07-02 13:54:31 UTC -->
 
 
 ## Requirements:
