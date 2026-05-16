@@ -24,33 +24,33 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 
 | **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
 |------------------------|---------------------|-----|------------------------|---------------------|
-| **a7800** | Atari 7800  |     | **Redream** | Dreamcast |
-| **AppleWin** | Apple ][  |     | **RetroArch** | Frontend |
-| **Ares** | Multi-system  |     | **RetroBat** | Frontend |
-| **Azahar** | 3DS  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
-| **BigPEmu** | Atari Jaguar  |     | **RPCS3** | PS3 |
-| **BizHawk** | Multi-system  |     | **SaveState** | Game saves |
-| **CEMU** | Wii U  |     | **shadPS4** | PS4 |
-| **Cxbx-Reloaded** | Xbox  |     | **simple64** | Nintendo 64 |
-| **Dolphin** | Wii / GameCube  |     | **SimpleLauncher** | Frontend |
-| **DREAMM** | LucasArts  |     | **Snes9x** | SNES |
-| **Duckstation** | PS1  |     | **Stella** | Atari 2600 |
-| **Gearboy** | Game Boy/Game Boy Color  |     | **Sudachi** | Switch |
-| **Gopher2600** | Atari 2600/  |     | **Supermodel** | Sega Model 3 |
-| **gopher64** | Nintendo 64  |     | **Supermodel-Dojo** | Sega Model 3 |
-| **MAME** | Arcade  |     | **Tanuki3DS** | 3DS |
-| **Mednafen** | Multi-system  |     | **TeknoParrot** | Arcade |
-| **MegaBoy** | Game Boy/Game Boy Color  |     | **uoYabause** | Sega Saturn |
-| **melonDS** | DS  |     | **VICE** | Commodore 64 |
-| **mGBA** | Game Boy Advance  |     | **VisualBoyAdvance-m** | Game Boy Advance |
-| **Mupen64Plus** | Nintendo 64  |     | **Vita3K** | Vita |
-| **Panda3DS** | 3DS  |     | **WinDurango** | Xbox One |
-| **PCSX2** | PS2  |     | **WinUAE** | Amiga |
-| **PPSSPP** | PSP  |     | **XEMU** | Xbox |
-| **Project64** | Nintendo 64  |     | **XENIA** | Xbox 360 |
-| **ProSystem** | Atari 7800  |     | **Xenia Manager** | Xbox 360 |
-| **psOff** | PS4  |     |  |  |
-<!-- Updated at 2026-05-15 22:18:17 UTC -->
+| **a7800** | Atari 7800  |     | **psOff** | PS4 |
+| **AppleWin** | Apple ][  |     | **Redream** | Dreamcast |
+| **Ares** | Multi-system  |     | **RetroArch** | Frontend |
+| **Azahar** | 3DS  |     | **RetroBat** | Frontend |
+| **BigPEmu** | Atari Jaguar  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
+| **BizHawk** | Multi-system  |     | **RPCS3** | PS3 |
+| **CEMU** | Wii U  |     | **SaveState** | Game saves |
+| **Cxbx-Reloaded** | Xbox  |     | **shadPS4** | PS4 |
+| **Dolphin** | Wii / GameCube  |     | **simple64** | Nintendo 64 |
+| **DREAMM** | LucasArts  |     | **SimpleLauncher** | Frontend |
+| **Duckstation** | PS1  |     | **Snes9x** | SNES |
+| **Eden** | Switch  |     | **Stella** | Atari 2600 |
+| **Gearboy** | Game Boy/Game Boy Color  |     | **Supermodel** | Sega Model 3 |
+| **Gopher2600** | Atari 2600/  |     | **Supermodel-Dojo** | Sega Model 3 |
+| **gopher64** | Nintendo 64  |     | **Tanuki3DS** | 3DS |
+| **MAME** | Arcade  |     | **TeknoParrot** | Arcade |
+| **Mednafen** | Multi-system  |     | **VICE** | Commodore 64 |
+| **MegaBoy** | Game Boy/Game Boy Color  |     | **VisualBoyAdvance-m** | Game Boy Advance |
+| **melonDS** | DS  |     | **Vita3K** | Vita |
+| **mGBA** | Game Boy Advance  |     | **WinDurango** | Xbox One |
+| **Mupen64Plus** | Nintendo 64  |     | **WinUAE** | Amiga |
+| **Panda3DS** | 3DS  |     | **XEMU** | Xbox |
+| **PCSX2** | PS2  |     | **XENIA** | Xbox 360 |
+| **PPSSPP** | PSP  |     | **Xenia Manager** | Xbox 360 |
+| **Project64** | Nintendo 64  |     | **YabaSanshiro** | Sega Saturn |
+| **ProSystem** | Atari 7800  |     |  |  |
+<!-- Updated at 2026-05-16 09:11:57 UTC -->
 
 
 ## Requirements:
