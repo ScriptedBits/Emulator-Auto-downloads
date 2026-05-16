@@ -1,5 +1,5 @@
 {
-    "version": "1.0.27",
+    "version": "1.0.28",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -120,6 +120,18 @@
         },
         "additional_requirements": "None"
     },
+	"Eden": {
+		"description": "Nintendo Switch emulator.",
+		"url": "https://eden-emu.dev/",
+		"requirements": {
+			"CPU": "Intel/AMD Processor",
+			"RAM": "16 GB",
+			"OS": "Windows, Linux, MacOS",
+			"GPU": "Nvidia / AMD"
+		},
+		"additional_requirements": "None",
+		"systems": ["Nintendo Switch"]
+	},
     "Gearboy": {
         "description": "Gearboy is a cross-platform Game Boy / Game Boy Color emulator written in C++.",
         "url": "https://github.com/drhelius/Gearboy",
@@ -432,18 +444,6 @@
 		"additional_requirements": "Bandicam causes simple64 to crash. Uninstall Bandicam if you want to use simple64",
 		"systems": ["Multi-system"]
 	},
-	"Sudachi": {
-		"description": "Nintendo Switch emulator.",
-		"url": "https://sudachi.emuplace.app/",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "16 GB",
-			"OS": "Windows, Linux",
-			"GPU": "Nvidia / AMD"
-		},
-		"additional_requirements": "None",
-		"systems": ["Nintendo Switch"]
-	},
 	"Supermodel": {
 		"description": "Sega Model 3 arcade emulator.",
 		"url": "https://www.supermodel3.com/",
@@ -480,9 +480,9 @@
 		"additional_requirements": "You need the following dependencies installed to build and run: sdl2, glew, xbyak (build only), xxhash (build only), capstone (build only)",
 		"systems": ["Nintendo 3DS"]
 	},
-	"uoYabause": {
-		"description": "uoYabause is an unofficial port of Yabause SEGA Saturn Emulator.",
-		"url": "https://www.uoyabause.org/",
+	"YabaSanshiro": {
+		"description": "YabaSanshiro is an SEGA Saturn Emulator.",
+		"url": "https://www.yabasanshiro.com/",
 		"requirements": {
 			"CPU": "Intel/AMD Processor",
 			"RAM": "4 GB",
