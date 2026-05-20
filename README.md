@@ -20,37 +20,38 @@ Supercharge Your Retro Gaming Setup with one Click!
 
 Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions of the top-tier gaming emulators. The **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
 
-## Currently Supported Emulators: 51 ##
+## Currently Supported Emulators: 53 ##
 
 | **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
 |------------------------|---------------------|-----|------------------------|---------------------|
-| **a7800** | Atari 7800  |     | **psOff** | PS4 |
-| **AppleWin** | Apple ][  |     | **Redream** | Dreamcast |
-| **Ares** | Multi-system  |     | **RetroArch** | Frontend |
-| **Azahar** | 3DS  |     | **RetroBat** | Frontend |
-| **BigPEmu** | Atari Jaguar  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
-| **BizHawk** | Multi-system  |     | **RPCS3** | PS3 |
-| **CEMU** | Wii U  |     | **SaveState** | Game saves |
-| **Cxbx-Reloaded** | Xbox  |     | **shadPS4** | PS4 |
-| **Dolphin** | Wii / GameCube  |     | **simple64** | Nintendo 64 |
-| **DREAMM** | LucasArts  |     | **SimpleLauncher** | Frontend |
-| **Duckstation** | PS1  |     | **Snes9x** | SNES |
-| **Eden** | Switch  |     | **Stella** | Atari 2600 |
-| **Gearboy** | Game Boy/Game Boy Color  |     | **Supermodel** | Sega Model 3 |
-| **Gopher2600** | Atari 2600/  |     | **Supermodel-Dojo** | Sega Model 3 |
-| **gopher64** | Nintendo 64  |     | **Tanuki3DS** | 3DS |
-| **MAME** | Arcade  |     | **TeknoParrot** | Arcade |
-| **Mednafen** | Multi-system  |     | **VICE** | Commodore 64 |
-| **MegaBoy** | Game Boy/Game Boy Color  |     | **VisualBoyAdvance-m** | Game Boy Advance |
-| **melonDS** | DS  |     | **Vita3K** | Vita |
-| **mGBA** | Game Boy Advance  |     | **WinDurango** | Xbox One |
-| **Mupen64Plus** | Nintendo 64  |     | **WinUAE** | Amiga |
-| **Panda3DS** | 3DS  |     | **XEMU** | Xbox |
-| **PCSX2** | PS2  |     | **XENIA** | Xbox 360 |
-| **PPSSPP** | PSP  |     | **Xenia Manager** | Xbox 360 |
-| **Project64** | Nintendo 64  |     | **YabaSanshiro** | Sega Saturn |
-| **ProSystem** | Atari 7800  |     |  |  |
-<!-- Updated at 2026-05-16 09:11:57 UTC -->
+| **a7800** | Atari 7800  |     | **ProSystem** | Atari 7800 |
+| **AppleWin** | Apple ][  |     | **psOff** | PS4 |
+| **Ares** | Multi-system  |     | **Redream** | Dreamcast |
+| **Azahar** | 3DS  |     | **RetroArch** | Frontend |
+| **BigPEmu** | Atari Jaguar  |     | **RetroBat** | Frontend |
+| **BizHawk** | Multi-system  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
+| **CEMU** | Wii U  |     | **RPCS3** | PS3 |
+| **Cxbx-Reloaded** | Xbox  |     | **SaveState** | Game saves |
+| **Dolphin** | Wii / GameCube  |     | **shadPS4** | PS4 |
+| **DREAMM** | LucasArts  |     | **simple64** | Nintendo 64 |
+| **Duckstation** | PS1  |     | **SimpleLauncher** | Frontend |
+| **Eden** | Switch  |     | **Snes9x** | SNES |
+| **Gearboy** | Game Boy/Game Boy Color  |     | **Stella** | Atari 2600 |
+| **Gopher2600** | Atari 2600/  |     | **Supermodel** | Sega Model 3 |
+| **gopher64** | Nintendo 64  |     | **Supermodel-Dojo** | Sega Model 3 |
+| **MAME** | Arcade  |     | **Tanuki3DS** | 3DS |
+| **Mednafen** | Multi-system  |     | **TeknoParrot** | Arcade |
+| **MegaBoy** | Game Boy/Game Boy Color  |     | **VICE** | Commodore 64 |
+| **melonDS** | DS  |     | **VisualBoyAdvance-m** | Game Boy Advance |
+| **Mesen2** | Multi-system / NES,SNES,GB,GBA  |     | **Vita3K** | Vita |
+| **MesenCE** | Multi-system / NES,SNES,GB,GBA  |     | **WinDurango** | Xbox One |
+| **mGBA** | Game Boy Advance  |     | **WinUAE** | Amiga |
+| **Mupen64Plus** | Nintendo 64  |     | **XEMU** | Xbox |
+| **Panda3DS** | 3DS  |     | **XENIA** | Xbox 360 |
+| **PCSX2** | PS2  |     | **Xenia Manager** | Xbox 360 |
+| **PPSSPP** | PSP  |     | **YabaSanshiro** | Sega Saturn |
+| **Project64** | Nintendo 64  |     |  |  |
+<!-- Updated at 2026-05-20 10:56:14 UTC -->
 
 
 ## Requirements:
