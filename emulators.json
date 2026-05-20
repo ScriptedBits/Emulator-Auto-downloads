@@ -18,6 +18,8 @@
     {"name": "Mednafen", "system": "Multi-system"},
     {"name": "MegaBoy", "system": "Game Boy/Game Boy Color"},
     {"name": "melonDS", "system": "DS"},
+    {"name": "Mesen2", "system": "Multi-system / NES,SNES,GB,GBA"},
+    {"name": "MesenCE", "system": "Multi-system / NES,SNES,GB,GBA"},
     {"name": "mGBA", "system": "Game Boy Advance"},
     {"name": "Mupen64Plus", "system": "Nintendo 64"},
     {"name": "Panda3DS", "system": "3DS"},
