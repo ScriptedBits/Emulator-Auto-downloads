@@ -7,9 +7,14 @@
 
 # Welcome to the Emulator Auto-Downloads Project! #
 
-## 🎉 Emulator Auto-Download v5.0 is out NOW! 🚀 ##
-## [https://github.com/ScriptedBits/Emulator-Auto-downloads/releases/tag/v5.0](https://github.com/ScriptedBits/Emulator-Auto-downloads/releases/tag/v5.0) ##
 
+**Choose your cabinet:**
+
+- **v4.x** — The arcade legend.  
+  The trusty old cabinet that’s been running strong since day one. Drops fresh emulators like clockwork, never gives you attitude, and never asks for more quarters. Just pure, reliable gameplay — no drama, no fuss, just insert coin and enjoy.
+
+- **v5.x** — The next-gen beast.  
+  Loaded with multiple versions, flashy new features, and enough options to satisfy even the most hardcore high-score chaser.
 
 > [!NOTE]
 > Be sure to check out our newest project at https://github.com/ScriptedBits/GameVault-Relocator
