@@ -1,5 +1,5 @@
 {
-    "version": "1.0.28",
+    "version": "1.0.29",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -231,6 +231,18 @@
 	"melonDS": {
 		"description": "Nintendo DS emulator with focus on accuracy.",
 		"url": "https://melonds.kuribo64.net/",
+		"requirements": {
+			"CPU": "Intel Core i5 or better",
+			"RAM": "1 GB",
+			"OS": "Windows, MacOS, Linux",
+			"GPU": "Integrated graphics"
+		},
+		"additional_requirements": "Microsoft Visual C++ 2015-2019 Redistributable",
+		"systems": ["Nintendo DS"]
+	},
+		"Mesen2": {
+		"description": "Multi system Nintendo emulator covering GB, GBA, NES SNES,PC Engine, SMS/Game Gear & WonderSwan",
+		"url": "https://github.com/SourMesen/Mesen2",
 		"requirements": {
 			"CPU": "Intel Core i5 or better",
 			"RAM": "1 GB",
