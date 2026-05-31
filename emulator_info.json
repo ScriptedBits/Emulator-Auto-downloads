@@ -1,5 +1,5 @@
 {
-    "version": "1.0.29",
+    "version": "1.0.30",
     "AppleWin": {
         "description": "Apple II emulator for Windows",
         "url": "https://github.com/AppleWin/AppleWin",
@@ -167,6 +167,18 @@
             "GPU": "Integrated graphics"
         },
         "additional_requirements": "None"
+    },
+    "GR2fork": {
+        "description": "ShadPS4 fork focused on improving emulation of Gravity Rush 2 on PC.",
+        "url": "https://github.com/junminlee2004/GR2fork",
+        "systems": ["PS4"],
+        "requirements": {
+            "CPU": "CPU: i5 12600K / ryzen 5 5600x",
+            "RAM": "16 GB",
+            "OS": "Windows, Linux",
+            "GPU": "Any modern gpu stronger than the minimum requirements with >4gb vram"
+        },
+        "additional_requirements": "add in your dumped sysmodules into GR2fork\user\sys_modules"
     },
     "Hypseus_Singe": {
         "description": "Hypseus is a SDL2 version of Daphne and Singe. Laserdisc game emulation.",
