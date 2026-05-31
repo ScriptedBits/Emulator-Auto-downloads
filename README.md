@@ -25,25 +25,26 @@ Supercharge Your Retro Gaming Setup with one Click!
 
 Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions of the top-tier gaming emulators. The **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
 
-## Currently Supported Emulators: 53 ##
+## Currently Supported Emulators: 54 ##
 
 | **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
 |------------------------|---------------------|-----|------------------------|---------------------|
-| **a7800** | Atari 7800  |     | **ProSystem** | Atari 7800 |
-| **AppleWin** | Apple ][  |     | **psOff** | PS4 |
-| **Ares** | Multi-system  |     | **Redream** | Dreamcast |
-| **Azahar** | 3DS  |     | **RetroArch** | Frontend |
-| **BigPEmu** | Atari Jaguar  |     | **RetroBat** | Frontend |
-| **BizHawk** | Multi-system  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
-| **CEMU** | Wii U  |     | **RPCS3** | PS3 |
-| **Cxbx-Reloaded** | Xbox  |     | **SaveState** | Game saves |
-| **Dolphin** | Wii / GameCube  |     | **shadPS4** | PS4 |
-| **DREAMM** | LucasArts  |     | **simple64** | Nintendo 64 |
-| **Duckstation** | PS1  |     | **SimpleLauncher** | Frontend |
-| **Eden** | Switch  |     | **Snes9x** | SNES |
-| **Gearboy** | Game Boy/Game Boy Color  |     | **Stella** | Atari 2600 |
-| **Gopher2600** | Atari 2600/  |     | **Supermodel** | Sega Model 3 |
-| **gopher64** | Nintendo 64  |     | **Supermodel-Dojo** | Sega Model 3 |
+| **a7800** | Atari 7800  |     | **Project64** | Nintendo 64 |
+| **AppleWin** | Apple ][  |     | **ProSystem** | Atari 7800 |
+| **Ares** | Multi-system  |     | **psOff** | PS4 |
+| **Azahar** | 3DS  |     | **Redream** | Dreamcast |
+| **BigPEmu** | Atari Jaguar  |     | **RetroArch** | Frontend |
+| **BizHawk** | Multi-system  |     | **RetroBat** | Frontend |
+| **CEMU** | Wii U  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
+| **Cxbx-Reloaded** | Xbox  |     | **RPCS3** | PS3 |
+| **Dolphin** | Wii / GameCube  |     | **SaveState** | Game saves |
+| **DREAMM** | LucasArts  |     | **shadPS4** | PS4 |
+| **Duckstation** | PS1  |     | **simple64** | Nintendo 64 |
+| **Eden** | Switch  |     | **SimpleLauncher** | Frontend |
+| **Gearboy** | Game Boy/Game Boy Color  |     | **Snes9x** | SNES |
+| **Gopher2600** | Atari 2600  |     | **Stella** | Atari 2600 |
+| **gopher64** | Nintendo 64  |     | **Supermodel** | Sega Model 3 |
+| **GR2fork** | PS4  |     | **Supermodel-Dojo** | Sega Model 3 |
 | **MAME** | Arcade  |     | **Tanuki3DS** | 3DS |
 | **Mednafen** | Multi-system  |     | **TeknoParrot** | Arcade |
 | **MegaBoy** | Game Boy/Game Boy Color  |     | **VICE** | Commodore 64 |
@@ -55,8 +56,7 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **Panda3DS** | 3DS  |     | **XENIA** | Xbox 360 |
 | **PCSX2** | PS2  |     | **Xenia Manager** | Xbox 360 |
 | **PPSSPP** | PSP  |     | **YabaSanshiro** | Sega Saturn |
-| **Project64** | Nintendo 64  |     |  |  |
-<!-- Updated at 2026-05-22 07:15:13 UTC -->
+<!-- Updated at 2026-05-31 02:55:32 UTC -->
 
 
 ## Requirements:
