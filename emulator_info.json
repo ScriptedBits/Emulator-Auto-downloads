@@ -178,7 +178,7 @@
             "OS": "Windows, Linux",
             "GPU": "Any modern gpu stronger than the minimum requirements with >4gb vram"
         },
-        "additional_requirements": "add in your dumped sysmodules into "GR2fork\user\sys_modules""
+        "additional_requirements": "add in your dumped sysmodules into GR2fork\\user\\sys_modules"
     },
     "Hypseus_Singe": {
         "description": "Hypseus is a SDL2 version of Daphne and Singe. Laserdisc game emulation.",
