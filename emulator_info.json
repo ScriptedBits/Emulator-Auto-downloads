@@ -1,17 +1,5 @@
 {
-    "version": "1.0.30",
-    "AppleWin": {
-        "description": "Apple II emulator for Windows",
-        "url": "https://github.com/AppleWin/AppleWin",
-        "systems": ["Apple II"],
-        "requirements": {
-            "CPU": "Intel/AMD Processor",
-            "RAM": "512 MB",
-            "OS": "Windows 7 and above",
-            "GPU": "Integrated graphics"
-        },
-        "additional_requirements": "None"
-    },
+    "version": "1.0.31",
     "A7800": {
         "description": "Atari 7800 Emulator: A7800 is a fork of the MAME Atari 7800 driver, with several enhancements added",
         "url": "http://7800.8bitdev.org/index.php/A7800_Emulator/",
@@ -24,12 +12,36 @@
         },
         "additional_requirements": "None"
     },
+    "AppleWin": {
+        "description": "Apple II emulator for Windows",
+        "url": "https://github.com/AppleWin/AppleWin",
+        "systems": ["Apple II"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "512 MB",
+            "OS": "Windows 7 and above",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
     "ares": {
         "description": "ares is a multi-system emulator that began development on October 14th, 2004. It is a descendant of higan and bsnes, and focuses on accuracy and preservation.",
         "url": "https://ares-emu.net/",
         "systems": ["Multi-system"],
         "requirements": {
             "CPU": "1 GHz Processor",
+            "RAM": "4 GB",
+            "OS": "Windows, MacOS",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "Azahar": {
+        "description": "Nintendo 3DS emulator.",
+        "url": "https://github.com/azahar-emu/azahar",
+        "systems": ["Nintendo 3DS"],
+        "requirements": {
+            "CPU": "Modern Intel/AMD Processor",
             "RAM": "4 GB",
             "OS": "Windows, MacOS",
             "GPU": "Integrated graphics"
@@ -58,7 +70,7 @@
             "OS": "Windows",
             "GPU": "Integrated graphics"
         },
-        "additional_requirements": "Visual C++ 2010 SP1 Runtime (x64), KB2999226 (prerequisite for installing 'UCRT' on vista-win8.1), Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019' (x64), .Net Framework v4.8 and DirectX"
+        "additional_requirements": "Visual C++ 2010 SP1 Runtime (x64), KB2999226, Microsoft Visual C++ Redistributable for Visual Studio 2015-2019, .Net Framework v4.8"
     },
     "Cemu": {
         "description": "Wii U emulator with support for HD graphics",
@@ -73,28 +85,16 @@
         "additional_requirements": "Microsoft Visual C++ 2017 Redistributable (x64)"
     },
     "Cxbx-Reloaded": {
-        "description": "Cxbx-Reloaded is an emulator for running Microsoft Xbox (and eventually, Chihiro) games on Microsoft Windows and Wine.",
+        "description": "Cxbx-Reloaded is an emulator for running Microsoft Xbox (and eventually, Chihiro) games on Microsoft Windows.",
         "url": "https://github.com/Cxbx-Reloaded/Cxbx-Reloaded",
         "systems": ["Xbox"],
         "requirements": {
             "CPU": "Intel or AMD Processor with OpenGL 4.5 support",
             "RAM": "4 GB",
-            "OS": "Windows 7+ x64, or x86-64 Linux with Wine. 32-bit is not supported.",
-            "GPU": "Any GPU that supports Direct3D 9.0c with Pixel Shader Model 2.x, and Vertex Shader Model 3.0."
+            "OS": "Windows 7+ x64",
+            "GPU": "Direct3D 9.0c with Pixel Shader Model 2.x"
         },
-        "additional_requirements": "32-bit (x86) Visual C++ 2022 Redistributable, Npcap, WinUSB"
-    },
-    "DuckStation": {
-        "description": "PlayStation 1 emulator focused on speed, accuracy, and maintainability.",
-        "url": "https://github.com/stenzek/duckstation",
-        "systems": ["PlayStation 1"],
-        "requirements": {
-            "CPU": "Intel/AMD Processor",
-            "RAM": "1 GB",
-            "OS": "Windows, MacOS, Linux, Android",
-            "GPU": "Integrated graphics"
-        },
-        "additional_requirements": "Microsoft Visual C++ 2015-2019 Redistributable"
+        "additional_requirements": "Visual C++ 2022 Redistributable, Npcap"
     },
     "Dolphin": {
         "description": "Nintendo GameCube and Wii emulator supporting HD and VR.",
@@ -116,52 +116,76 @@
             "CPU": "Intel/AMD Processor with SSE2 support",
             "RAM": "2 GB",
             "OS": "Windows, MacOS, Linux",
-            "GPU": "NVIDIA, AMD GPU recommended or Embedded graphics"
+            "GPU": "Integrated graphics"
         },
         "additional_requirements": "None"
     },
-	"Eden": {
-		"description": "Nintendo Switch emulator.",
-		"url": "https://eden-emu.dev/",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "16 GB",
-			"OS": "Windows, Linux, MacOS",
-			"GPU": "Nvidia / AMD"
-		},
-		"additional_requirements": "None",
-		"systems": ["Nintendo Switch"]
-	},
+    "DuckStation": {
+        "description": "PlayStation 1 emulator focused on speed, accuracy, and maintainability.",
+        "url": "https://github.com/stenzek/duckstation",
+        "systems": ["PlayStation 1"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Windows, MacOS, Linux, Android",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2015-2019 Redistributable"
+    },
+    "Eden": {
+        "description": "Nintendo Switch emulator.",
+        "url": "https://eden-emu.dev/",
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "16 GB",
+            "OS": "Windows, Linux, MacOS",
+            "GPU": "Nvidia / AMD"
+        },
+        "additional_requirements": "None",
+        "systems": ["Nintendo Switch"]
+    },
     "Gearboy": {
         "description": "Gearboy is a cross-platform Game Boy / Game Boy Color emulator written in C++.",
         "url": "https://github.com/drhelius/Gearboy",
         "systems": ["Game Boy", "Game Boy Color"],
         "requirements": {
-            "CPU": "Intel/AMD Processor with SSE2 support",
+            "CPU": "Intel/AMD Processor",
             "RAM": "2 GB",
             "OS": "Windows, MacOS, Linux",
             "GPU": "Integrated graphics"
         },
-        "additional_requirements": "Microsoft Visual C++ Redistributable"
+        "additional_requirements": "None"
+    },
+    "Gecko": {
+        "description": "High performance Nintendo 64 emulator.",
+        "url": "https://github.com/ioncodes/gecko",
+        "systems": ["Nintendo 64"],
+        "requirements": {
+            "CPU": "Modern Intel/AMD Processor",
+            "RAM": "4 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
     },
     "gopher64": {
         "description": "Nintendo 64 emulator written in Rust.",
         "url": "https://github.com/gopher64/gopher64",
         "systems": ["Nintendo 64"],
         "requirements": {
-            "CPU": "Intel/AMD Processor with SSE2 support",
-            "RAM": "2 GB",
+            "CPU": "Modern Intel/AMD Processor",
+            "RAM": "4 GB",
             "OS": "Windows, MacOS, Linux",
             "GPU": "Integrated graphics"
         },
-        "additional_requirements": "Rust installed"
+        "additional_requirements": "None"
     },
     "Gopher2600": {
         "description": "Atari 2600 emulator written in Rust.",
         "url": "https://github.com/JetSetIlly/Gopher2600",
         "systems": ["Atari 2600"],
         "requirements": {
-            "CPU": "Intel/AMD Processor with SSE2 support",
+            "CPU": "Modern Intel/AMD Processor",
             "RAM": "2 GB",
             "OS": "Windows, Linux",
             "GPU": "Integrated graphics"
@@ -173,34 +197,46 @@
         "url": "https://github.com/junminlee2004/GR2fork",
         "systems": ["PS4"],
         "requirements": {
-            "CPU": "CPU: i5 12600K / ryzen 5 5600x",
+            "CPU": "i5 12600K / Ryzen 5 5600x or better",
             "RAM": "16 GB",
             "OS": "Windows, Linux",
-            "GPU": "Any modern gpu stronger than the minimum requirements with >4gb vram"
+            "GPU": "GPU with >4GB VRAM"
         },
-        "additional_requirements": "add in your dumped sysmodules into GR2fork\\user\\sys_modules"
+        "additional_requirements": "Add dumped sysmodules into user/sys_modules folder"
     },
     "Hypseus_Singe": {
         "description": "Hypseus is a SDL2 version of Daphne and Singe. Laserdisc game emulation.",
         "url": "https://github.com/DirtBagXon/hypseus-singe",
-        "systems": ["Daphne and Singe"],
+        "systems": ["Laserdisc Games"],
         "requirements": {
-            "CPU": "Intel/AMD Processor with SSE2 support",
-            "RAM": "2 GB",
-            "OS": "Windows",
+            "CPU": "Modern Processor",
+            "RAM": "4 GB",
+            "OS": "Windows, MacOS",
             "GPU": "Integrated graphics"
         },
         "additional_requirements": "None"
     },
-    "Lime3DS": {
-        "description": "Nintendo 3DS emulator.",
-        "url": "https://github.com/Lime3DS/lime3ds-archive",
-        "systems": ["Nintendo 3DS"],
+    "jgenesis": {
+        "description": "A high-accuracy, multi-system emulator written in Rust, supporting Genesis, Master System, Game Gear, NES, and more.",
+        "url": "https://github.com/jsgroth/jgenesis",
+        "systems": ["Sega Genesis", "NES", "Master System", "Game Gear"],
         "requirements": {
-            "CPU": "Intel/AMD Processor with SSE2 support",
-            "RAM": "2 GB",
+            "CPU": "Modern Intel/AMD Processor",
+            "RAM": "4 GB",
             "OS": "Windows, Linux",
-            "GPU": "Integrated graphics"
+            "GPU": "Integrated graphics sufficient"
+        },
+        "additional_requirements": "None"
+    },
+    "Kenji_NX": {
+        "description": "A Nintendo Switch emulator focused on accuracy and performance.",
+        "url": "https://github.com/Kenji-NX/Kenji-NX",
+        "systems": ["Nintendo Switch"],
+        "requirements": {
+            "CPU": "Modern Intel/AMD Processor with AVX2 support",
+            "RAM": "8 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Dedicated GPU recommended"
         },
         "additional_requirements": "None"
     },
@@ -216,388 +252,424 @@
         },
         "additional_requirements": "None"
     },
+    "Mednafen": {
+        "description": "Multi-system emulator with a focus on accuracy.",
+        "url": "https://mednafen.github.io/",
+        "systems": ["NES", "SNES", "Game Boy", "Game Boy Advance", "PlayStation 1"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "512 MB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2017 Redistributable"
+    },
     "MegaBoy": {
         "description": "Cross-platform, accurate Gameboy/Color Emulator made in C++",
         "url": "https://github.com/MeGaL0DoN/MegaBoy",
-        "systems": ["Gameboy/Color"],
+        "systems": ["Game Boy", "Game Boy Color"],
         "requirements": {
-            "CPU": "Intel/AMD Processor with SSE2 support",
+            "CPU": "Intel/AMD Processor",
             "RAM": "2 GB",
             "OS": "Windows, MacOS, Linux",
             "GPU": "Integrated graphics"
         },
         "additional_requirements": "None"
     },
-    "Mednafen": {
-		"description": "Multi-system emulator with a focus on accuracy.",
-		"url": "https://mednafen.github.io/",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "512 MB",
-			"OS": "Windows, MacOS, Linux",
-			"GPU": "Integrated graphics"
-		},
-		"additional_requirements": "Microsoft Visual C++ 2017 Redistributable",
-		"systems": ["NES", "SNES", "Game Boy", "Game Boy Advance", "PlayStation 1"]
-	},
-	"melonDS": {
-		"description": "Nintendo DS emulator with focus on accuracy.",
-		"url": "https://melonds.kuribo64.net/",
-		"requirements": {
-			"CPU": "Intel Core i5 or better",
-			"RAM": "1 GB",
-			"OS": "Windows, MacOS, Linux",
-			"GPU": "Integrated graphics"
-		},
-		"additional_requirements": "Microsoft Visual C++ 2015-2019 Redistributable",
-		"systems": ["Nintendo DS"]
-	},
-		"Mesen2": {
-		"description": "Multi system Nintendo emulator covering GB, GBA, NES SNES,PC Engine, SMS/Game Gear & WonderSwan",
-		"url": "https://github.com/SourMesen/Mesen2",
-		"requirements": {
-			"CPU": "Intel Core i5 or better",
-			"RAM": "1 GB",
-			"OS": "Windows, MacOS, Linux",
-			"GPU": "Integrated graphics"
-		},
-		"additional_requirements": "Microsoft Visual C++ 2015-2019 Redistributable",
-		"systems": ["Nintendo DS"]
-	},
-	"mGBA": {
-		"description": "Game Boy Advance emulator for speed and compatibility.",
-		"url": "https://mgba.io/",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "512 MB",
-			"OS": "Windows, MacOS, Linux, 3DS, Switch",
-			"GPU": "Integrated graphics"
-		},
-		"additional_requirements": "None",
-		"systems": ["Game Boy Advance", "Game Boy"]
-	},
-	"Mupen64Plus": {
-		"description": "Nintendo 64 emulator with plugins for high performance.",
-		"url": "https://mupen64plus.org/",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "1 GB",
-			"OS": "64-bit Windows 10 and 11",
-			"GPU": "Integrated graphics"
-		},
-		"additional_requirements": "None",
-		"systems": ["Nintendo 64"]
-	},
-	"Panda3DS": {
-		"description": "Panda3DS is an experimental Nintendo 3DS emulator focused on compatibility and performance.",
-		"url": "https://panda3ds.com/download.html",
-		"requirements": {
-			"CPU": "Intel/AMD Processor with OpenGL 4.5 support",
-			"RAM": "4 GB",
-			"OS": "Windows, MacOS, Linux",
-			"GPU": "Dedicated GPU recommended"
-		},
-		"additional_requirements": "Microsoft Visual C++ 2019 Redistributable for Windows",
-		"systems": ["Nintendo 3DS"]
-	},
-	"PPSSPP": {
-		"description": "PPSSPP is a Sony PSP emulator",
-		"url": "https://www.ppsspp.org",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "4 GB",
-			"OS": "Windows, MacOS, Linux",
-			"GPU": "Dedicated GPU recommended"
-		},
-		"additional_requirements": "PPSSPP is very efficient and can play most PSP games at great graphical quality on almost any PC or Mac hardware made in the last 10 years or even more",
-		"systems": ["Sony PSP"]
-	},
-	"Project64": {
-		"description": "Emulator for the Nintendo 64 and Nintendo 64 Disk Drive",
-		"url": "https://github.com/project64/project64",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "2 GB",
-			"OS": "Windows, MacOS, Linux",
-			"GPU": "OpenGL / Vulkin 1.1 supported graphics card"
-		},
-		"additional_requirements": "None",
-		"systems": ["Nintendo 64"]
-	},
-	"ProSystem": {
-		"description": "The ProSystem Emulator is an Atari 7800 emulator for Windows OS.",
-		"url": "https://github.com/gstanton/ProSystem1_3",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "4 GB",
-			"OS": "Windows",
-			"GPU": "Direct3D 11"
-		},
-		"additional_requirements": "None",
-		"systems": ["Atari 7800"]
-	},
-	"PCSX2": {
-		"description": "PlayStation 2 emulator with a focus on compatibility and performance.",
-		"url": "https://pcsx2.net/",
-		"requirements": {
-			"CPU": "Intel/AMD Processor that supports SSE4.1",
-			"RAM": "8 GB",
-			"OS": "Windows 10 Version 1809 (64-bit), MacOS 11.0 (Big Sur), Ubuntu 22.04/Debian or newer, Arch Linux, or other distro (64-bit)",
-			"GPU": "Direct3D 11 (Feature Level 10.0) support, OpenGL 3.3 support, Vulkan 1.1 support"
-		},
-		"additional_requirements": "None",
-		"systems": ["PlayStation 2"]
-	},
-	"RetroArch": {
-		"description": "Frontend for emulators, game engines, and media players.",
-		"url": "https://www.retroarch.com/",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "1 GB",
-			"OS": "Windows, MacOS, Linux",
-			"GPU": "Integrated graphics"
-		},
-		"additional_requirements": "None",
-		"systems": ["Multi-system"]
-	},
-	"RetroBat": {
-		"description": "Frontend for emulators, game engines",
-		"url": "https://www.retrobat.org/",
-		"requirements": {
-			"CPU": "CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.",
-			"RAM": "8 GB",
-			"OS": "Windows 8.1 64 Bits, Windows 10 64 Bits, Windows 11 64 Bits",
-			"GPU": "If you want to use emulators such as Dolphin, PCSX2, RPCS3 etc.. you need a modern graphics card that supports Direct3D 11.1 / OpenGL 4.4 / Vulkan"
-		},
-		"additional_requirements": "VC++ Redistributables (both 32 & 64 bits) & DirectX",
-		"systems": ["Multi-system"]
-	},
-	"Rosalie's Mupen GUI": {
-		"description": "Rosalie's Mupen GUI is a free and open-source mupen64plus front-end written in C++.",
-		"url": "https://github.com/Rosalie241/RMG",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "1 GB",
-			"OS": "Windows, Linux",
-			"GPU": "Integrated graphics"
-		},
-		"additional_requirements": "None",
-		"systems": ["Nintendo 64"]
-	},
-	"RPCS3": {
-		"description": "PlayStation 3 emulator and debugger.",
-		"url": "https://rpcs3.net/",
-		"requirements": {
-			"CPU": "Intel/AMD Processor with AVX2 support",
-			"RAM": "8 GB",
-			"OS": "Windows, Linux",
-			"GPU": "NVIDIA or AMD GPU recommended"
-		},
-		"additional_requirements": "Microsoft Visual C++ 2019 Redistributable",
-		"systems": ["PlayStation 3"]
-	},
-	"SaveState": {
-		"description": "A user-friendly GUI application for Windows to easily back up and restore video game save files",
-		"url": "https://github.com/Matteo842/SaveState",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "8 GB",
-			"OS": "Windows",
-			"GPU": "Integrated graphics"
-		},
-		"additional_requirements": "None",
-		"systems": ["Misc"]
-	},
-	"shadPS4": {
-		"description": "Sony PlayStation 4 emulator.",
-		"url": "https://github.com/shadps4-emu/shadps4",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "8 GB",
-			"OS": "Windows, MacOS, Linux",
-			"GPU": "Graphics card with at least 1GB of VRAM, Vulkan 1.3 support (required)"
-		},
-		"additional_requirements": "None",
-		"systems": ["PlayStation 4"]
-	},
-	"Snes9x": {
-		"description": "Super Nintendo Entertainment System emulator.",
-		"url": "https://www.snes9x.com/",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "256 MB",
-			"OS": "Windows, MacOS, Linux",
-			"GPU": "Integrated graphics"
-		},
-		"additional_requirements": "None",
-		"systems": ["Super Nintendo"]
-	},
-	"Stella": {
-		"description": "Atari 2600 emulator.",
-		"url": "https://stella-emu.github.io/",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "256 MB",
-			"OS": "Windows, MacOS, Linux",
-			"GPU": "Integrated graphics"
-		},
-		"additional_requirements": "None",
-		"systems": ["Atari 2600"]
-	},
-	"simple64": {
-		"description": "simple64 is an emulator based on a heavily modified version of mupen64plus-core, and ParaLLEl.",
-		"url": "https://simple64.github.io/",
-		"requirements": {
-			"CPU": "A CPU that is capable of x86-64-v3 instructions (AVX2) instructions",
-			"RAM": "4 GB",
-			"OS": "Windows",
-			"GPU": "A GPU that can support Vulkan 1.1 or higher."
-		},
-		"additional_requirements": "Bandicam causes simple64 to crash. Uninstall Bandicam if you want to use simple64",
-		"systems": ["Nintendo 64"]
-	},
-	"SimpleLauncher": {
-		"description": "Simple Launcher is an emulator frontend that makes playing retro games a breeze.",
-		"url": "https://github.com/drpetersonfernandes/SimpleLauncher/",
-		"requirements": {
-			"CPU": "CPU requiremnents for emulated games",
-			"RAM": "4 GB",
-			"OS": "Windows",
-			"GPU": "A GPU that can support Vulkan 1.1 or higher or OpenGL needed for games."
-		},
-		"additional_requirements": "Bandicam causes simple64 to crash. Uninstall Bandicam if you want to use simple64",
-		"systems": ["Multi-system"]
-	},
-	"Supermodel": {
-		"description": "Sega Model 3 arcade emulator.",
-		"url": "https://www.supermodel3.com/",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "1 GB",
-			"OS": "Windows, Linux",
-			"GPU": "NVIDIA or AMD GPU recommended"
-		},
-		"additional_requirements": "Microsoft Visual C++ 2013 Redistributable",
-		"systems": ["Sega Model 3"]
-	},
-	"Supermodel_Dojo": {
-		"description": "Sega Model 3 arcade emulator front end.",
-		"url": "https://github.com/blueminder/supermodel-dojo/",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "1 GB",
-			"OS": "Windows, Linux",
-			"GPU": "NVIDIA or AMD GPU recommended"
-		},
-		"additional_requirements": "Microsoft Visual C++ 2013 Redistributable",
-		"systems": ["Sega Model 3"]
-	},
-	"Tanuki3DS": {
-		"description": "Tanuki3DS is a new HLE 3DS emulator for MacOS and Linux.",
-		"url": "https://github.com/burhanr13/Tanuki3DS",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "1 GB",
-			"OS": "Linux, MacOS",
-			"GPU": "NVIDIA or AMD GPU recommended"
-		},
-		"additional_requirements": "You need the following dependencies installed to build and run: sdl2, glew, xbyak (build only), xxhash (build only), capstone (build only)",
-		"systems": ["Nintendo 3DS"]
-	},
-	"YabaSanshiro": {
-		"description": "YabaSanshiro is an SEGA Saturn Emulator.",
-		"url": "https://www.yabasanshiro.com/",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "4 GB",
-			"OS": "Windows 7 and above",
-			"GPU": "Graphics card that supports Vulkan / OpenGL"
-		},
-		"additional_requirements": "None",
-		"systems": ["Sega Saturn"]
-	},
-	"WinUAE": {
-		"description": "Amiga emulator.",
-		"url": "https://www.winuae.net/",
-		"requirements": {
-			"CPU": "Intel/AMD Processor - SSE2 capable CPU",
-			"RAM": "1 GB",
-			"OS": "Windows 7 or newer recommended (32-bit or 64-bit)",
-			"GPU": "NVIDIA or AMD GPU recommended"
-		},
-		"additional_requirements": "Direct3D 11 mode: Windows 7: KB2670838, Windows 8 or newer: no extra dependencies.",
-		"systems": ["Amiga"]
-	},
-	"VICE": {
-		"description": "Commodore 64, C64DTV, C128, and VIC20 emulator.",
-		"url": "https://vice-emu.sourceforge.io/",
-		"requirements": {
-			"CPU": "Intel/AMD Processor",
-			"RAM": "1 GB",
-			"OS": "Windows 7 or newer recommended (32-bit or 64-bit)",
-			"GPU": "NVIDIA or AMD GPU recommended"
-		},
-		"additional_requirements": "Direct3D 11 mode: Windows 7: KB2670838, Windows 8 or newer: no extra dependencies.",
-		"systems": ["Commodore 64", "Commodore VIC-20", "Commodore 128"]
-	},
-	"VBA-M": {
-		"description": "Game Boy Advance Emulator.",
-		"url": "https://visualboyadvance.org",
-		"requirements": {
-			"CPU": "2Ghz x86 (or x86-64) Intel Core 2 or AMD Athlon processor with SSE, Snapdragon 835 or newer CPU compatible with Arm for Windows.",
-			"RAM": "1 GB",
-			"OS": "Windows XP, Vista, 7, 8.1 or 10/11, Linux distros or macOS",
-			"GPU": "NVIDIA or AMD GPU recommended"
-		},
-		"additional_requirements": "DirectX June 2010 Redist",
-		"systems": ["Game Boy Advance"]
-	},
-	"Vita3K": {
-		"description": "PlayStation Vita emulator.",
-		"url": "https://vita3k.org/",
-		"requirements": {
-			"CPU": "x86_64 CPU with the AVX instruction set",
-			"RAM": "8 GB",
-			"OS": "Windows 7 or newer recommended (32-bit or 64-bit)",
-			"GPU": "GPU that supports OpenGL 4.4 / Vulkan"
-		},
-		"additional_requirements": "GPU that supports shader interlock.",
-		"systems": ["PlayStation Vita"]
-	},
-	"XEMU": {
-		"description": "Original Xbox Emulator",
-		"url": "https://xemu.app/",
-		"requirements": {
-			"CPU": "Intel or AMD 64-bit x86 processor with AVX(2) support",
-			"RAM": "6 GB",
-			"OS": "Windows 10 or newer recommended (64-bit) / MacOS / Linux",
-			"GPU": "Direct3D 12-compatible or Vulkan-compatible GPU"
-		},
-		"additional_requirements": "1. MCPX Boot ROM Image 2.Flash ROM Image (BIOS) 3.Hard Disk Image",
-		"systems": ["Xbox"]
-	},
-	"Xenia-Canary": {
-		"description": "Microsoft XBOX 360 emulator (Dev version).",
-		"url": "https://xenia.jp/",
-		"requirements": {
-			"CPU": "Intel or AMD 64-bit x86 processor with AVX(2) support",
-			"RAM": "6 GB",
-			"OS": "Windows 10 or newer recommended (32-bit or 64-bit)",
-			"GPU": "Direct3D 12-compatible or Vulkan-compatible GPU"
-		},
-		"additional_requirements": "2017/2019 x64 Visual C++ Redistributable.",
-		"systems": ["Xbox 360"]
-	},
-	"Xenia-Manager": {
-		"description": "Manager App for Xeina XBOX 360 emulator.",
-		"url": "https://github.com/xenia-manager/xenia-manager",
-		"requirements": {
-			"CPU": "Intel/AMD Processor - SSE2 capable CPU",
-			"RAM": "6 GB",
-			"OS": "Windows 10 or higher",
-			"GPU": "Direct3D 12-compatible or Vulkan-compatible GPU"
-		},
-		"additional_requirements": "Microsoft .NET 8 Desktop Runtime",
-		"systems": ["Xbox 360"]
-	}
+    "melonDS": {
+        "description": "Nintendo DS emulator with focus on accuracy.",
+        "url": "https://melonds.kuribo64.net/",
+        "systems": ["Nintendo DS"],
+        "requirements": {
+            "CPU": "Intel Core i5 or better",
+            "RAM": "1 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2015-2019 Redistributable"
+    },
+    "Mesen2": {
+        "description": "Multi system Nintendo emulator covering GB, GBA, NES SNES,PC Engine, SMS/Game Gear & WonderSwan",
+        "url": "https://github.com/SourMesen/Mesen2",
+        "systems": ["NES", "SNES", "Game Boy", "Game Boy Advance", "PC Engine"],
+        "requirements": {
+            "CPU": "Intel Core i5 or better",
+            "RAM": "1 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2015-2019 Redistributable"
+    },
+    "MesenCE": {
+        "description": "Multi-system emulator covering several Nintendo consoles.",
+        "url": "https://github.com/nesdev-org/MesenCE",
+        "systems": ["Multi-system"],
+        "requirements": {
+            "CPU": "Modern Processor",
+            "RAM": "4 GB",
+            "OS": "Windows, Linux, MacOS",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "Mupen64Plus": {
+        "description": "Nintendo 64 emulator with plugins for high performance.",
+        "url": "https://mupen64plus.org/",
+        "systems": ["Nintendo 64"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "Panda3DS": {
+        "description": "Panda3DS is an experimental Nintendo 3DS emulator focused on compatibility and performance.",
+        "url": "https://panda3ds.com/",
+        "systems": ["Nintendo 3DS"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor with OpenGL 4.5 support",
+            "RAM": "4 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Dedicated GPU recommended"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2019 Redistributable"
+    },
+    "PCSX2": {
+        "description": "PlayStation 2 emulator with a focus on compatibility and performance.",
+        "url": "https://pcsx2.net/",
+        "systems": ["PlayStation 2"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor that supports SSE4.1",
+            "RAM": "8 GB",
+            "OS": "Windows 10+, Linux, MacOS",
+            "GPU": "Direct3D 11 / OpenGL 3.3 / Vulkan 1.1"
+        },
+        "additional_requirements": "None"
+    },
+    "PPSSPP": {
+        "description": "PPSSPP is a Sony PSP emulator",
+        "url": "https://www.ppsspp.org",
+        "systems": ["Sony PSP"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "4 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Dedicated GPU recommended"
+        },
+        "additional_requirements": "None"
+    },
+    "Project64": {
+        "description": "Emulator for the Nintendo 64 and Nintendo 64 Disk Drive",
+        "url": "https://github.com/project64/project64",
+        "systems": ["Nintendo 64"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "2 GB",
+            "OS": "Windows",
+            "GPU": "OpenGL / Vulkan 1.1 supported"
+        },
+        "additional_requirements": "None"
+    },
+    "ProSystem": {
+        "description": "The ProSystem Emulator is an Atari 7800 emulator for Windows OS.",
+        "url": "https://github.com/gstanton/ProSystem1_3",
+        "systems": ["Atari 7800"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "4 GB",
+            "OS": "Windows",
+            "GPU": "Direct3D 11"
+        },
+        "additional_requirements": "None"
+    },
+    "Redream": {
+        "description": "A high-performance Sega Dreamcast emulator known for excellent compatibility and accuracy.",
+        "url": "https://redream.io/",
+        "systems": ["Sega Dreamcast"],
+        "requirements": {
+            "CPU": "Modern Intel/AMD Processor",
+            "RAM": "4 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "OpenGL 3.3 or Vulkan compatible GPU"
+        },
+        "additional_requirements": "None"
+    },
+    "RetroArch": {
+        "description": "Frontend for emulators, game engines, and media players.",
+        "url": "https://www.retroarch.com/",
+        "systems": ["Multi-system"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "Rosalie's Mupen GUI": {
+        "description": "Rosalie's Mupen GUI is a free and open-source mupen64plus front-end written in C++.",
+        "url": "https://github.com/Rosalie241/RMG",
+        "systems": ["Nintendo 64"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Windows, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "RPCS3": {
+        "description": "PlayStation 3 emulator and debugger.",
+        "url": "https://rpcs3.net/",
+        "systems": ["PlayStation 3"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor with AVX2 support",
+            "RAM": "8 GB",
+            "OS": "Windows, Linux",
+            "GPU": "NVIDIA or AMD GPU recommended"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2019 Redistributable"
+    },
+    "SaveState": {
+        "description": "A user-friendly GUI application for Windows to easily back up and restore video game save files",
+        "url": "https://github.com/Matteo842/SaveState",
+        "systems": ["Misc"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "8 GB",
+            "OS": "Windows",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "shadPS4_cli": {
+        "description": "Command-line version of the shadPS4 PlayStation 4 emulator.",
+        "url": "https://github.com/shadps4-emu/shadps4",
+        "systems": ["PlayStation 4"],
+        "requirements": {
+            "CPU": "Modern Intel/AMD Processor with AVX2 support",
+            "RAM": "8 GB",
+            "OS": "Windows, Linux, MacOS",
+            "GPU": "GPU with Vulkan 1.3 support"
+        },
+        "additional_requirements": "None"
+    },
+    "shadPS4_Qt_Launcher": {
+        "description": "Graphical Qt frontend/launcher for the shadPS4 PlayStation 4 emulator.",
+        "url": "https://github.com/shadps4-emu/shadps4-qtlauncher",
+        "systems": ["PlayStation 4"],
+        "requirements": {
+            "CPU": "Modern Intel/AMD Processor",
+            "RAM": "8 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "GPU with Vulkan 1.3 support"
+        },
+        "additional_requirements": "None"
+    },
+    "SimpleLauncher": {
+        "description": "Simple Launcher is an emulator frontend that makes playing retro games a breeze.",
+        "url": "https://github.com/drpetersonfernandes/SimpleLauncher/",
+        "systems": ["Multi-system"],
+        "requirements": {
+            "CPU": "Modern Processor",
+            "RAM": "4 GB",
+            "OS": "Windows",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "simple64": {
+        "description": "simple64 is an emulator based on a heavily modified version of mupen64plus-core, and ParaLLEl.",
+        "url": "https://simple64.github.io/",
+        "systems": ["Nintendo 64"],
+        "requirements": {
+            "CPU": "CPU that supports x86-64-v3 (AVX2)",
+            "RAM": "4 GB",
+            "OS": "Windows",
+            "GPU": "GPU that supports Vulkan 1.1 or higher"
+        },
+        "additional_requirements": "None"
+    },
+    "Snes9x": {
+        "description": "Super Nintendo Entertainment System emulator.",
+        "url": "https://www.snes9x.com/",
+        "systems": ["Super Nintendo"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "256 MB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "Stella": {
+        "description": "Atari 2600 emulator.",
+        "url": "https://stella-emu.github.io/",
+        "systems": ["Atari 2600"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "256 MB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "Supermodel": {
+        "description": "Sega Model 3 arcade emulator.",
+        "url": "https://www.supermodel3.com/",
+        "systems": ["Sega Model 3"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Windows, Linux",
+            "GPU": "NVIDIA or AMD GPU recommended"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2013 Redistributable"
+    },
+    "Supermodel_Dojo": {
+        "description": "Sega Model 3 arcade emulator front end.",
+        "url": "https://github.com/blueminder/supermodel-dojo/",
+        "systems": ["Sega Model 3"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Windows, Linux",
+            "GPU": "NVIDIA or AMD GPU recommended"
+        },
+        "additional_requirements": "Microsoft Visual C++ 2013 Redistributable"
+    },
+    "Tanuki3DS": {
+        "description": "Tanuki3DS is a new HLE 3DS emulator for MacOS and Linux.",
+        "url": "https://github.com/burhanr13/Tanuki3DS",
+        "systems": ["Nintendo 3DS"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Linux, MacOS",
+            "GPU": "NVIDIA or AMD GPU recommended"
+        },
+        "additional_requirements": "SDL2, GLEW"
+    },
+    "VICE": {
+        "description": "Commodore 64, C64DTV, C128, and VIC20 emulator.",
+        "url": "https://vice-emu.sourceforge.io/",
+        "systems": ["Commodore 64", "Commodore VIC-20", "Commodore 128"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Windows 7 or newer",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "VBA-M": {
+        "description": "Game Boy Advance Emulator.",
+        "url": "https://visualboyadvance.org",
+        "systems": ["Game Boy Advance"],
+        "requirements": {
+            "CPU": "2Ghz x86 processor",
+            "RAM": "1 GB",
+            "OS": "Windows, Linux, macOS",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "DirectX June 2010 Redist"
+    },
+    "Vita3K": {
+        "description": "PlayStation Vita emulator.",
+        "url": "https://vita3k.org/",
+        "systems": ["PlayStation Vita"],
+        "requirements": {
+            "CPU": "x86_64 CPU with AVX support",
+            "RAM": "8 GB",
+            "OS": "Windows 7 or newer",
+            "GPU": "GPU that supports OpenGL 4.4 / Vulkan"
+        },
+        "additional_requirements": "None"
+    },
+    "WinDurango": {
+        "description": "Xbox One and Xbox Series X/S emulator for Windows.",
+        "url": "https://github.com/WinDurango/WinDurango",
+        "systems": ["Xbox One", "Xbox Series X/S"],
+        "requirements": {
+            "CPU": "High-end Intel/AMD Processor",
+            "RAM": "16 GB",
+            "OS": "Windows",
+            "GPU": "High-end dedicated GPU required"
+        },
+        "additional_requirements": "None"
+    },
+    "WinUAE": {
+        "description": "Amiga emulator.",
+        "url": "https://www.winuae.net/",
+        "systems": ["Amiga"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor - SSE2 capable",
+            "RAM": "1 GB",
+            "OS": "Windows 7 or newer",
+            "GPU": "NVIDIA or AMD GPU recommended"
+        },
+        "additional_requirements": "None"
+    },
+    "XEMU": {
+        "description": "Original Xbox Emulator",
+        "url": "https://xemu.app/",
+        "systems": ["Xbox"],
+        "requirements": {
+            "CPU": "Intel or AMD 64-bit x86 processor with AVX support",
+            "RAM": "6 GB",
+            "OS": "Windows 10 or newer",
+            "GPU": "Direct3D 12 or Vulkan compatible GPU"
+        },
+        "additional_requirements": "MCPX Boot ROM, Flash ROM, Hard Disk Image"
+    },
+    "Xenia-Canary": {
+        "description": "Microsoft XBOX 360 emulator (Dev version).",
+        "url": "https://xenia.jp/",
+        "systems": ["Xbox 360"],
+        "requirements": {
+            "CPU": "Intel or AMD 64-bit x86 processor with AVX2 support",
+            "RAM": "6 GB",
+            "OS": "Windows 10 or newer",
+            "GPU": "Direct3D 12 or Vulkan compatible GPU"
+        },
+        "additional_requirements": "2017/2019 x64 Visual C++ Redistributable"
+    },
+    "Xenia-Manager": {
+        "description": "Manager App for Xenia XBOX 360 emulator.",
+        "url": "https://github.com/xenia-manager/xenia-manager",
+        "systems": ["Xbox 360"],
+        "requirements": {
+            "CPU": "Modern Processor",
+            "RAM": "6 GB",
+            "OS": "Windows 10 or higher",
+            "GPU": "Direct3D 12 or Vulkan compatible GPU"
+        },
+        "additional_requirements": "Microsoft .NET 8 Desktop Runtime"
+    },
+    "YabaSanshiro": {
+        "description": "YabaSanshiro is an SEGA Saturn Emulator.",
+        "url": "https://www.yabasanshiro.com/",
+        "systems": ["Sega Saturn"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "4 GB",
+            "OS": "Windows 7 and above",
+            "GPU": "Graphics card that supports Vulkan / OpenGL"
+        },
+        "additional_requirements": "None"
+    },
+    "ZSNES": {
+        "description": "One of the most popular Super Nintendo (SNES) emulators of all time.",
+        "url": "https://www.zsnes.com/",
+        "systems": ["Super Nintendo"],
+        "requirements": {
+            "CPU": "Any modern processor",
+            "RAM": "512 MB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    }
 }
