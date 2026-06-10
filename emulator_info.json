@@ -1,5 +1,5 @@
 {
-    "version": "1.0.31",
+    "version": "1.0.32",
     "A7800": {
         "description": "Atari 7800 Emulator: A7800 is a fork of the MAME Atari 7800 driver, with several enhancements added",
         "url": "http://7800.8bitdev.org/index.php/A7800_Emulator/",
@@ -347,6 +347,18 @@
             "GPU": "Direct3D 11 / OpenGL 3.3 / Vulkan 1.1"
         },
         "additional_requirements": "None"
+    },
+        "PCSX2X6": {
+        "description": "PCSX2 Fork for NAMCO System 246 and 256 emulation",
+        "url": "https://ps2homebrew-arcade.github.io/pcsx2x6/",
+        "systems": ["PlayStation 2 Arcade systmes"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor that supports SSE4.1",
+            "RAM": "8 GB",
+            "OS": "Windows 10+, Linux, MacOS",
+            "GPU": "Direct3D 11 / OpenGL 3.3 / Vulkan 1.1"
+        },
+        "additional_requirements": "These are the min requirments"
     },
     "PPSSPP": {
         "description": "PPSSPP is a Sony PSP emulator",
