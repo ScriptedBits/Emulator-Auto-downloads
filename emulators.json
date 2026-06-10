@@ -25,6 +25,7 @@
     {"name": "Mupen64Plus", "system": "Nintendo 64"},
     {"name": "Panda3DS", "system": "3DS"},
     {"name": "PCSX2", "system": "PS2"},
+    {"name": "PCSX2X6", "system": "System 246/256 (PS2 Arcade)"},
     {"name": "PPSSPP", "system": "PSP"},
     {"name": "Project64", "system": "Nintendo 64"},
     {"name": "ProSystem", "system": "Atari 7800"},
