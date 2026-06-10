@@ -25,7 +25,7 @@ Supercharge Your Retro Gaming Setup with one Click!
 
 Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions of the top-tier gaming emulators. The **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
 
-## Currently Supported Emulators: 54 ##
+## Currently Supported Emulators: 55 ##
 
 | **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
 |------------------------|---------------------|-----|------------------------|---------------------|
@@ -55,8 +55,9 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **Mupen64Plus** | Nintendo 64  |     | **XEMU** | Xbox |
 | **Panda3DS** | 3DS  |     | **XENIA** | Xbox 360 |
 | **PCSX2** | PS2  |     | **Xenia Manager** | Xbox 360 |
-| **PPSSPP** | PSP  |     | **YabaSanshiro** | Sega Saturn |
-<!-- Updated at 2026-06-07 08:20:54 UTC -->
+| **PCSX2X6** | System 246/256 (PS2 Arcade)  |     | **YabaSanshiro** | Sega Saturn |
+| **PPSSPP** | PSP  |     |  |  |
+<!-- Updated at 2026-06-10 09:23:34 UTC -->
 
 
 ## Requirements:
