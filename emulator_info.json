@@ -1,5 +1,5 @@
 {
-    "version": "1.0.33",
+    "version": "1.0.34",
     "A7800": {
         "description": "Atari 7800 Emulator: A7800 is a fork of the MAME Atari 7800 driver, with several enhancements added",
         "url": "http://7800.8bitdev.org/index.php/A7800_Emulator/",
@@ -27,7 +27,7 @@
     "ares": {
         "description": "ares is a multi-system emulator that began development on October 14th, 2004. It is a descendant of higan and bsnes, and focuses on accuracy and preservation.",
         "url": "https://ares-emu.net/",
-        "systems": ["Multi-system"],
+        "systems": ["NES", "SNES", "Game Boy", "Game Boy Advance", "PC Engine", "Master System", "Game Gear", "WonderSwan", "MSX", "MSX2", "Arcade", "ColecoVision", "Sega SG-1000", "PlayStation 1", "Atari 2600"],
         "requirements": {
             "CPU": "1 GHz Processor",
             "RAM": "4 GB",
@@ -243,7 +243,7 @@
     "MAME": {
         "description": "Multiple Arcade Machine Emulator, supports various arcade systems.",
         "url": "https://www.mamedev.org/",
-        "systems": ["Arcade"],
+        "systems": ["Multi-system", "Arcade", "Amiga", "NES", "SNES", "Game Boy", "Game Boy Advance", "PC Engine", "Master System", "Game Gear", "MSX", "MSX2", "Arcade", "Sega SG-1000", "PlayStation 1", "Atari 2600", "Apple II","Commodore 64","Commodore 128", "Irem", "Virtural Boy", "NEO GEO MVS"],
         "requirements": {
             "CPU": "Intel/AMD Processor",
             "RAM": "1 GB",
@@ -289,9 +289,9 @@
         "additional_requirements": "Microsoft Visual C++ 2015-2019 Redistributable"
     },
     "Mesen2": {
-        "description": "Multi system Nintendo emulator covering GB, GBA, NES SNES,PC Engine, SMS/Game Gear & WonderSwan",
+        "description": "Multi system Nintendo emulator covering GB, GBA, NES, SNES, PC Engine, SMS/Game Gear & WonderSwan",
         "url": "https://github.com/SourMesen/Mesen2",
-        "systems": ["NES", "SNES", "Game Boy", "Game Boy Advance", "PC Engine"],
+        "systems": ["NES", "SNES", "Game Boy", "Game Boy Advance", "PC Engine", "Master System", "Game Gear", "WonderSwan"],
         "requirements": {
             "CPU": "Intel Core i5 or better",
             "RAM": "1 GB",
@@ -303,7 +303,7 @@
     "MesenCE": {
         "description": "Multi-system emulator covering several Nintendo consoles.",
         "url": "https://github.com/nesdev-org/MesenCE",
-        "systems": ["Multi-system"],
+        "systems": ["NES", "SNES", "Game Boy", "Game Boy Advance", "PC Engine", "Master System", "Game Gear", "WonderSwan"],
         "requirements": {
             "CPU": "Modern Processor",
             "RAM": "4 GB",
@@ -351,7 +351,7 @@
         "PCSX2X6": {
         "description": "PCSX2 Fork for NAMCO System 246 and 256 emulation",
         "url": "https://ps2homebrew-arcade.github.io/pcsx2x6/",
-        "systems": ["PlayStation 2 Arcade systmes"],
+        "systems": ["PlayStation 2 Arcade systmes", "Namco System 246/256"],
         "requirements": {
             "CPU": "Intel/AMD Processor that supports SSE4.1",
             "RAM": "8 GB",
@@ -483,7 +483,7 @@
     "SimpleLauncher": {
         "description": "Simple Launcher is an emulator frontend that makes playing retro games a breeze.",
         "url": "https://github.com/drpetersonfernandes/SimpleLauncher/",
-        "systems": ["Multi-system"],
+        "systems": ["Misc"],
         "requirements": {
             "CPU": "Modern Processor",
             "RAM": "4 GB",
@@ -507,7 +507,7 @@
     "Snes9x": {
         "description": "Super Nintendo Entertainment System emulator.",
         "url": "https://www.snes9x.com/",
-        "systems": ["Super Nintendo"],
+        "systems": ["SNES"],
         "requirements": {
             "CPU": "Intel/AMD Processor",
             "RAM": "256 MB",
@@ -673,9 +673,9 @@
         "additional_requirements": "None"
     },
     "Super ZSNES": {
-        "description": "One of the most popular Super Nintendo (SNES) emulators of all time. Super ZSNES is rewritten from scratch",
+        "description": "One of the most popular Super Nintendo (SNES) emulators of all time. SUper ZSNES is rewritten from scratch",
         "url": "https://www.zsnes.com/",
-        "systems": ["Super Nintendo"],
+        "systems": ["SNES"],
         "requirements": {
             "CPU": "Any modern processor",
             "RAM": "512 MB",
