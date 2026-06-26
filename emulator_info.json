@@ -1,5 +1,5 @@
 {
-    "version": "1.0.34",
+    "version": "1.0.35",
     "A7800": {
         "description": "Atari 7800 Emulator: A7800 is a fork of the MAME Atari 7800 driver, with several enhancements added",
         "url": "http://7800.8bitdev.org/index.php/A7800_Emulator/",
@@ -672,6 +672,17 @@
         },
         "additional_requirements": "None"
     },
+    "Ymir": {
+        "description": "Ymir is an SEGA Saturn Emulator.",
+        "url": "https://github.com/StrikerX3/Ymir",
+        "systems": ["Sega Saturn"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "4 GB",
+            "OS": "Windows 10 and above, Linux and MacOS",
+            "GPU": "Graphics card that supports Vulkan / OpenGL"
+        },
+        "additional_requirements": "need the latest Microsoft Visual C++ Redistributable package"
     "Super ZSNES": {
         "description": "One of the most popular Super Nintendo (SNES) emulators of all time. SUper ZSNES is rewritten from scratch",
         "url": "https://www.zsnes.com/",
