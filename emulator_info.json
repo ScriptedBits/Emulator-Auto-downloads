@@ -683,6 +683,7 @@
             "GPU": "Graphics card that supports Vulkan / OpenGL"
         },
         "additional_requirements": "need the latest Microsoft Visual C++ Redistributable package"
+    },
     "Super ZSNES": {
         "description": "One of the most popular Super Nintendo (SNES) emulators of all time. SUper ZSNES is rewritten from scratch",
         "url": "https://www.zsnes.com/",
