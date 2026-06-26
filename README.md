@@ -1,9 +1,8 @@
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/dbalcar/Emulator-Auto-downloads)
-![GitHub All Releases](https://img.shields.io/github/downloads/dbalcar/Emulator-Auto-downloads/total)
-![GitHub issues](https://img.shields.io/github/issues/dbalcar/Emulator-Auto-downloads)
-
-
 # Welcome to the Emulator Auto-Downloads Project! #
+## ⚠️ Important Notice
+# This branch is archived and not being worked on.  Thanks #
+
+$\color{#FF5555}{\Large{\textbf{This is the v3.x of the EAD project. Please see the v4.x(main) and the v5.x releases for the latest release of EAD.}}}$
 
 Tired of scouring the web for emulators? 
 
