@@ -248,7 +248,7 @@
             "CPU": "Modern Intel/AMD Processor with AVX2 support",
             "RAM": "16 GB",
             "OS": "Windows",
-            "GPU": "A Vulkan 1.3-capable GPU with current drivers
+            "GPU": "A Vulkan 1.3-capable GPU with current drivers"
         },
         "additional_requirements": "See the Github repo for build requirments. Once releases are posted EAD will download the binaries"
     },
@@ -363,7 +363,7 @@
         "PCSX2X6": {
         "description": "PCSX2 Fork for NAMCO System 246 and 256 emulation",
         "url": "https://ps2homebrew-arcade.github.io/pcsx2x6/",
-        "systems": ["PlayStation 2 Arcade systmes", "Namco System 246/256"],
+        "systems": ["PlayStation 2 Arcade systems", "Namco System 246/256"],
         "requirements": {
             "CPU": "Intel/AMD Processor that supports SSE4.1",
             "RAM": "8 GB",
