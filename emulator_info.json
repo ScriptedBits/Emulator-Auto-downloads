@@ -243,7 +243,7 @@
     "KytyPS5": {
         "description": "A PlayStation 5 emulator for Windows",
         "url": "https://github.com/KytyPS5/KytyPS5",
-        "systems": ["Playstation 5"],
+        "systems": ["PlayStation 5"],
         "requirements": {
             "CPU": "Modern Intel/AMD Processor with AVX2 support",
             "RAM": "16 GB",
@@ -495,7 +495,7 @@
     "Sharpemu": {
         "description": "An experimental PlayStation 5 emulator for Windows, Linux and macOS",
         "url": "https://github.com/sharpemu/sharpemu",
-        "systems": ["Playstation 5"],
+        "systems": ["PlayStation 5"],
         "requirements": {
             "CPU": "Modern Intel/AMD Processor with AVX2 support",
             "RAM": "16 GB",
