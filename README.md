@@ -25,7 +25,7 @@ Supercharge Your Retro Gaming Setup with one Click!
 
 Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions of the top-tier gaming emulators. The **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
 
-## Currently Supported Emulators: 59 ##
+## Currently Supported Emulators: 61 ##
 
 | **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
 |------------------------|---------------------|-----|------------------------|---------------------|
@@ -38,14 +38,15 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **CEMU** | Wii U  |     | **RPCS3** | PS3 |
 | **Cxbx-Reloaded** | Xbox  |     | **SaveState** | Game saves |
 | **Dolphin** | Wii / GameCube  |     | **shadPS4** | PS4 |
-| **DREAMM** | LucasArts  |     | **simple64** | Nintendo 64 |
-| **Duckstation** | PS1  |     | **simpleBoy** | Game boy |
-| **Eden** | Switch  |     | **SimpleLauncher** | Frontend |
-| **Gearboy** | Game Boy/Game Boy Color  |     | **Snes9x** | SNES |
-| **Gopher2600** | Atari 2600  |     | **Stella** | Atari 2600 |
-| **gopher64** | Nintendo 64  |     | **Super ZSNES** | SNES |
-| **GR2fork** | PS4  |     | **Supermodel** | Sega Model 3 |
-| **Hypseus Singe** | laserdisc arcade games  |     | **Supermodel-Dojo** | Sega Model 3 |
+| **DREAMM** | LucasArts  |     | **Sharpemu** | PS5 |
+| **Duckstation** | PS1  |     | **simple64** | Nintendo 64 |
+| **Eden** | Switch  |     | **simpleBoy** | Game boy |
+| **Gearboy** | Game Boy/Game Boy Color  |     | **SimpleLauncher** | Frontend |
+| **Gopher2600** | Atari 2600  |     | **Snes9x** | SNES |
+| **gopher64** | Nintendo 64  |     | **Stella** | Atari 2600 |
+| **GR2fork** | PS4  |     | **Super ZSNES** | SNES |
+| **Hypseus Singe** | laserdisc arcade games  |     | **Supermodel** | Sega Model 3 |
+| **KytyPS5** | PS5  |     | **Supermodel-Dojo** | Sega Model 3 |
 | **MAME** | Arcade  |     | **Tanuki3DS** | 3DS |
 | **Mednafen** | Multi-system  |     | **TeknoParrot** | Arcade |
 | **MegaBoy** | Game Boy/Game Boy Color  |     | **VICE** | Commodore 64 |
@@ -59,7 +60,7 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **PCSX2X6** | System 246/256 (PS2 Arcade)  |     | **YabaSanshiro** | Sega Saturn |
 | **PPSSPP** | PSP  |     | **Ymir** | Sega Saturn |
 | **Project64** | Nintendo 64  |     |  |  |
-<!-- Updated at 2026-06-26 11:40:01 UTC -->
+<!-- Updated at 2026-07-16 21:38:32 UTC -->
 
 
 ## Requirements:
