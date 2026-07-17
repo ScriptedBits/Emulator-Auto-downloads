@@ -1,5 +1,5 @@
 {
-    "version": "1.0.36",
+    "version": "1.0.37",
     "A7800": {
         "description": "Atari 7800 Emulator: A7800 is a fork of the MAME Atari 7800 driver, with several enhancements added",
         "url": "http://7800.8bitdev.org/index.php/A7800_Emulator/",
@@ -502,7 +502,7 @@
             "OS": "Windows, Linux, MacOS",
             "GPU": "A Vulkan 1.3-capable GPU with current drivers"
         },
-        "additional_requirements": "See the Github repo for build requirments. Once releases are posted EAD will download the binaries"
+        "additional_requirements": "None"
     },
     "SimpleLauncher": {
         "description": "Simple Launcher is an emulator frontend that makes playing retro games a breeze.",
