@@ -25,42 +25,42 @@ Supercharge Your Retro Gaming Setup with one Click!
 
 Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions of the top-tier gaming emulators. The **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
 
-## Currently Supported Emulators: 61 ##
+## Currently Supported Emulators: 62 ##
 
 | **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
 |------------------------|---------------------|-----|------------------------|---------------------|
-| **a7800** | Atari 7800  |     | **ProSystem** | Atari 7800 |
-| **AppleWin** | Apple ][  |     | **psOff** | PS4 |
-| **Ares** | Multi-system  |     | **Redream** | Dreamcast |
-| **Azahar** | 3DS  |     | **RetroArch** | Frontend |
-| **BigPEmu** | Atari Jaguar  |     | **RetroBat** | Frontend |
-| **BizHawk** | Multi-system  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
-| **CEMU** | Wii U  |     | **RPCS3** | PS3 |
-| **Cxbx-Reloaded** | Xbox  |     | **SaveState** | Game saves |
-| **Dolphin** | Wii / GameCube  |     | **shadPS4** | PS4 |
-| **DREAMM** | LucasArts  |     | **Sharpemu** | PS5 |
-| **Duckstation** | PS1  |     | **simple64** | Nintendo 64 |
-| **Eden** | Switch  |     | **simpleBoy** | Game boy |
-| **Gearboy** | Game Boy/Game Boy Color  |     | **SimpleLauncher** | Frontend |
-| **Gopher2600** | Atari 2600  |     | **Snes9x** | SNES |
-| **gopher64** | Nintendo 64  |     | **Stella** | Atari 2600 |
-| **GR2fork** | PS4  |     | **Super ZSNES** | SNES |
-| **Hypseus Singe** | laserdisc arcade games  |     | **Supermodel** | Sega Model 3 |
-| **KytyPS5** | PS5  |     | **Supermodel-Dojo** | Sega Model 3 |
-| **MAME** | Arcade  |     | **Tanuki3DS** | 3DS |
-| **Mednafen** | Multi-system  |     | **TeknoParrot** | Arcade |
-| **MegaBoy** | Game Boy/Game Boy Color  |     | **VICE** | Commodore 64 |
-| **melonDS** | DS  |     | **VisualBoyAdvance-m** | Game Boy Advance |
-| **Mesen2** | Multi-system / NES,SNES,GB,GBA  |     | **Vita3K** | Vita |
-| **MesenCE** | Multi-system / NES,SNES,GB,GBA  |     | **WinDurango** | Xbox One |
-| **mGBA** | Game Boy Advance  |     | **WinUAE** | Amiga |
-| **Mupen64Plus** | Nintendo 64  |     | **XEMU** | Xbox |
-| **Panda3DS** | 3DS  |     | **XENIA** | Xbox 360 |
-| **PCSX2** | PS2  |     | **Xenia Manager** | Xbox 360 |
+| **a7800** | Atari 7800  |     | **Project64** | Nintendo 64 |
+| **AppleWin** | Apple ][  |     | **ProSystem** | Atari 7800 |
+| **Ares** | Multi-system  |     | **psOff** | PS4 |
+| **Azahar** | 3DS  |     | **Redream** | Dreamcast |
+| **BigPEmu** | Atari Jaguar  |     | **RetroArch** | Frontend |
+| **BizHawk** | Multi-system  |     | **RetroBat** | Frontend |
+| **CEMU** | Wii U  |     | **Rosalie's Mupen GUI** | Nintendo 64 |
+| **Cxbx-Reloaded** | Xbox  |     | **RPCS3** | PS3 |
+| **Dolphin** | Wii / GameCube  |     | **SaveState** | Game saves |
+| **DREAMM** | LucasArts  |     | **shadPS4** | PS4 |
+| **Duckstation** | PS1  |     | **Sharpemu** | PS5 |
+| **Eden** | Switch  |     | **simple64** | Nintendo 64 |
+| **Gearboy** | Game Boy/Game Boy Color  |     | **simpleBoy** | Game boy |
+| **Gopher2600** | Atari 2600  |     | **SimpleLauncher** | Frontend |
+| **gopher64** | Nintendo 64  |     | **Snes9x** | SNES |
+| **GR2fork** | PS4  |     | **Stella** | Atari 2600 |
+| **Hypseus Singe** | laserdisc arcade games  |     | **Super ZSNES** | SNES |
+| **KytyPS5** | PS5  |     | **Supermodel** | Sega Model 3 |
+| **MAME** | Arcade  |     | **Supermodel-Dojo** | Sega Model 3 |
+| **Mednafen** | Multi-system  |     | **Tanuki3DS** | 3DS |
+| **MegaBoy** | Game Boy/Game Boy Color  |     | **TeknoParrot** | Arcade |
+| **melonDS** | DS  |     | **VICE** | Commodore 64 |
+| **Mesen2** | Multi-system / NES,SNES,GB,GBA  |     | **VisualBoyAdvance-m** | Game Boy Advance |
+| **MesenCE** | Multi-system / NES,SNES,GB,GBA  |     | **Vita3K** | Vita |
+| **mGBA** | Game Boy Advance  |     | **WinDurango** | Xbox One |
+| **Mupen64Plus** | Nintendo 64  |     | **WinUAE** | Amiga |
+| **Panda3DS** | 3DS  |     | **XEMU** | Xbox |
+| **PCSX2** | PS2  |     | **XENIA** | Xbox 360 |
+| **PCSX2 Reliquary** | PS2  |     | **Xenia Manager** | Xbox 360 |
 | **PCSX2X6** | System 246/256 (PS2 Arcade)  |     | **YabaSanshiro** | Sega Saturn |
 | **PPSSPP** | PSP  |     | **Ymir** | Sega Saturn |
-| **Project64** | Nintendo 64  |     |  |  |
-<!-- Updated at 2026-07-16 21:38:32 UTC -->
+<!-- Updated at 2026-08-18 11:54:26 UTC -->
 
 
 ## Requirements:
