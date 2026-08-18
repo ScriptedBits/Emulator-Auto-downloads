@@ -1,5 +1,5 @@
 {
-    "version": "1.0.37",
+    "version": "1.0.38",
     "A7800": {
         "description": "Atari 7800 Emulator: A7800 is a fork of the MAME Atari 7800 driver, with several enhancements added",
         "url": "http://7800.8bitdev.org/index.php/A7800_Emulator/",
@@ -364,6 +364,18 @@
         "description": "PCSX2 Fork for NAMCO System 246 and 256 emulation",
         "url": "https://ps2homebrew-arcade.github.io/pcsx2x6/",
         "systems": ["PlayStation 2 Arcade systems", "Namco System 246/256"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor that supports SSE4.1",
+            "RAM": "8 GB",
+            "OS": "Windows 10+, Linux, MacOS",
+            "GPU": "Direct3D 11 / OpenGL 3.3 / Vulkan 1.1"
+        },
+        "additional_requirements": "These are the min requirments"
+    },
+        "PCSX2 Reliquary": {
+        "description": "PCSX2 Reliquary - PS2 Emulator for the nerds",
+        "url": "https://github.com/DiscoStarslayer/pcsx2-reliquary",
+        "systems": ["PCSX2 Reliquary is an experimental fork of PCSX2 focused on properly modeling security flows, PlayStation 2 arcade hardware, and accuracy focused compatibility work"],
         "requirements": {
             "CPU": "Intel/AMD Processor that supports SSE4.1",
             "RAM": "8 GB",
