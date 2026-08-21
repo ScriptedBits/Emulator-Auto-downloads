@@ -528,6 +528,18 @@
         },
         "additional_requirements": "Microsoft Visual C++ 2019 Redistributable"
     },
+    "SameBoy": {
+        "description": "SameBoy is a user friendly, powerful and open source Game Boy, Game Boy Color and Super Game Boy emulator",
+        "url": "https://sameboy.github.io/",
+        "systems": ["Game Boy", "Game Boy Color", "Game Boy Pocket", "Super Game Boy", "Game Boy Advance"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "8 GB",
+            "OS": "Windows",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
     "SaveState": {
         "description": "A user-friendly GUI application for Windows to easily back up and restore video game save files",
         "url": "https://github.com/Matteo842/SaveState",
@@ -600,6 +612,18 @@
         },
         "additional_requirements": "None"
     },
+    "Simple-Boy": {
+        "description": "Game Boy (DMG-01) emulator written in C++17, featuring an interactive ImGui/SFML debugger",
+        "url": "https://sameboy.github.io/",
+        "systems": ["Game Boy"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "8 GB",
+            "OS": "Windows",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
     "Snes9x": {
         "description": "Super Nintendo Entertainment System emulator.",
         "url": "https://www.snes9x.com/",
@@ -659,6 +683,18 @@
             "GPU": "NVIDIA or AMD GPU recommended"
         },
         "additional_requirements": "SDL2, GLEW"
+    },
+    "TeknoParrot": {
+        "description": "TeknoParrot is the world's most advanced modern arcade preservation technology",
+        "url": "https://teknoparrot.com/",
+        "systems": ["Arcade"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "16 GB",
+            "OS": "Windwows",
+            "GPU": "NVIDIA or AMD GPU recommended"
+        },
+        "additional_requirements": "DirectX End-User Runtimes (June 2010) Microsoft legacy runtime Visual C++ Redistributable Runtimes All-in-One"
     },
     "VICE": {
         "description": "Commodore 64, C64DTV, C128, and VIC20 emulator.",
