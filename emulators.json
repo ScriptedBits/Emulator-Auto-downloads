@@ -33,6 +33,7 @@
     {"name": "Project64", "system": "Nintendo 64"},
     {"name": "ProSystem", "system": "Atari 7800"},
     {"name": "psOff", "system": "PS4"},
+    {"name": "Quiver Launcher", "system": "Frontend"},
     {"name": "RetroArch", "system": "Frontend"},
     {"name": "RetroBat", "system": "Frontend"},
     {"name": "Redream", "system": "Dreamcast"},
