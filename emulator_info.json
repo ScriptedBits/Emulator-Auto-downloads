@@ -468,6 +468,18 @@
         },
         "additional_requirements": "None"
     },
+    "Quiver Launcher": {
+        "description": "A modern launcher for downloading, installing, and running apps from GitHub and GitLab releases. With a personal library, community catalog subscriptions, and flexible filtering.",
+        "url": "https://github.com/tgeorgiadis/quiver-launcher/",
+        "systems": ["Misc"],
+        "requirements": {
+            "CPU": "Intel/AMD Processor",
+            "RAM": "1 GB",
+            "OS": "Windows, Linux, MacOS",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
     "Redream": {
         "description": "A high-performance Sega Dreamcast emulator known for excellent compatibility and accuracy.",
         "url": "https://redream.io/",
