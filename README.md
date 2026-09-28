@@ -25,13 +25,13 @@ Supercharge Your Retro Gaming Setup with one Click!
 
 Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions of the top-tier gaming emulators. The **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
 
-## Currently Supported Emulators: 62 ##
+## Currently Supported Emulators: 63 ##
 
 | **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
 |------------------------|---------------------|-----|------------------------|---------------------|
-| **a7800** | Atari 7800  |     | **Project64** | Nintendo 64 |
-| **AppleWin** | Apple ][  |     | **ProSystem** | Atari 7800 |
-| **Ares** | Multi-system  |     | **psOff** | PS4 |
+| **a7800** | Atari 7800  |     | **ProSystem** | Atari 7800 |
+| **AppleWin** | Apple ][  |     | **psOff** | PS4 |
+| **Ares** | Multi-system  |     | **Quiver Launcher** | Frontend |
 | **Azahar** | 3DS  |     | **Redream** | Dreamcast |
 | **BigPEmu** | Atari Jaguar  |     | **RetroArch** | Frontend |
 | **BizHawk** | Multi-system  |     | **RetroBat** | Frontend |
@@ -60,7 +60,8 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **PCSX2 Reliquary** | PS2  |     | **Xenia Manager** | Xbox 360 |
 | **PCSX2X6** | System 246/256 (PS2 Arcade)  |     | **YabaSanshiro** | Sega Saturn |
 | **PPSSPP** | PSP  |     | **Ymir** | Sega Saturn |
-<!-- Updated at 2026-09-09 11:16:02 UTC -->
+| **Project64** | Nintendo 64  |     |  |  |
+<!-- Updated at 2026-09-28 17:48:27 UTC -->
 
 
 ## Requirements:
