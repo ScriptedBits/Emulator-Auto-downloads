@@ -42,6 +42,7 @@
     {"name": "SaveState", "system": "Game saves"},
     {"name": "shadPS4", "system": "PS4"},
     {"name": "Sharpemu", "system": "PS5"},
+    {"name": "Sly", "system": "Frontend"},
     {"name": "Snes9x", "system": "SNES"},
     {"name": "Stella", "system": "Atari 2600"},
     {"name": "simple64", "system": "Nintendo 64"},
