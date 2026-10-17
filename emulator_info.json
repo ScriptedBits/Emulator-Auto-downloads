@@ -1,5 +1,5 @@
 {
-    "version": "1.0.39",
+    "version": "1.0.40",
     "A7800": {
         "description": "Atari 7800 Emulator: A7800 is a fork of the MAME Atari 7800 driver, with several enhancements added",
         "url": "http://7800.8bitdev.org/index.php/A7800_Emulator/",
@@ -608,6 +608,18 @@
             "CPU": "Modern Processor",
             "RAM": "4 GB",
             "OS": "Windows",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "Sly": {
+        "description": "A modern take on multi-system emulation, for developers and users alike. Sly offers a unique take on the classic emulator experience and also provides a rich set of developer tools for exploring games and their underlying systems.",
+        "url": "https://github.com/ioncodes/sly/",
+        "systems": ["Misc"],
+        "requirements": {
+            "CPU": "Modern Processor",
+            "RAM": "4 GB",
+            "OS": "Windows, Linux, MacOS",
             "GPU": "Integrated graphics"
         },
         "additional_requirements": "None"
