@@ -25,7 +25,7 @@ Supercharge Your Retro Gaming Setup with one Click!
 
 Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions of the top-tier gaming emulators. The **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
 
-## Currently Supported Emulators: 63 ##
+## Currently Supported Emulators: 64 ##
 
 | **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
 |------------------------|---------------------|-----|------------------------|---------------------|
@@ -43,25 +43,25 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **Eden** | Switch  |     | **simple64** | Nintendo 64 |
 | **Gearboy** | Game Boy/Game Boy Color  |     | **simpleBoy** | Game boy |
 | **Gopher2600** | Atari 2600  |     | **SimpleLauncher** | Frontend |
-| **gopher64** | Nintendo 64  |     | **Snes9x** | SNES |
-| **GR2fork** | PS4  |     | **Stella** | Atari 2600 |
-| **Hypseus Singe** | laserdisc arcade games  |     | **Super ZSNES** | SNES |
-| **KytyPS5** | PS5  |     | **Supermodel** | Sega Model 3 |
-| **MAME** | Arcade  |     | **Supermodel-Dojo** | Sega Model 3 |
-| **Mednafen** | Multi-system  |     | **Tanuki3DS** | 3DS |
-| **MegaBoy** | Game Boy/Game Boy Color  |     | **TeknoParrot** | Arcade |
-| **melonDS** | DS  |     | **VICE** | Commodore 64 |
-| **Mesen2** | Multi-system / NES,SNES,GB,GBA  |     | **VisualBoyAdvance-m** | Game Boy Advance |
-| **MesenCE** | Multi-system / NES,SNES,GB,GBA  |     | **Vita3K** | Vita |
-| **mGBA** | Game Boy Advance  |     | **WinDurango** | Xbox One |
-| **Mupen64Plus** | Nintendo 64  |     | **WinUAE** | Amiga |
-| **Panda3DS** | 3DS  |     | **XEMU** | Xbox |
-| **PCSX2** | PS2  |     | **XENIA** | Xbox 360 |
-| **PCSX2 Reliquary** | PS2  |     | **Xenia Manager** | Xbox 360 |
-| **PCSX2X6** | System 246/256 (PS2 Arcade)  |     | **YabaSanshiro** | Sega Saturn |
-| **PPSSPP** | PSP  |     | **Ymir** | Sega Saturn |
-| **Project64** | Nintendo 64  |     |  |  |
-<!-- Updated at 2026-09-28 17:48:27 UTC -->
+| **gopher64** | Nintendo 64  |     | **Sly** | Frontend |
+| **GR2fork** | PS4  |     | **Snes9x** | SNES |
+| **Hypseus Singe** | laserdisc arcade games  |     | **Stella** | Atari 2600 |
+| **KytyPS5** | PS5  |     | **Super ZSNES** | SNES |
+| **MAME** | Arcade  |     | **Supermodel** | Sega Model 3 |
+| **Mednafen** | Multi-system  |     | **Supermodel-Dojo** | Sega Model 3 |
+| **MegaBoy** | Game Boy/Game Boy Color  |     | **Tanuki3DS** | 3DS |
+| **melonDS** | DS  |     | **TeknoParrot** | Arcade |
+| **Mesen2** | Multi-system / NES,SNES,GB,GBA  |     | **VICE** | Commodore 64 |
+| **MesenCE** | Multi-system / NES,SNES,GB,GBA  |     | **VisualBoyAdvance-m** | Game Boy Advance |
+| **mGBA** | Game Boy Advance  |     | **Vita3K** | Vita |
+| **Mupen64Plus** | Nintendo 64  |     | **WinDurango** | Xbox One |
+| **Panda3DS** | 3DS  |     | **WinUAE** | Amiga |
+| **PCSX2** | PS2  |     | **XEMU** | Xbox |
+| **PCSX2 Reliquary** | PS2  |     | **XENIA** | Xbox 360 |
+| **PCSX2X6** | System 246/256 (PS2 Arcade)  |     | **Xenia Manager** | Xbox 360 |
+| **PPSSPP** | PSP  |     | **YabaSanshiro** | Sega Saturn |
+| **Project64** | Nintendo 64  |     | **Ymir** | Sega Saturn |
+<!-- Updated at 2026-10-17 22:24:40 UTC -->
 
 
 ## Requirements:
