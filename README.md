@@ -61,7 +61,7 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **PCSX2X6** | System 246/256 (PS2 Arcade)  |     | **Xenia Manager** | Xbox 360 |
 | **PPSSPP** | PSP  |     | **YabaSanshiro** | Sega Saturn |
 | **Project64** | Nintendo 64  |     | **Ymir** | Sega Saturn |
-<!-- Updated at 2026-10-17 22:24:40 UTC -->
+<!-- Updated at 2026-10-19 14:41:46 UTC -->
 
 
 ## Requirements:
