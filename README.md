@@ -62,7 +62,7 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **PCSX2X6** | System 246/256 (PS2 Arcade)  |     | **YabaSanshiro** | Sega Saturn |
 | **PPSSPP** | PSP  |     | **Ymir** | Sega Saturn |
 | **Project64** | Nintendo 64  |     |  |  |
-<!-- Updated at 2026-11-16 15:04:36 UTC -->
+<!-- Updated at 2026-11-16 15:30:41 UTC -->
 
 
 ## Requirements:
