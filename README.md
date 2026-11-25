@@ -25,12 +25,13 @@ Supercharge Your Retro Gaming Setup with one Click!
 
 Emulator Auto-Downloads is a passion project designed to save time by automating the download of the latest versions of the top-tier gaming emulators. The **Emulator Auto-Downloads** takes the hassle out of finding and updating the best gaming emulators, letting you focus on your favorite retro and modern games. Whether you're setting up a new system or maintaining an existing one, this tool makes managing a wide range of emulators—from retro classics to modern consoles—effortless.
 
-## Currently Supported Emulators: 65 ##
+## Currently Supported Emulators: 69 ##
 
 | **Emulator**           | **System**          | --- | **Emulator**           | **System**          |
 |------------------------|---------------------|-----|------------------------|---------------------|
-| **a7800** | Atari 7800  |     | **ProSystem** | Atari 7800 |
-| **AppleWin** | Apple ][  |     | **psOff** | PS4 |
+| **a7800** | Atari 7800  |     | **Project64** | Nintendo 64 |
+| **AppleWin** | Apple ][  |     | **ProSystem** | Atari 7800 |
+| **ArcadeDuck** | PS1 Arcade  |     | **psOff** | PS4 |
 | **Ares** | Multi-system  |     | **Quiver Launcher** | Frontend |
 | **Azahar** | 3DS  |     | **Redream** | Dreamcast |
 | **BigPEmu** | Atari Jaguar  |     | **RetroArch** | Frontend |
@@ -45,24 +46,25 @@ Emulator Auto-Downloads is a passion project designed to save time by automating
 | **Gopher2600** | Atari 2600  |     | **SimpleLauncher** | Frontend |
 | **gopher64** | Nintendo 64  |     | **Sly** | Frontend |
 | **GR2fork** | PS4  |     | **Snes9x** | SNES |
-| **Hypseus Singe** | laserdisc arcade games  |     | **Stella** | Atari 2600 |
-| **KytyPS5** | PS5  |     | **Super ZSNES** | SNES |
-| **Lichii** | Switch 2  |     | **Supermodel** | Sega Model 3 |
-| **MAME** | Arcade  |     | **Supermodel-Dojo** | Sega Model 3 |
-| **Mednafen** | Multi-system  |     | **Tanuki3DS** | 3DS |
-| **MegaBoy** | Game Boy/Game Boy Color  |     | **TeknoParrot** | Arcade |
-| **melonDS** | DS  |     | **VICE** | Commodore 64 |
-| **Mesen2** | Multi-system / NES,SNES,GB,GBA  |     | **VisualBoyAdvance-m** | Game Boy Advance |
-| **MesenCE** | Multi-system / NES,SNES,GB,GBA  |     | **Vita3K** | Vita |
-| **mGBA** | Game Boy Advance  |     | **WinDurango** | Xbox One |
-| **Mupen64Plus** | Nintendo 64  |     | **WinUAE** | Amiga |
-| **Panda3DS** | 3DS  |     | **XEMU** | Xbox |
-| **PCSX2** | PS2  |     | **XENIA** | Xbox 360 |
-| **PCSX2 Reliquary** | PS2  |     | **Xenia Manager** | Xbox 360 |
-| **PCSX2X6** | System 246/256 (PS2 Arcade)  |     | **YabaSanshiro** | Sega Saturn |
-| **PPSSPP** | PSP  |     | **Ymir** | Sega Saturn |
-| **Project64** | Nintendo 64  |     |  |  |
-<!-- Updated at 2026-11-16 15:30:41 UTC -->
+| **Hades** | Game Boy Advance  |     | **Stella** | Atari 2600 |
+| **Hypseus Singe** | laserdisc arcade games  |     | **Super ZSNES** | SNES |
+| **KytyPS5** | PS5  |     | **Supermodel** | Sega Model 3 |
+| **Lichii** | Switch 2  |     | **Supermodel-Dojo** | Sega Model 3 |
+| **MAME** | Arcade  |     | **Tanuki3DS** | 3DS |
+| **Mednafen** | Multi-system  |     | **TeknoParrot** | Arcade |
+| **MegaBoy** | Game Boy/Game Boy Color  |     | **VICE** | Commodore 64 |
+| **melonDS** | DS  |     | **VisualBoyAdvance-m** | Game Boy Advance |
+| **Mesen2** | Multi-system / NES,SNES,GB,GBA  |     | **Vita3K** | Vita |
+| **MesenCE** | Multi-system / NES,SNES,GB,GBA  |     | **WinDurango** | Xbox One |
+| **mGBA** | Game Boy Advance  |     | **WinUAE** | Amiga |
+| **Mupen64Plus** | Nintendo 64  |     | **XEMU** | Xbox |
+| **Odin** | Sega Hikaru  |     | **XENIA** | Xbox 360 |
+| **Panda3DS** | 3DS  |     | **Xenia Manager** | Xbox 360 |
+| **PCSX2** | PS2  |     | **XENIA-Edge** | Xbox 360 |
+| **PCSX2 Reliquary** | PS2  |     | **YabaSanshiro** | Sega Saturn |
+| **PCSX2X6** | System 246/256 (PS2 Arcade)  |     | **Ymir** | Sega Saturn |
+| **PPSSPP** | PSP  |     |  |  |
+<!-- Updated at 2026-11-25 15:43:29 UTC -->
 
 
 ## Requirements:
