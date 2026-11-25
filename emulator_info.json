@@ -1,5 +1,5 @@
 {
-    "version": "1.0.41",
+    "version": "1.0.42",
     "A7800": {
         "description": "Atari 7800 Emulator: A7800 is a fork of the MAME Atari 7800 driver, with several enhancements added",
         "url": "http://7800.8bitdev.org/index.php/A7800_Emulator/",
@@ -20,6 +20,18 @@
             "CPU": "Intel/AMD Processor",
             "RAM": "512 MB",
             "OS": "Windows 7 and above",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
+    "ArcadeDuck": {
+        "description": "Arcade focused DuckStation fork for PlayStation 1 based arcade hardware.",
+        "url": "https://github.com/StillJC/ArcadeDuck",
+        "systems": ["PS1 Arcade"],
+        "requirements": {
+            "CPU": "1 GHz Processor",
+            "RAM": "4 GB",
+            "OS": "Windows",
             "GPU": "Integrated graphics"
         },
         "additional_requirements": "None"
@@ -228,6 +240,18 @@
         },
         "additional_requirements": "Add dumped sysmodules into user/sys_modules folder"
     },
+    "Hades": {
+        "description": "A Nintendo Game Boy Advance Emulator",
+        "url": "https://github.com/hades-emu/Hades",
+        "systems": [" Game Boy Advance"],
+        "requirements": {
+            "CPU": "Modern Processor",
+            "RAM": "4 GB",
+            "OS": "Windows, Linux, MacOS",
+            "GPU": "Integrated graphics"
+        },
+        "additional_requirements": "None"
+    },
     "HBMAME": {
         "description": "HBMAME (HomeBrew MAME) is a derivative of MAME, and contains various hacks and homebrews.",
         "url": "https://hbmame.1emulation.com/",
@@ -395,6 +419,18 @@
             "GPU": "Integrated graphics"
         },
         "additional_requirements": "None"
+    },
+    "Odin": {
+        "description": "Odin: Sega Hikaru arcade emulator",
+        "url": "https://github.com/Tovarichtch/Odin",
+        "systems": ["Sega Hikaru"],
+        "requirements": {
+            "CPU": "Modern Intel/AMD Processor with AVX2 support",
+            "RAM": "16 GB",
+            "OS": "Windows, MacOS, Linux",
+            "GPU": "A Vulkan 1.3-capable GPU with current drivers"
+        },
+        "additional_requirements": "See the Github repo for build requirments. Once releases are posted EAD will download the binaries"
     },
     "Panda3DS": {
         "description": "Panda3DS is an experimental Nintendo 3DS emulator focused on compatibility and performance.",
@@ -812,6 +848,18 @@
             "CPU": "Intel or AMD 64-bit x86 processor with AVX2 support",
             "RAM": "6 GB",
             "OS": "Windows 10 or newer",
+            "GPU": "Direct3D 12 or Vulkan compatible GPU"
+        },
+        "additional_requirements": "2017/2019 x64 Visual C++ Redistributable"
+    },
+    "Xenia-Edge": {
+        "description": "Microsoft XBOX 360 emulator (Dev version).",
+        "url": "https://github.com/has207/xenia-edge",
+        "systems": ["Xbox 360"],
+        "requirements": {
+            "CPU": "Intel or AMD 64-bit x86 processor with AVX2 support",
+            "RAM": "6 GB",
+            "OS": "Windows, Linux, macOS",
             "GPU": "Direct3D 12 or Vulkan compatible GPU"
         },
         "additional_requirements": "2017/2019 x64 Visual C++ Redistributable"
