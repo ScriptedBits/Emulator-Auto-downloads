@@ -2,6 +2,7 @@
     {"name": "a7800", "system": "Atari 7800"},
     {"name": "AppleWin", "system": "Apple ]["},
     {"name": "Ares", "system": "Multi-system"},
+    {"name": "ArcadeDuck", "system": "PS1 Arcade"},
     {"name": "Azahar", "system": "3DS"},
     {"name": "BigPEmu", "system": "Atari Jaguar"},
     {"name": "BizHawk", "system": "Multi-system"},
@@ -15,6 +16,7 @@
     {"name": "gopher64", "system": "Nintendo 64"},
     {"name": "Gopher2600", "system": "Atari 2600"},
     {"name": "GR2fork", "system": "PS4"},
+    {"name": "Hades", "system": "Game Boy Advance"},
     {"name": "Hypseus Singe", "system": "laserdisc arcade games"},
     {"name": "KytyPS5", "system": "PS5"},
     {"name": "Lichii", "system": "Switch 2"},
@@ -26,6 +28,7 @@
     {"name": "MesenCE", "system": "Multi-system / NES,SNES,GB,GBA"},
     {"name": "mGBA", "system": "Game Boy Advance"},
     {"name": "Mupen64Plus", "system": "Nintendo 64"},
+    {"name": "Odin", "system": "Sega Hikaru"},
     {"name": "Panda3DS", "system": "3DS"},
     {"name": "PCSX2", "system": "PS2"},
     {"name": "PCSX2X6", "system": "System 246/256 (PS2 Arcade)"},
@@ -63,5 +66,6 @@
     {"name": "WinDurango", "system": "Xbox One"},
     {"name": "XEMU", "system": "Xbox"},
     {"name": "Xenia Manager", "system": "Xbox 360"},
-    {"name": "XENIA", "system": "Xbox 360"}
+    {"name": "XENIA", "system": "Xbox 360"},
+    {"name": "XENIA-Edge", "system": "Xbox 360"}
 ]
